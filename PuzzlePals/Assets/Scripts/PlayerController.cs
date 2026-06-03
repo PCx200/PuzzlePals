@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -27,6 +28,11 @@ public class PlayerController : MonoBehaviour
     //Player Inputs
     private InputAction moveAction;
     private InputAction jumpAction;
+    private InputAction interactAction;
+
+    public MonsterCharacter currentMonster;
+
+    public IInteractable currentInteractable;
 
     private void Awake()
     {
@@ -43,13 +49,28 @@ public class PlayerController : MonoBehaviour
     {
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
+        interactAction = InputSystem.actions.FindAction("Interact");
 
         jumpAction.performed += OnJumpPerformed;
+        interactAction.performed += OnInteract;
     }
 
     private void OnDisable()
     {
         jumpAction.performed -= OnJumpPerformed;
+        interactAction.performed -= OnInteract;
+    }
+
+    private void OnJumpPerformed(InputAction.CallbackContext ctx)
+    {
+        jumpPressed = true;
+    }
+
+    private void OnInteract(InputAction.CallbackContext ctx)
+    {
+        currentInteractable?.Interact();
+        Debug.Log(currentInteractable);
+
     }
 
     private void FixedUpdate()
@@ -61,17 +82,13 @@ public class PlayerController : MonoBehaviour
         Move();
         Jump();
 
+
         if (!IsGrounded() && rb.linearVelocity.y < 0)
         {
             rb.AddForce(Vector3.down * Physics.gravity.magnitude * (fallMultiplier - 1f), ForceMode.Acceleration);
         }
 
     }
-    private void OnJumpPerformed(InputAction.CallbackContext ctx)
-    {
-        jumpPressed = true;
-    }
-
 
     private void Jump()
     {
@@ -95,6 +112,26 @@ public class PlayerController : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics.CheckSphere(legsTransform.position, groundCheckRadius, groundLayer);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.TryGetComponent(out IInteractable interactable))
+        { 
+        
+            currentInteractable = interactable;
+            Debug.Log("Trigger with: " + other.name);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.TryGetComponent(out IInteractable interactable) &&
+            currentInteractable == interactable)
+        {
+            Debug.Log("Exited: " + other.name);
+            currentInteractable = null;
+        }
     }
 
     private void OnDrawGizmos()
