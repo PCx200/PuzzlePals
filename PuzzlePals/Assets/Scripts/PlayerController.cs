@@ -54,6 +54,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * jumpHeight);
+        jumpDirection = Vector3.up * jumpForce;
+
+
         Move();
         Jump();
 
@@ -84,7 +88,7 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        movementDirection = new Vector3(moveAction.ReadValue<Vector2>().x, 0, 0);
+        movementDirection = new Vector3(moveAction.ReadValue<Vector2>().x, 0, moveAction.ReadValue<Vector2>().y).normalized;
         rb.AddForce(movementDirection * movementSpeed, ForceMode.Force);
     }
 
