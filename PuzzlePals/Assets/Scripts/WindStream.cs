@@ -1,6 +1,3 @@
-using JetBrains.Annotations;
-using Mono.Cecil.Cil;
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]

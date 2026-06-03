@@ -1,5 +1,3 @@
-using System;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class MonsterCharacter : MonoBehaviour
@@ -10,6 +8,8 @@ public class MonsterCharacter : MonoBehaviour
     public MonsterName Name => monsterName;
 
     [SerializeField] private GameObject prefab;
+
+    public GameObject Prefab => prefab;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

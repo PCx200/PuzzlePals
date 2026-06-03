@@ -1,7 +1,4 @@
-using NUnit.Framework.Constraints;
-using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(BoxCollider))]
 public class TransformationPoint : MonoBehaviour, IInteractable
@@ -14,18 +11,26 @@ public class TransformationPoint : MonoBehaviour, IInteractable
         var player = FindAnyObjectByType<PlayerController>();
 
         if (player == null)
-        { 
+        {
             Debug.Log("Player is null");
             return;
         }
 
         if (player.currentMonster.Name == characterToTransform.Name)
-        { 
+        {
             Debug.Log("Trying to transform to the same monster");
             return;
         }
 
+        Transform(player);
+    }
+
+    private void Transform(PlayerController player)
+    {
         player.currentMonster = characterToTransform;
+        var newMonster = Instantiate(player.currentMonster.Prefab, player.transform.position, Quaternion.identity);
+        Destroy(player.GetComponentInChildren<MonsterCharacter>().gameObject);
+        newMonster.transform.SetParent(player.transform);
         Debug.Log("Transformed into " + characterToTransform.Name);
     }
 
