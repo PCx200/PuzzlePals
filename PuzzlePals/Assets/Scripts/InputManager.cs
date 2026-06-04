@@ -33,8 +33,6 @@ public class InputManager : MonoBehaviour
 
     private InputAction bounceAction;
 
-    public InputAction Press;
-
     public InputAction Axis;
     public InputAction BounceAction => bounceAction;
     #endregion
@@ -59,7 +57,6 @@ public class InputManager : MonoBehaviour
         dreamAction = inputActionAsset.FindAction("Dream");
         createCupcakeAction = inputActionAsset.FindAction("CreateCupcake");
         bounceAction = inputActionAsset.FindAction("Bounce");
-        Press = inputActionAsset.FindAction("Press");
         Axis = inputActionAsset.FindAction("Axis");
     }
 

@@ -340,17 +340,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InputManager
   inputActionAsset: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  Press:
-    m_Name: 
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 6e372d4e-0aae-47ef-bda0-eb546ec836ad
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
   Axis:
-    m_Name: 
+    m_Name: Axis
     m_Type: 0
     m_ExpectedControlType: 
     m_Id: 3ee0fc26-666f-44c1-bf3a-8a4343c92094
@@ -744,13 +735,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263250165}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.36, y: 4.8, z: -8.96}
+  m_LocalRotation: {x: 0.09016961, y: -0, z: -0, w: 0.99592644}
+  m_LocalPosition: {x: 0.36, y: 3.8000002, z: -8.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children:
+  - {fileID: 2099981913}
+  m_Father: {fileID: 1408116996}
+  m_LocalEulerAnglesHint: {x: 10.347, y: 0, z: 0}
 --- !u!114 &1263250171
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -763,7 +755,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fabf8b765ed0e54faea9bc61f24996d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraRotate
-  rotationSpeed: 0.2
+  rotationSpeed: 0.15
   target: {fileID: 1408116996}
 --- !u!1 &1341797043
 GameObject:
@@ -854,6 +846,7 @@ Transform:
   m_Children:
   - {fileID: 1341797044}
   - {fileID: 374648234}
+  - {fileID: 1263250170}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1408116997
@@ -874,6 +867,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  camDirection: {fileID: 2099981913}
 --- !u!54 &1408116998
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -922,6 +916,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 2, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &2099981912
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2099981913}
+  m_Layer: 0
+  m_Name: CamDirection
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2099981913
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099981912}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.09016961, y: -0, z: -0, w: 0.99592644}
+  m_LocalPosition: {x: -0.323, y: -1.9810307, z: 9.471825}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1263250170}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2122867579
 GameObject:
   m_ObjectHideFlags: 0
@@ -996,7 +1021,6 @@ BoxCollider:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 1263250170}
   - {fileID: 1150838472}
   - {fileID: 428685606}
   - {fileID: 1260201281}

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
+//This script makes the camera rotate around the player
 
 public class CameraRotate : MonoBehaviour
 {
@@ -12,10 +13,8 @@ public class CameraRotate : MonoBehaviour
     private void Start()
     {
         inputManager = InputManager.Instance;
-        inputManager.Press.Enable();
         inputManager.Axis.Enable();
-        inputManager.Press.performed += _ => { StartCoroutine(Rotate()); };
-        inputManager.Press.canceled += _ => { allowRotation = false; };
+        StartCoroutine(Rotate());
         inputManager.Axis.performed += context => { rotation = context.ReadValue<Vector2>(); };
     }
     private void OnEnable()
@@ -24,11 +23,12 @@ public class CameraRotate : MonoBehaviour
     }
     private IEnumerator Rotate()
     {
-        allowRotation = true;
-        while (allowRotation)
+        while (true)
         {
             rotation *= rotationSpeed;
             transform.RotateAround(target.transform.position, Vector3.up, rotation.x);
+            //to be added the clamp for rotating up and down
+            //transform.RotateAround(target.transform.position, -Vector3.right, rotation.y);
             yield return null;
         }
 

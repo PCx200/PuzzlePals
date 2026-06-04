@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform legsTransform;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform camDirection;
 
     private Vector3 jumpDirection;
     private float jumpForce;
@@ -105,7 +106,7 @@ public class PlayerController : MonoBehaviour
     }
 
     private void Move()
-    {
+    {        
         movementDirection = new Vector3(inputManager.MoveAction.ReadValue<Vector2>().x, 0, inputManager.MoveAction.ReadValue<Vector2>().y).normalized;
         rb.AddForce(movementDirection * currentMonster.Stats.movementSpeed, ForceMode.Force);
     }
