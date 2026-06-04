@@ -8,9 +8,6 @@ public class Sprint : SuperPower
     public override void UseSuperPower()
     {
         var player = FindAnyObjectByType<PlayerController>();
-
-        var currentSpeed = player.currentMonster.Stats.movementSpeed;
-
-        player.currentMonster.Stats.movementSpeed *= sprintMultiplier;
+        player.currentMonster.Stats.sprintMultiplier = sprintMultiplier;
     }
 }

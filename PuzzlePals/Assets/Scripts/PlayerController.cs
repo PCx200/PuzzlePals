@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     private float jumpForce;
     private bool jumpPressed;
 
+    private bool isSprinting;
+
     //Player Inputs
     private InputManager inputManager;
 
@@ -42,7 +44,9 @@ public class PlayerController : MonoBehaviour
         inputManager.JumpAction.performed += OnJumpPerformed;
         inputManager.InteractAction.performed += OnInteract;
         inputManager.AttackAction.performed += OnAttackPerformed;
-        inputManager.SprintAction.performed += OnSprint;
+
+        inputManager.SprintAction.performed += OnSprintPerformed;
+        inputManager.SprintAction.canceled += OnSprintCanceled;
     }
 
     private void OnDisable()
@@ -50,7 +54,9 @@ public class PlayerController : MonoBehaviour
         inputManager.JumpAction.performed -= OnJumpPerformed;
         inputManager.InteractAction.performed -= OnInteract;
         inputManager.AttackAction.performed -= OnAttackPerformed;
-        inputManager.SprintAction.performed -= OnSprint;
+
+        inputManager.SprintAction.performed -= OnSprintPerformed;
+        inputManager.SprintAction.canceled -= OnSprintCanceled;
 
     }
 
@@ -71,10 +77,16 @@ public class PlayerController : MonoBehaviour
         currentMonster.UseSuperPower();
     }
 
-    private void OnSprint(InputAction.CallbackContext ctx)
+    private void OnSprintPerformed(InputAction.CallbackContext ctx)
     {
         if (currentMonster.Name != MonsterCharacter.MonsterName.Jullia) return;
-        currentMonster.UseSuperPower();
+        isSprinting = true;
+    }
+
+    private void OnSprintCanceled(InputAction.CallbackContext ctx)
+    {
+        if (currentMonster.Name != MonsterCharacter.MonsterName.Jullia) return;
+        isSprinting = false;
     }
 
     private void FixedUpdate()
@@ -109,8 +121,13 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
+        float speed = currentMonster.Stats.movementSpeed;
+
+        if (isSprinting)
+            speed *= currentMonster.Stats.sprintMultiplier;
+
         movementDirection = new Vector3(inputManager.MoveAction.ReadValue<Vector2>().x, 0, inputManager.MoveAction.ReadValue<Vector2>().y).normalized;
-        rb.AddForce(movementDirection * currentMonster.Stats.movementSpeed, ForceMode.Force);
+        rb.AddForce(movementDirection * speed, ForceMode.Force);
     }
 
     private bool IsGrounded()
