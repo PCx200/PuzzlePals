@@ -6,15 +6,11 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
 
-    [SerializeField] private float movementSpeed;
+    public MonsterCharacter currentMonster;
 
     private Vector3 movementDirection;
 
     [Header("Jumping Properties")]
-    [Tooltip("The amount of units the jump is going to be.")]
-    [SerializeField] private float jumpHeight;
-    [Tooltip("Increases the falling speed.")]
-    [SerializeField] private float fallMultiplier;
     [SerializeField] private Transform legsTransform;
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask groundLayer;
@@ -24,23 +20,28 @@ public class PlayerController : MonoBehaviour
     private bool jumpPressed;
 
     //Player Inputs
+    private InputManager inputManager;
     private InputAction moveAction;
     private InputAction jumpAction;
     private InputAction interactAction;
     private InputAction attackAction;
 
-    public MonsterCharacter currentMonster;
+    //private InputAction moveAction;
+    //private InputAction jumpAction;
+    //private InputAction interactAction;
 
     public IInteractable currentInteractable;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+
+        inputManager = InputManager.Instance;
     }
 
     void Start()
     {
-        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * jumpHeight);
+        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * currentMonster.Stats.jumpHeight);
         jumpDirection = Vector3.up * jumpForce; 
     }
 
@@ -54,6 +55,8 @@ public class PlayerController : MonoBehaviour
         jumpAction.performed += OnJumpPerformed;
         interactAction.performed += OnInteract;
         attackAction.performed += OnAttacked;
+        inputManager.JumpAction.performed += OnJumpPerformed;
+        inputManager.InteractAction.performed += OnInteract;
     }
 
     private void OnDisable()
@@ -80,7 +83,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * jumpHeight);
+        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * currentMonster.Stats.jumpHeight);
         jumpDirection = Vector3.up * jumpForce;
 
 
@@ -90,7 +93,7 @@ public class PlayerController : MonoBehaviour
 
         if (!IsGrounded() && rb.linearVelocity.y < 0)
         {
-            rb.AddForce(Vector3.down * Physics.gravity.magnitude * (fallMultiplier - 1f), ForceMode.Acceleration);
+            rb.AddForce(Vector3.down * Physics.gravity.magnitude * (currentMonster.Stats.fallMultiplier - 1f), ForceMode.Acceleration);
         }
 
     }
@@ -110,8 +113,8 @@ public class PlayerController : MonoBehaviour
 
     private void Move()
     {
-        movementDirection = new Vector3(moveAction.ReadValue<Vector2>().x, 0, moveAction.ReadValue<Vector2>().y).normalized;
-        rb.AddForce(movementDirection * movementSpeed, ForceMode.Force);
+        movementDirection = new Vector3(inputManager.MoveAction.ReadValue<Vector2>().x, 0, inputManager.MoveAction.ReadValue<Vector2>().y).normalized;
+        rb.AddForce(movementDirection * currentMonster.Stats.movementSpeed, ForceMode.Force);
     }
 
     private bool IsGrounded()

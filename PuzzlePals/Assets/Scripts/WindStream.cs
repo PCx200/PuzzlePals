@@ -69,7 +69,9 @@ public class WindStream : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.GetComponent<PlayerController>())
+        var player = other.GetComponent<PlayerController>();
+
+        if (player)
         {
             var rigidbody = other.GetComponent<Rigidbody>();
 
@@ -77,7 +79,14 @@ public class WindStream : MonoBehaviour
             var distanceFromSource = windSource - other.transform.position;
             windStrength = windSpeed / distanceFromSource.magnitude;
 
-            rigidbody.AddForce(windDirection * windStrength, ForceMode.Force);
+            if (player.currentMonster.Name == MonsterCharacter.MonsterName.Jullia)
+            {
+                rigidbody.AddForce(windDirection * windStrength / 15f, ForceMode.Force);
+            }
+            else
+            {
+                rigidbody.AddForce(windDirection * windStrength, ForceMode.Force);
+            }
         }
     }
 
