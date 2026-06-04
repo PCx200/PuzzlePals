@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     private InputAction moveAction;
     private InputAction jumpAction;
     private InputAction interactAction;
+    private InputAction attackAction;
 
     public MonsterCharacter currentMonster;
 
@@ -48,15 +49,18 @@ public class PlayerController : MonoBehaviour
         moveAction = InputSystem.actions.FindAction("Move");
         jumpAction = InputSystem.actions.FindAction("Jump");
         interactAction = InputSystem.actions.FindAction("Interact");
+        attackAction = InputSystem.actions.FindAction("Attack");
 
         jumpAction.performed += OnJumpPerformed;
         interactAction.performed += OnInteract;
+        attackAction.performed += OnAttacked;
     }
 
     private void OnDisable()
     {
         jumpAction.performed -= OnJumpPerformed;
         interactAction.performed -= OnInteract;
+        attackAction.performed -= OnAttacked;
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext ctx)
@@ -70,7 +74,10 @@ public class PlayerController : MonoBehaviour
         Debug.Log(currentInteractable);
 
     }
-
+    private void OnAttacked(InputAction.CallbackContext ctx)
+    {
+        currentMonster.UseSuperPower();
+    }
     private void FixedUpdate()
     {
         jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * jumpHeight);

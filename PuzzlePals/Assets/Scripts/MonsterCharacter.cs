@@ -11,15 +11,10 @@ public class MonsterCharacter : MonoBehaviour
 
     public GameObject Prefab => prefab;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    [SerializeField] private SuperPower superPower;
 
-    // Update is called once per frame
-    void Update()
+    public void UseSuperPower()
     {
-        
+        superPower.UseSuperPower();
     }
 }

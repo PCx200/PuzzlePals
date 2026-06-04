@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3633091286532796272
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8569075484998895539}
+  m_Layer: 0
+  m_Name: IceCreamSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8569075484998895539
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3633091286532796272}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5518449729907231357}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8117784409236594783
 GameObject:
   m_ObjectHideFlags: 0
@@ -12,6 +43,7 @@ GameObject:
   - component: {fileID: 2607054540371152904}
   - component: {fileID: 5426906227955924483}
   - component: {fileID: 729907975647824590}
+  - component: {fileID: 6527278588862112247}
   m_Layer: 0
   m_Name: Mida
   m_TagString: Untagged
@@ -31,7 +63,8 @@ Transform:
   m_LocalPosition: {x: 2, y: 1, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8569075484998895539}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &2607054540371152904
@@ -105,3 +138,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
   monsterName: 0
   prefab: {fileID: 8117784409236594783}
+  superPower: {fileID: 6527278588862112247}
+--- !u!114 &6527278588862112247
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8117784409236594783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caf77ed204425dc43a43233324acee0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IceCreamBalls
+  iceCreamBallPrefab: {fileID: 8661497036409924585, guid: 7443dee39c51f9c44bcf385561a71fa1, type: 3}
+  ballSpawnPoint: {fileID: 8569075484998895539}
+  cooldown: 3
