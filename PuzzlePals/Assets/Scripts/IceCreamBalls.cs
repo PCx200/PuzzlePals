@@ -1,6 +1,5 @@
 using UnityEngine;
-using System.Collections;
-using Unity.VisualScripting;
+
 //this class is the super power of MIDA
 //it can throw ice cream balls in front
 public class IceCreamBalls : SuperPower
@@ -8,7 +7,12 @@ public class IceCreamBalls : SuperPower
     [SerializeField] private GameObject iceCreamBallPrefab;
     [SerializeField] private Transform ballSpawnPoint;
     [SerializeField] private float cooldown;
+    [SerializeField] private float ballDespawnTime;
     private float currentCooldown;
+
+    [SerializeField] private float upwardForce;
+    [SerializeField] private float throwForce;
+
     public override void UseSuperPower()
     {
         ThrowIceCreamBalls();
@@ -22,14 +26,12 @@ public class IceCreamBalls : SuperPower
 
             Rigidbody rb = ball.GetComponent<Rigidbody>();
 
-            rb.AddForce(Vector3.up * 3, ForceMode.Impulse);
-            rb.AddForce(Vector3.forward, ForceMode.Impulse);
+            rb.AddForce(Vector3.up * upwardForce, ForceMode.Impulse);
+            rb.AddForce(Vector3.forward * throwForce, ForceMode.Impulse);
 
             currentCooldown = cooldown;
 
-            Debug.Log("Throw Ice Cream Ball");
-
-            Destroy(ball, 2);
+            Destroy(ball, ballDespawnTime);
         }
     }
     void Update()

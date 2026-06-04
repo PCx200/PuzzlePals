@@ -21,10 +21,10 @@ public class PlayerController : MonoBehaviour
 
     //Player Inputs
     private InputManager inputManager;
-    private InputAction moveAction;
-    private InputAction jumpAction;
-    private InputAction interactAction;
-    private InputAction attackAction;
+    //private InputAction moveAction;
+    //private InputAction jumpAction;
+    //private InputAction interactAction;
+    //private InputAction attackAction;
 
     //private InputAction moveAction;
     //private InputAction jumpAction;
@@ -47,23 +47,16 @@ public class PlayerController : MonoBehaviour
 
     private void OnEnable()
     {
-        moveAction = InputSystem.actions.FindAction("Move");
-        jumpAction = InputSystem.actions.FindAction("Jump");
-        interactAction = InputSystem.actions.FindAction("Interact");
-        attackAction = InputSystem.actions.FindAction("Attack");
-
-        jumpAction.performed += OnJumpPerformed;
-        interactAction.performed += OnInteract;
-        attackAction.performed += OnAttacked;
         inputManager.JumpAction.performed += OnJumpPerformed;
         inputManager.InteractAction.performed += OnInteract;
+        inputManager.AttackAction.performed += OnAttacked;
     }
 
     private void OnDisable()
     {
-        jumpAction.performed -= OnJumpPerformed;
-        interactAction.performed -= OnInteract;
-        attackAction.performed -= OnAttacked;
+        inputManager.JumpAction.performed -= OnJumpPerformed;
+        inputManager.InteractAction.performed -= OnInteract;
+        inputManager.AttackAction.performed -= OnAttacked;
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext ctx)
