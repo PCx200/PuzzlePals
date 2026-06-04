@@ -3,10 +3,28 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class TransformationPoint : MonoBehaviour, IInteractable
 {
+    public enum TransformationType { Instant, WithInteraction }
+
+    [SerializeField] private TransformationType transformationType;
+
     [SerializeField] private MonsterCharacter characterToTransform;
     [SerializeField] BoxCollider area;
-    
-    void IInteractable.Interact()
+
+    //private void Awake()
+    //{
+    //    switch (transformationType)
+    //    {
+    //        case TransformationType.Instant:
+
+    //            break;
+    //        case TransformationType.WithInteraction:
+    //            break;
+    //        default:
+    //            break;
+    //    }
+    //}
+
+    public void Interact()
     {
         var player = FindAnyObjectByType<PlayerController>();
 
@@ -27,10 +45,19 @@ public class TransformationPoint : MonoBehaviour, IInteractable
 
     private void Transform(PlayerController player)
     {
+        var currentMonster = player.currentMonster;
+
+        var swappedMonster = currentMonster;
+
         player.currentMonster = characterToTransform;
+
+
         var newMonster = Instantiate(player.currentMonster.Prefab, player.transform.position, Quaternion.identity);
         Destroy(player.GetComponentInChildren<MonsterCharacter>().gameObject);
         newMonster.transform.SetParent(player.transform);
+
+        characterToTransform = swappedMonster;
+
         Debug.Log("Transformed into " + characterToTransform.Name);
     }
 
@@ -58,6 +85,16 @@ public class TransformationPoint : MonoBehaviour, IInteractable
                 break;
             default:
                 break;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        var player = other.GetComponent<PlayerController>();
+
+        if (player != null && transformationType == TransformationType.Instant)
+        {
+            Transform(player);
         }
     }
 }
