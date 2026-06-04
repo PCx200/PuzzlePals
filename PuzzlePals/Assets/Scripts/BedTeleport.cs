@@ -25,11 +25,14 @@ public class BedTeleport : MonoBehaviour, IInteractable
     {
         var player = FindAnyObjectByType<PlayerController>();
 
+
         if (player == null)
         {
             Debug.Log("Player is null");
             return;
         }
+
+        if (player.currentMonster.Name != MonsterCharacter.MonsterName.Home) return;
 
         Teleport(player);
     }

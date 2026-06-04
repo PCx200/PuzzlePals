@@ -11,6 +11,10 @@ public class MonsterCharacter : MonoBehaviour
 
     public GameObject Prefab => prefab;
 
+    [SerializeField] private MonsterStatsSO stats;
+
+    public MonsterStatsSO Stats => stats;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
