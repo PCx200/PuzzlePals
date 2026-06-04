@@ -138,6 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
   monsterName: 0
   prefab: {fileID: 8117784409236594783}
+  stats: {fileID: 11400000, guid: 5b1b89b9d8f27e24c81a19c409ebc526, type: 2}
   superPower: {fileID: 6527278588862112247}
 --- !u!114 &6527278588862112247
 MonoBehaviour:
@@ -153,4 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::IceCreamBalls
   iceCreamBallPrefab: {fileID: 8661497036409924585, guid: 7443dee39c51f9c44bcf385561a71fa1, type: 3}
   ballSpawnPoint: {fileID: 8569075484998895539}
-  cooldown: 3
+  cooldown: 0.7
+  ballDespawnTime: 3
+  upwardForce: 4
+  throwForce: 20
