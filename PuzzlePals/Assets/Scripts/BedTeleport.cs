@@ -4,8 +4,6 @@ public class BedTeleport : MonoBehaviour, IInteractable
 {
     [SerializeField] private BedTeleport linkedBed;
 
-    protected BedTeleport LinkedBed;
-
     [SerializeField] private BoxCollider area;
 
     private void OnValidate()
@@ -14,11 +12,6 @@ public class BedTeleport : MonoBehaviour, IInteractable
         {
             area = GetComponent<BoxCollider>();
         }
-    }
-
-    private void Start()
-    {
-        linkedBed.LinkedBed = this;
     }
 
     public void Interact()

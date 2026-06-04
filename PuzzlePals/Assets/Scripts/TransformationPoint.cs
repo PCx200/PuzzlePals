@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
@@ -10,19 +12,7 @@ public class TransformationPoint : MonoBehaviour, IInteractable
     [SerializeField] private MonsterCharacter characterToTransform;
     [SerializeField] BoxCollider area;
 
-    //private void Awake()
-    //{
-    //    switch (transformationType)
-    //    {
-    //        case TransformationType.Instant:
-
-    //            break;
-    //        case TransformationType.WithInteraction:
-    //            break;
-    //        default:
-    //            break;
-    //    }
-    //}
+    [SerializeField] private List<MonsterCharacter> monsters = new List<MonsterCharacter>(); 
 
     public void Interact()
     {
@@ -45,20 +35,19 @@ public class TransformationPoint : MonoBehaviour, IInteractable
 
     private void Transform(PlayerController player)
     {
-        var currentMonster = player.currentMonster;
+        var currentMonster = monsters.Find(m => m.Name == player.currentMonster.Name);
 
-        var swappedMonster = currentMonster;
+        var prefabToSpawn = monsters.Find(m => m.Name == characterToTransform.Name);
 
-        player.currentMonster = characterToTransform;
+        var newMonster = Instantiate(prefabToSpawn, player.transform.position, Quaternion.identity);
 
-
-        var newMonster = Instantiate(player.currentMonster.Prefab, player.transform.position, Quaternion.identity);
         Destroy(player.GetComponentInChildren<MonsterCharacter>().gameObject);
+
         newMonster.transform.SetParent(player.transform);
 
-        characterToTransform = swappedMonster;
+        characterToTransform = currentMonster;
 
-        Debug.Log("Transformed into " + characterToTransform.Name);
+        player.currentMonster = newMonster;
     }
 
     private void OnDrawGizmos()
