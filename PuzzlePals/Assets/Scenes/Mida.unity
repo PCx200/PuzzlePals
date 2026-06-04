@@ -713,7 +713,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263250165}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10652012, y: -0.03269274, z: 0.0035042781, w: 0.9937668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.36, y: 4.8, z: -8.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -824,15 +824,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e153a7529e0f14ab6fbc5e5b8567c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  movementSpeed: 12
-  jumpHeight: 4
-  fallMultiplier: 2
+  currentMonster: {fileID: 374648236}
   legsTransform: {fileID: 1341797044}
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
-  currentMonster: {fileID: 374648236}
 --- !u!54 &1408116998
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -891,6 +888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1547531130}
   - component: {fileID: 1547531129}
+  - component: {fileID: 1547531131}
   m_Layer: 0
   m_Name: CinemachineCamera
   m_TagString: Untagged
@@ -918,7 +916,7 @@ MonoBehaviour:
   m_StreamingVersion: 20241001
   m_LegacyPriority: 0
   Target:
-    TrackingTarget: {fileID: 0}
+    TrackingTarget: {fileID: 1408116996}
     LookAtTarget: {fileID: 0}
     CustomLookAtTarget: 0
   Lens:
@@ -949,13 +947,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1547531128}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.10652012, y: -0.03269274, z: 0.0035042781, w: 0.9937668}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.36, y: 3.8000002, z: -8.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1408116996}
-  m_LocalEulerAnglesHint: {x: 12.236, y: -3.768, z: 0}
+  m_LocalEulerAnglesHint: {x: 6.762, y: 0, z: 0}
+--- !u!114 &1547531131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547531128}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4afa82ae3200b82408d605c3dbdd1e38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachineRotateWithFollowTarget
+  Damping: 0
 --- !u!1 &2122867579
 GameObject:
   m_ObjectHideFlags: 0
