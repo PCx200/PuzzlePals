@@ -21,14 +21,6 @@ public class PlayerController : MonoBehaviour
 
     //Player Inputs
     private InputManager inputManager;
-    //private InputAction moveAction;
-    //private InputAction jumpAction;
-    //private InputAction interactAction;
-    //private InputAction attackAction;
-
-    //private InputAction moveAction;
-    //private InputAction jumpAction;
-    //private InputAction interactAction;
 
     public IInteractable currentInteractable;
 
@@ -49,14 +41,17 @@ public class PlayerController : MonoBehaviour
     {
         inputManager.JumpAction.performed += OnJumpPerformed;
         inputManager.InteractAction.performed += OnInteract;
-        inputManager.AttackAction.performed += OnAttacked;
+        inputManager.AttackAction.performed += OnAttackPerformed;
+        inputManager.SprintAction.performed += OnSprint;
     }
 
     private void OnDisable()
     {
         inputManager.JumpAction.performed -= OnJumpPerformed;
         inputManager.InteractAction.performed -= OnInteract;
-        inputManager.AttackAction.performed -= OnAttacked;
+        inputManager.AttackAction.performed -= OnAttackPerformed;
+        inputManager.SprintAction.performed -= OnSprint;
+
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext ctx)
@@ -70,10 +65,18 @@ public class PlayerController : MonoBehaviour
         Debug.Log(currentInteractable);
 
     }
-    private void OnAttacked(InputAction.CallbackContext ctx)
+    private void OnAttackPerformed(InputAction.CallbackContext ctx)
     {
+        if (currentMonster.Name != MonsterCharacter.MonsterName.Mida) return;
         currentMonster.UseSuperPower();
     }
+
+    private void OnSprint(InputAction.CallbackContext ctx)
+    {
+        if (currentMonster.Name != MonsterCharacter.MonsterName.Jullia) return;
+        currentMonster.UseSuperPower();
+    }
+
     private void FixedUpdate()
     {
         jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * currentMonster.Stats.jumpHeight);

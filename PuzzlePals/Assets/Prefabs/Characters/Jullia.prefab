@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6146719297427952800}
   - component: {fileID: 5234637895112437075}
   - component: {fileID: 752744297014886363}
+  - component: {fileID: 1024873733947535520}
   m_Layer: 0
   m_Name: Jullia
   m_TagString: Untagged
@@ -106,3 +107,17 @@ MonoBehaviour:
   monsterName: 3
   prefab: {fileID: 6124674054090878015}
   stats: {fileID: 11400000, guid: 0956ed5832aa6dd4b82155ad7c5db85c, type: 2}
+  superPower: {fileID: 1024873733947535520}
+--- !u!114 &1024873733947535520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124674054090878015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35fe9a8a05b13a64b9e592a1e43e932e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Sprint
+  sprintMultiplier: 2

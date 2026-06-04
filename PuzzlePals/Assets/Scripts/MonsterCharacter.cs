@@ -7,9 +7,9 @@ public class MonsterCharacter : MonoBehaviour
     [SerializeField]  private MonsterName monsterName;
     public MonsterName Name => monsterName;
 
-    [SerializeField] private GameObject prefab;
+    //[SerializeField] private GameObject prefab;
 
-    public GameObject Prefab => prefab;
+    //public GameObject Prefab => prefab;
 
     [SerializeField] private MonsterStatsSO stats;
 
