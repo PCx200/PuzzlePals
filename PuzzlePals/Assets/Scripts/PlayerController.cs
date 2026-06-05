@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnAttackPerformed(InputAction.CallbackContext ctx)
     {
-        if (currentMonster.Name != MonsterCharacter.MonsterName.Mida) return;
+        //if (currentMonster.Name != MonsterCharacter.MonsterName.Mida) return;
         currentMonster.UseSuperPower();
     }
 

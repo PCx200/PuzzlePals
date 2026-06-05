@@ -34,6 +34,8 @@ public class InputManager : MonoBehaviour
     private InputAction bounceAction;
 
     public InputAction Axis;
+
+    //public InputAction SeeInvisible;
     public InputAction BounceAction => bounceAction;
     #endregion
 
@@ -58,6 +60,7 @@ public class InputManager : MonoBehaviour
         createCupcakeAction = inputActionAsset.FindAction("CreateCupcake");
         bounceAction = inputActionAsset.FindAction("Bounce");
         Axis = inputActionAsset.FindAction("Axis");
+        //SeeInvisible = inputActionAsset.FindAction("SeeInvisible");
     }
 
     private void OnEnable()
