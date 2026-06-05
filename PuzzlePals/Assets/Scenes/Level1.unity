@@ -265,13 +265,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: Beds (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5764189183531684824, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -31.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764189183531684824, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5764189183531684824, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.5
+      objectReference: {fileID: 0}
     - target: {fileID: 7257894971969011387, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -4.7692714
+      value: -0.14
       objectReference: {fileID: 0}
     - target: {fileID: 7257894971969011387, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.62
+      value: 12.11
       objectReference: {fileID: 0}
     - target: {fileID: 7257894971969011387, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -304,6 +316,14 @@ PrefabInstance:
     - target: {fileID: 7257894971969011387, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651463324487223179, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -10.17
+      objectReference: {fileID: 0}
+    - target: {fileID: 8651463324487223179, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -4.41
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -992,7 +1012,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35fe9a8a05b13a64b9e592a1e43e932e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sprint
-  sprintMultiplier: 1
+  sprintMultiplier: 2
 --- !u!114 &1935880468
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,6 +1186,14 @@ PrefabInstance:
     - target: {fileID: 23906837884957067, guid: 4784003d935fb3443810ce991417a53f, type: 3}
       propertyPath: m_Name
       value: WindStream
+      objectReference: {fileID: 0}
+    - target: {fileID: 140307413373262021, guid: 4784003d935fb3443810ce991417a53f, type: 3}
+      propertyPath: direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 140307413373262021, guid: 4784003d935fb3443810ce991417a53f, type: 3}
+      propertyPath: windSource.x
+      value: 19.664999
       objectReference: {fileID: 0}
     - target: {fileID: 1888641925519023869, guid: 4784003d935fb3443810ce991417a53f, type: 3}
       propertyPath: m_LocalPosition.x
