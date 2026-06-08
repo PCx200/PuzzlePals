@@ -36,10 +36,15 @@ public class InputManager : MonoBehaviour
 
     private InputAction bounceAction;
 
-    public InputAction Axis;
+    private InputAction axis;
+
+    public InputAction Axis => axis;
 
     //public InputAction SeeInvisible;
     public InputAction BounceAction => bounceAction;
+
+    private InputAction pauseMenuAction;
+    public InputAction PauseMenuAction => pauseMenuAction;
     #endregion
 
     private void Awake()
@@ -63,7 +68,10 @@ public class InputManager : MonoBehaviour
         releaseHappiness = inputActionAsset.FindAction("ReleaseHappiness");
         createCupcakeAction = inputActionAsset.FindAction("CreateCupcake");
         bounceAction = inputActionAsset.FindAction("Bounce");
-        Axis = inputActionAsset.FindAction("Axis");
+        axis = inputActionAsset.FindAction("Axis");
+
+        pauseMenuAction = inputActionAsset.FindAction("Pause");
+
         //SeeInvisible = inputActionAsset.FindAction("SeeInvisible");
     }
 

@@ -32,6 +32,7 @@ public class BedTeleport : MonoBehaviour, IInteractable
     private void Teleport(PlayerController player)
     {
         player.transform.position = linkedBed.area.transform.position;
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.pipe, transform.position);
     }
 
     private void OnDrawGizmos()

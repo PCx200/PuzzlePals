@@ -1,5 +1,7 @@
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.FilePathAttribute;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -60,7 +62,6 @@ public class PlayerController : MonoBehaviour
         inputManager.SprintAction.performed -= OnSprintPerformed;
         inputManager.ReleaseHappiness.performed -= OnSuperPowerUsed2;
         inputManager.SprintAction.canceled -= OnSprintCanceled;
-
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext ctx)
@@ -145,8 +146,21 @@ public class PlayerController : MonoBehaviour
 
         if (isSprinting) speed *= currentMonster.Stats.sprintMultiplier;
 
-        rb.AddForce(movementDirection * speed, ForceMode.Force);
+        Vector3 moveForce = movementDirection * speed;
+
+        if (moveForce.magnitude > 0)
+        {
+            transform.rotation = Quaternion.LookRotation(camForward);
+        }
+
+        rb.AddForce(moveForce, ForceMode.Force);
     }
+
+    private void LookAt()
+    {
+
+    }
+
 
     private bool IsGrounded()
     {

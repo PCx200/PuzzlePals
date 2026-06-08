@@ -27,7 +27,7 @@ public class IceCreamBalls : SuperPower
             Rigidbody rb = ball.GetComponent<Rigidbody>();
 
             rb.AddForce(Vector3.up * upwardForce, ForceMode.Impulse);
-            rb.AddForce(Vector3.forward * throwForce, ForceMode.Impulse);
+            rb.AddForce(transform.forward * throwForce, ForceMode.Impulse);
 
             currentCooldown = cooldown;
 
