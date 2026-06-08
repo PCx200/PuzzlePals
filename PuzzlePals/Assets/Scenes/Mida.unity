@@ -294,6 +294,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Invisible (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4466231159611120003, guid: 99320a77d1e04304a99e98517d9648de, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 92ffe4a8d722ae4429056673b9337c7d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -409,6 +413,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Invisible (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4466231159611120003, guid: 99320a77d1e04304a99e98517d9648de, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 92ffe4a8d722ae4429056673b9337c7d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -470,6 +478,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Invisible (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4466231159611120003, guid: 99320a77d1e04304a99e98517d9648de, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 92ffe4a8d722ae4429056673b9337c7d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1062,7 +1074,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 1
   m_LinearDamping: 0.75
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -1077,7 +1089,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 1
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 1
 --- !u!65 &1408116999
 BoxCollider:
@@ -1318,6 +1330,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Invisible
       objectReference: {fileID: 0}
+    - target: {fileID: 4466231159611120003, guid: 99320a77d1e04304a99e98517d9648de, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 13400000, guid: 92ffe4a8d722ae4429056673b9337c7d, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
