@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8569075484998895539}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: IceCreamSpawnPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,8 @@ GameObject:
   - component: {fileID: 5426906227955924483}
   - component: {fileID: 729907975647824590}
   - component: {fileID: 6527278588862112247}
-  m_Layer: 0
+  - component: {fileID: 5385128500879305550}
+  m_Layer: 7
   m_Name: Mida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +138,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
   monsterName: 0
-  prefab: {fileID: 8117784409236594783}
   stats: {fileID: 11400000, guid: 5b1b89b9d8f27e24c81a19c409ebc526, type: 2}
   superPower: {fileID: 6527278588862112247}
 --- !u!114 &6527278588862112247
@@ -158,3 +158,26 @@ MonoBehaviour:
   ballDespawnTime: 3
   upwardForce: 4
   throwForce: 20
+--- !u!136 &5385128500879305550
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8117784409236594783}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

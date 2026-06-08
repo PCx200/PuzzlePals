@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5234637895112437075}
   - component: {fileID: 752744297014886363}
   - component: {fileID: 1024873733947535520}
+  - component: {fileID: 2943548817955197920}
   m_Layer: 0
   m_Name: Jullia
   m_TagString: Untagged
@@ -105,7 +106,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
   monsterName: 3
-  prefab: {fileID: 6124674054090878015}
   stats: {fileID: 11400000, guid: 0956ed5832aa6dd4b82155ad7c5db85c, type: 2}
   superPower: {fileID: 1024873733947535520}
 --- !u!114 &1024873733947535520
@@ -121,3 +121,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sprint
   sprintMultiplier: 2
+--- !u!136 &2943548817955197920
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6124674054090878015}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

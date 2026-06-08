@@ -12,8 +12,7 @@ GameObject:
   - component: {fileID: 7135029210471111943}
   - component: {fileID: 8079478459519590205}
   - component: {fileID: 6371974529764012476}
-  - component: {fileID: 7795104410995064998}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: IceCreamWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -105,7 +104,7 @@ BoxCollider:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_LayerOverridePriority: 0
   m_IsTrigger: 0
   m_ProvidesContacts: 0
@@ -113,16 +112,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7795104410995064998
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 701648338604725071}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7fe77e95bd167e42b815fc7647dd087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::IceCreamWall
-  enableBack: 1
