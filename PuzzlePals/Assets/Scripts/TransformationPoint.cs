@@ -48,6 +48,8 @@ public class TransformationPoint : MonoBehaviour, IInteractable
         characterToTransform = currentMonster;
 
         player.currentMonster = newMonster;
+        
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.kaboom, transform.position);
     }
 
     private void OnDrawGizmos()
