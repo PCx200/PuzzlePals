@@ -1,7 +1,6 @@
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEditor.FilePathAttribute;
+
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
