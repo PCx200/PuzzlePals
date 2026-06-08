@@ -10,7 +10,8 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("SFX")]
     [field: SerializeField] public EventReference kaboom { get; private set; }
-    
+    [field: SerializeField] public EventReference pipe { get; private set; }
+
     [field: Header("Music")]
     [field: SerializeField] public EventReference mainMenuMusic { get; private set; }
     [field: SerializeField] public EventReference lobbyMusic { get; private set; }
