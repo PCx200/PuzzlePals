@@ -2,16 +2,21 @@ using UnityEngine;
 [RequireComponent (typeof(Material))]
 public class Happifyable : MonoBehaviour
 {
-    [SerializeField] private Material material;
-    [SerializeField] private Color color = Color.pink;
+    [SerializeField] private Material sadMaterial;
+    [SerializeField] private Material happyMaterial;
+    private MeshRenderer meshRenderer;
 
     private void Awake()
     {
-        //material = GetComponent<Material>();
+        meshRenderer = GetComponent<MeshRenderer>();
+    }
+    private void Start()
+    {
+        meshRenderer.material = sadMaterial;
     }
     private void OnTriggerEnter(Collider other)
     {
-        material.SetColor("_BaseColor", color);
-        Debug.Log("Set Color to " + color);
+        meshRenderer.material = happyMaterial;
+        Debug.Log("Set material to sad");
     }
 }

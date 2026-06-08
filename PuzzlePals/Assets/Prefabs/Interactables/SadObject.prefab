@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 960171085705601455}
   - component: {fileID: 4208841712971607261}
   - component: {fileID: 429855448651478600}
-  - component: {fileID: 1511600133128548795}
   m_Layer: 10
   m_Name: SadObject
   m_TagString: Untagged
@@ -113,17 +112,3 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1511600133128548795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4525696920886123132}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebd938d89ab7f4c4e999e9ae38369254, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Happifyable
-  material: {fileID: 2100000, guid: 59d6072dd7d4df6469711f5c2535d7e6, type: 2}
-  color: {r: 1, g: 0.41823888, b: 0.6980557, a: 1}

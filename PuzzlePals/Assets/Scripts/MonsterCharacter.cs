@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 public class MonsterCharacter : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class MonsterCharacter : MonoBehaviour
 
     public MonsterStatsSO Stats => stats;
 
-    [SerializeField] private SuperPower superPower;
+    [SerializeField] private List<SuperPower> superPowers;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,9 +24,9 @@ public class MonsterCharacter : MonoBehaviour
         
     }
 
-    public void UseSuperPower()
+    public void UseSuperPower(int superPowerNumber)
     {
-        if (superPower == null) return;
-        superPower.UseSuperPower();
+        if (superPowers == null) return;
+        superPowers[superPowerNumber].UseSuperPower();
     }
 }
