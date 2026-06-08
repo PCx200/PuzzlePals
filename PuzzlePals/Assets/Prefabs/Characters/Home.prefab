@@ -107,7 +107,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
   monsterName: 2
   stats: {fileID: 11400000, guid: 78c666639d1fae04b82755f2cd453f0e, type: 2}
-  superPower: {fileID: 3347778230201130459}
+  superPowers:
+  - {fileID: 3347778230201130459}
 --- !u!114 &3347778230201130459
 MonoBehaviour:
   m_ObjectHideFlags: 0

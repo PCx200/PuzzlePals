@@ -506,6 +506,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5652814799159139393, guid: 1da767be229a65c4c9bcd18043dbdb8d, type: 3}
   m_PrefabInstance: {fileID: 1000641334}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &299766266 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3347778230201130459, guid: 1da767be229a65c4c9bcd18043dbdb8d, type: 3}
+  m_PrefabInstance: {fileID: 1000641334}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1c383412c51ca42acb02c5674cd6ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EventBus.DreamState
 --- !u!114 &299766267 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8815492153921969491, guid: 1da767be229a65c4c9bcd18043dbdb8d, type: 3}
@@ -1700,6 +1711,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8815492153921969491, guid: 1da767be229a65c4c9bcd18043dbdb8d, type: 3}
+      propertyPath: superPowers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8815492153921969491, guid: 1da767be229a65c4c9bcd18043dbdb8d, type: 3}
+      propertyPath: 'superPowers.Array.data[0]'
+      value: 
+      objectReference: {fileID: 299766266}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
