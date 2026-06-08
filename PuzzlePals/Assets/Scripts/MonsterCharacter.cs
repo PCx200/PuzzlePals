@@ -26,7 +26,7 @@ public class MonsterCharacter : MonoBehaviour
 
     public void UseSuperPower(int superPowerNumber)
     {
-        if (superPowers == null) return;
+        if (superPowers == null || superPowers[superPowerNumber] == null) return;
         superPowers[superPowerNumber].UseSuperPower();
     }
 }
