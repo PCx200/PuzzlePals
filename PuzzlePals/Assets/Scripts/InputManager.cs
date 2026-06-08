@@ -28,6 +28,9 @@ public class InputManager : MonoBehaviour
     private InputAction dreamAction;
     public InputAction DreamAction => dreamAction;
 
+    private InputAction releaseHappiness;
+    public InputAction ReleaseHappiness => releaseHappiness;
+
     private InputAction createCupcakeAction;
     public InputAction CreateCupcakeAction => createCupcakeAction;
 
@@ -62,6 +65,7 @@ public class InputManager : MonoBehaviour
         attackAction = inputActionAsset.FindAction("Attack");
         sprintAction = inputActionAsset.FindAction("Sprint");
         dreamAction = inputActionAsset.FindAction("Dream");
+        releaseHappiness = inputActionAsset.FindAction("ReleaseHappiness");
         createCupcakeAction = inputActionAsset.FindAction("CreateCupcake");
         bounceAction = inputActionAsset.FindAction("Bounce");
         axis = inputActionAsset.FindAction("Axis");
