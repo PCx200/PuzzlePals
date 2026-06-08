@@ -2,15 +2,9 @@ using UnityEngine;
 
 namespace EventBus
 {
-    [RequireComponent(typeof(MeshRenderer))]
     public class Invisible : MonoBehaviour
     {
-        MeshRenderer m_Renderer;
         bool visible = false;
-        private void Awake()
-        {
-            m_Renderer = GetComponent<MeshRenderer>();
-        }
         private void OnEnable()
         {
             EventBus.Subscribe<RenderInvisibleThings>(OnRenderInvisible); 
@@ -21,7 +15,7 @@ namespace EventBus
         }
         private void OnRenderInvisible(RenderInvisibleThings eventData)
         {
-            m_Renderer.enabled = visible;
+            gameObject.SetActive(visible);
             visible = !visible;
         }
     }
