@@ -1,5 +1,7 @@
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using static UnityEditor.FilePathAttribute;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerController : MonoBehaviour
@@ -44,7 +46,7 @@ public class PlayerController : MonoBehaviour
     {
         inputManager.JumpAction.performed += OnJumpPerformed;
         inputManager.InteractAction.performed += OnInteract;
-        inputManager.AttackAction.performed += OnAttackPerformed;
+        inputManager.AttackAction.performed += OnSuperPowerPerformed;
 
         inputManager.SprintAction.performed += OnSprintPerformed;
         inputManager.SprintAction.canceled += OnSprintCanceled;
@@ -54,11 +56,10 @@ public class PlayerController : MonoBehaviour
     {
         inputManager.JumpAction.performed -= OnJumpPerformed;
         inputManager.InteractAction.performed -= OnInteract;
-        inputManager.AttackAction.performed -= OnAttackPerformed;
+        inputManager.AttackAction.performed -= OnSuperPowerPerformed;
 
         inputManager.SprintAction.performed -= OnSprintPerformed;
         inputManager.SprintAction.canceled -= OnSprintCanceled;
-
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext ctx)
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour
         Debug.Log(currentInteractable);
 
     }
-    private void OnAttackPerformed(InputAction.CallbackContext ctx)
+    private void OnSuperPowerPerformed(InputAction.CallbackContext ctx)
     {
         //if (currentMonster.Name != MonsterCharacter.MonsterName.Mida) return;
         currentMonster.UseSuperPower();
@@ -139,8 +140,21 @@ public class PlayerController : MonoBehaviour
 
         if (isSprinting) speed *= currentMonster.Stats.sprintMultiplier;
 
-        rb.AddForce(movementDirection * speed, ForceMode.Force);
+        Vector3 moveForce = movementDirection * speed;
+
+        if (moveForce.magnitude > 0)
+        {
+            transform.rotation = Quaternion.LookRotation(camForward);
+        }
+
+        rb.AddForce(moveForce, ForceMode.Force);
     }
+
+    private void LookAt()
+    {
+
+    }
+
 
     private bool IsGrounded()
     {
