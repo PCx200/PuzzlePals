@@ -10,4 +10,11 @@ namespace EventBus
 
         }
     }
+    public class FinishedLevel : EventData
+    {
+        public FinishedLevel()
+        {
+
+        }
+    }
 }
