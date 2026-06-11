@@ -13,6 +13,7 @@ public class Cupcake : SuperPower
         {
             Instantiate(cupcake, spawnPoint.transform.position, Quaternion.identity, spawnPoint);
             spawned = true;
+            StartCoroutine(CoolDownCupcake());
         }
     }
 
