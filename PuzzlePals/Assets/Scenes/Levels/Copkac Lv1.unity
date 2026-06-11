@@ -2572,6 +2572,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c918b7f256bcc4181b3582d63a25ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuManager
+  pausePanel: {fileID: 1386214945}
 --- !u!1 &1072908532
 GameObject:
   m_ObjectHideFlags: 0
@@ -3705,7 +3706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1386214946
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4075,6 +4076,10 @@ PrefabInstance:
       value: WindStream
       objectReference: {fileID: 0}
     - target: {fileID: 140307413373262021, guid: 4784003d935fb3443810ce991417a53f, type: 3}
+      propertyPath: direction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 140307413373262021, guid: 4784003d935fb3443810ce991417a53f, type: 3}
       propertyPath: windSpeed
       value: 35
       objectReference: {fileID: 0}
@@ -4092,7 +4097,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 239997081195651995, guid: 4784003d935fb3443810ce991417a53f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.999999
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 239997081195651995, guid: 4784003d935fb3443810ce991417a53f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4100,7 +4105,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 239997081195651995, guid: 4784003d935fb3443810ce991417a53f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.000002682209
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 239997081195651995, guid: 4784003d935fb3443810ce991417a53f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 239997081195651995, guid: 4784003d935fb3443810ce991417a53f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 823013303672257329, guid: 4784003d935fb3443810ce991417a53f, type: 3}
       propertyPath: InitialModule.startLifetime.scalar
