@@ -4590,6 +4590,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: WindStream
       objectReference: {fileID: 0}
+    - target: {fileID: 23906837884957067, guid: 4784003d935fb3443810ce991417a53f, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 140307413373262021, guid: 4784003d935fb3443810ce991417a53f, type: 3}
+      propertyPath: direction
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 140307413373262021, guid: 4784003d935fb3443810ce991417a53f, type: 3}
       propertyPath: windSpeed
       value: 100
@@ -4600,15 +4608,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 140307413373262021, guid: 4784003d935fb3443810ce991417a53f, type: 3}
       propertyPath: windSource.y
-      value: 6.5
+      value: 10.5
       objectReference: {fileID: 0}
     - target: {fileID: 140307413373262021, guid: 4784003d935fb3443810ce991417a53f, type: 3}
       propertyPath: windSource.z
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 239997081195651995, guid: 4784003d935fb3443810ce991417a53f, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 239997081195651995, guid: 4784003d935fb3443810ce991417a53f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.00000023841858
+      objectReference: {fileID: 0}
+    - target: {fileID: 239997081195651995, guid: 4784003d935fb3443810ce991417a53f, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 239997081195651995, guid: 4784003d935fb3443810ce991417a53f, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 823013303672257329, guid: 4784003d935fb3443810ce991417a53f, type: 3}
       propertyPath: ShapeModule.radius.value
