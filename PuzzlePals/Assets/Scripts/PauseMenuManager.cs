@@ -41,7 +41,7 @@ public class PauseMenuManager : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1.0f;
-        canvas.enabled = false;
+        pausePanel.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);

@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "LevelData", menuName = "Scriptable Objects/LevelData")]
 public class LevelData : ScriptableObject
 {
-    public float bestCompletionTime;
-    public int stars;
-    public List<int> timeForStars;
+    public SceneAsset scene;
+    public ushort bestCompletionTime = ushort.MaxValue;
+    public byte stars;
+    public List<byte> timeForStars;
 }

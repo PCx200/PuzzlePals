@@ -1,3 +1,4 @@
+using EventBus;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -5,48 +6,55 @@ public class Level : MonoBehaviour
     [SerializeField] private LevelData levelData;
 
     [SerializeField] private float timeElapsed; // the time since the start of the level.
+    public float TimeElapsed => timeElapsed;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+    [SerializeField] private EndPoint endPoint;
+
+    private void OnValidate()
     {
-
+        if (levelData != null)
+        {
+            name = levelData.scene.name;
+        }
     }
 
-    // Update is called once per frame
+    private void OnEnable()
+    {
+        endPoint.OnLevelCompleted += OnLevelCompleted;
+    }
+
+    private void OnDisable()
+    {
+        endPoint.OnLevelCompleted -= OnLevelCompleted;
+    }
+
     void Update()
     {
-        timeElapsed = Time.time;
+        timeElapsed += Time.deltaTime;
     }
 
-    public void OnLevelEnd()
+    private void OnLevelCompleted()
     {
-        // 3 - 30 secs
-        // 2 - 45 secs
-        // 1 - 60 secs
 
         if (levelData == null)
-        {
             return;
-        }
+
+        if (timeElapsed < levelData.bestCompletionTime)
+            levelData.bestCompletionTime = (ushort)timeElapsed;
 
         var timeForStars = levelData.timeForStars;
 
-        if (timeForStars.Count != 3)
+        if (timeForStars.Count == 2)
         {
-            return;
+            if (timeElapsed <= timeForStars[0])
+                levelData.stars = 3;
+            else if (timeElapsed <= timeForStars[1])
+                levelData.stars = 2;
+            else
+                levelData.stars = 1;
         }
 
-        if (timeElapsed < timeForStars[0])
-        {
-            levelData.stars = 3;
-        }
-        else if (timeElapsed < timeForStars[1])
-        {
-            levelData.stars = 2;
-        }
-        else
-        {
-            levelData.stars = 1;
-        }
+        LevelManager.Instance.OnLevelCompleted();
     }
 }
