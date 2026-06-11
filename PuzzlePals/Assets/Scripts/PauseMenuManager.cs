@@ -29,18 +29,21 @@ public class PauseMenuManager : MonoBehaviour
         {
             Time.timeScale = 0.0f;
             canvas.enabled = true;
-            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             Time.timeScale = 1.0f;
             canvas.enabled = false;
-            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         isPaused = !isPaused;
     }
     public void Restart()
     {
+        Time.timeScale = 1.0f;
+        canvas.enabled = false;
+        Cursor.lockState = CursorLockMode.Locked;
         string currentSceneName = SceneManager.GetActiveScene().name;
         SceneManager.LoadScene(currentSceneName);
     }
