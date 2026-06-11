@@ -5,13 +5,12 @@ using UnityEngine.SceneManagement;
 public class PauseMenuManager : MonoBehaviour
 {
     bool isPaused;
-    Canvas canvas;
+    [SerializeField] GameObject pausePanel;
 
     private InputManager inputManager;
 
     private void Start()
     {
-        canvas = GetComponent<Canvas>();
         inputManager = InputManager.Instance;
         inputManager.PauseMenuAction.performed += PauseGame;
     }
@@ -28,14 +27,14 @@ public class PauseMenuManager : MonoBehaviour
         if (!isPaused)
         {
             Time.timeScale = 0.0f;
-            canvas.enabled = true;
-            Cursor.visible = true;
+            pausePanel.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             Time.timeScale = 1.0f;
-            canvas.enabled = false;
-            Cursor.visible = false;
+            pausePanel.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
         }
         isPaused = !isPaused;
     }
