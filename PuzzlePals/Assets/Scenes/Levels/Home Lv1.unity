@@ -349,7 +349,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1814919252}
     m_Modifications:
     - target: {fileID: 3651889036843834275, guid: 0688f5f141c83e240a81f125131ec5ee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -400,6 +400,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0688f5f141c83e240a81f125131ec5ee, type: 3}
+--- !u!4 &204963898 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3651889036843834275, guid: 0688f5f141c83e240a81f125131ec5ee, type: 3}
+  m_PrefabInstance: {fileID: 204963897}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &265407383
 GameObject:
   m_ObjectHideFlags: 0
@@ -3513,7 +3518,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1814919252}
     m_Modifications:
     - target: {fileID: 701648338604725071, guid: 5412505bd843d314685af59522977582, type: 3}
       propertyPath: m_Name
@@ -3537,7 +3542,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8940647117494178027, guid: 5412505bd843d314685af59522977582, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -8.999999
+      value: -9
       objectReference: {fileID: 0}
     - target: {fileID: 8940647117494178027, guid: 5412505bd843d314685af59522977582, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3572,6 +3577,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5412505bd843d314685af59522977582, type: 3}
+--- !u!4 &1293446496 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8940647117494178027, guid: 5412505bd843d314685af59522977582, type: 3}
+  m_PrefabInstance: {fileID: 1293446495}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1307340047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4343,6 +4353,8 @@ Transform:
   - {fileID: 1782251575}
   - {fileID: 1945008139}
   - {fileID: 578028866}
+  - {fileID: 1293446496}
+  - {fileID: 204963898}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1818398650
@@ -5621,6 +5633,7 @@ SceneRoots:
   - {fileID: 428685606}
   - {fileID: 1848141795}
   - {fileID: 964589262}
+  - {fileID: 2120576667}
   - {fileID: 1858633619}
   - {fileID: 325327943098712499}
   - {fileID: 2367449017652327112}
@@ -5631,6 +5644,3 @@ SceneRoots:
   - {fileID: 1408116996}
   - {fileID: 1959695837}
   - {fileID: 1814919252}
-  - {fileID: 1293446495}
-  - {fileID: 204963897}
-  - {fileID: 2120576667}
