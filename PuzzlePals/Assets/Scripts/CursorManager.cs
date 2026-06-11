@@ -22,11 +22,11 @@ public class CursorManager : MonoBehaviour
     {
         if (!enableCursor)
         {
-            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
         }
         else
         {
-            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
