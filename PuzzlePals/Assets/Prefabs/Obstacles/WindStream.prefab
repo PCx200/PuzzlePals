@@ -46,10 +46,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f171821ac3c22a499c7280b5b0dc0a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WindStream
-  direction: 1
+  direction: 2
   area: {fileID: 7572976416996026693}
   windSpeed: 150
-  windSource: {x: 19.664999, y: 2.54, z: 0}
+  windSource: {x: 11.69, y: -2.44, z: 0}
+  windParticles: {fileID: 823013303672257329}
 --- !u!65 &7572976416996026693
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -97,8 +98,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359608753790994465}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.7071065, z: -0, w: 0.7071071}
-  m_LocalPosition: {x: 7.999999, y: 0, z: -0.0000071525574}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 0, y: -4.98, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
