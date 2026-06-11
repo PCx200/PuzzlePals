@@ -121,6 +121,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1c383412c51ca42acb02c5674cd6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventBus.DreamState
+  invisibleObjs: []
+  visible: 0
 --- !u!136 &1361482123894703732
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -131,7 +133,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   m_ExcludeLayers:
     serializedVersion: 2
     m_Bits: 0
