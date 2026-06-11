@@ -31,18 +31,15 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-
-        inputManager = InputManager.Instance;
     }
 
     void Start()
     {
         jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * currentMonster.Stats.jumpHeight);
-        jumpDirection = Vector3.up * jumpForce; 
-    }
+        jumpDirection = Vector3.up * jumpForce;
 
-    private void OnEnable()
-    {
+        inputManager = InputManager.Instance;
+
         inputManager.JumpAction.performed += OnJumpPerformed;
         inputManager.InteractAction.performed += OnInteract;
         inputManager.AttackAction.performed += OnSuperPowerUsed;
@@ -154,12 +151,6 @@ public class PlayerController : MonoBehaviour
 
         rb.AddForce(moveForce, ForceMode.Force);
     }
-
-    private void LookAt()
-    {
-
-    }
-
 
     private bool IsGrounded()
     {
