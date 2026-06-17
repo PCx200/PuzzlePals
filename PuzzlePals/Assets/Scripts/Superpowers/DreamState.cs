@@ -32,6 +32,7 @@ namespace EventBus
                 }
             }
             visible = !visible;
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dreamState, transform.position);
         }
 
         private void OnDestroy()
