@@ -9,8 +9,11 @@ public class FMODEvents : MonoBehaviour
     public static FMODEvents Instance;
 
     [field: Header("SFX")]
-    [field: SerializeField] public EventReference kaboom { get; private set; }
+    [field: SerializeField] public EventReference transformation { get; private set; }
     [field: SerializeField] public EventReference bed { get; private set; }
+    [field: SerializeField] public EventReference buttonClick { get; private set; }
+    [field: SerializeField] public EventReference doorOpen { get; private set; }
+    [field: SerializeField] public EventReference monsterEat { get; private set; }
 
     [field: Header("Music")]
     [field: SerializeField] public EventReference mainMenuMusic { get; private set; }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 757988254397761071}
   - component: {fileID: 3195758331538603193}
   - component: {fileID: 6121541581723320559}
+  - component: {fileID: 7989794993153199674}
   m_Layer: 0
   m_Name: InteractableArea
   m_TagString: Untagged
@@ -68,6 +69,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BedTeleport
   linkedBed: {fileID: 0}
   area: {fileID: 3195758331538603193}
+--- !u!114 &7989794993153199674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 400722044995077836}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecdb081b1f8c27b41bdfd0ca32d18242, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::InteractableView
+  canvas: {fileID: 8533445055555380667, guid: f2414acd307d64b46ab323e2e5bdfce6, type: 3}
+  activeCanvas: {fileID: 0}
+  cameraTransform: {fileID: 1747699437919528646, guid: 8f258c97866286448b09e655e1904642, type: 3}
 --- !u!1 &4801443107597411454
 GameObject:
   m_ObjectHideFlags: 0
