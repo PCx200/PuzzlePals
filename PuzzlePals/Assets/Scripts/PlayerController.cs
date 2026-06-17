@@ -16,12 +16,12 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float groundCheckRadius;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private Transform lookAtTransform;
-
-    private Vector3 jumpDirection;
-    private float jumpForce;
+    
+    private Vector3 jumpForce;
     private bool jumpPressed;
 
     private bool isSprinting;
+    private bool isGrounded;
 
     //Player Inputs
     private InputManager inputManager;
@@ -35,9 +35,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * currentMonster.Stats.jumpHeight);
-        jumpDirection = Vector3.up * jumpForce;
-
         inputManager = InputManager.Instance;
 
         inputManager.JumpAction.performed += OnJumpPerformed;
@@ -95,31 +92,21 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * currentMonster.Stats.jumpHeight);
-        jumpDirection = Vector3.up * jumpForce;
-
-
+        isGrounded = IsGrounded();
+        
         Move();
         Jump();
-
-
-        if (!IsGrounded() && rb.linearVelocity.y < 0)
-        {
-            rb.AddForce(Vector3.down * Physics.gravity.magnitude * (currentMonster.Stats.fallMultiplier - 1f), ForceMode.Acceleration);
-        }
-
     }
 
     private void Jump()
     {
+        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * currentMonster.Stats.jumpHeight) * Vector3.up;
         if (jumpPressed && IsGrounded())
         {
             //resets the velocity so if jumping on slopes it should be with the same force
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
-
-            rb.AddForce(jumpDirection, ForceMode.Impulse);
+            rb.AddForce(jumpForce, ForceMode.Impulse);
         }
-
         jumpPressed = false;
     }
 
@@ -138,18 +125,21 @@ public class PlayerController : MonoBehaviour
 
         Vector3 movementDirection = (camForward * input.y + camRight * input.x).normalized;
 
-        float speed = currentMonster.Stats.movementSpeed;
+        float acceleration = currentMonster.Stats.acceleration;
 
-        if (isSprinting) speed *= currentMonster.Stats.sprintMultiplier;
-
-        Vector3 moveForce = movementDirection * speed;
-
+        if (isSprinting) acceleration *= currentMonster.Stats.sprintMultiplier;
+        if (!isGrounded) acceleration *= currentMonster.Stats.airMultiplier;
+        
+        Vector3 moveForce = movementDirection * acceleration;
+        Vector3 frictionForce = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z) * currentMonster.Stats.friction;
+        if (!isGrounded) frictionForce *= currentMonster.Stats.airMultiplier;
+        
+        rb.AddForce(moveForce - frictionForce, ForceMode.Force);
+        
         if (moveForce.magnitude > 0)
         {
-            transform.rotation = Quaternion.LookRotation(camForward);
+            transform.rotation = Quaternion.LookRotation(movementDirection, Vector3.up);
         }
-
-        rb.AddForce(moveForce, ForceMode.Force);
     }
 
     private bool IsGrounded()
