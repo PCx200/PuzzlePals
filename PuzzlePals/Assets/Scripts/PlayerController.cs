@@ -132,7 +132,7 @@ public class PlayerController : MonoBehaviour
         
         Vector3 moveForce = movementDirection * acceleration;
         Vector3 frictionForce = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z) * currentMonster.Stats.friction;
-        if (!isGrounded) frictionForce *= currentMonster.Stats.airMultiplier;
+        if (!isGrounded) frictionForce = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z) * currentMonster.Stats.airFriction;
         
         rb.AddForce(moveForce - frictionForce, ForceMode.Force);
         

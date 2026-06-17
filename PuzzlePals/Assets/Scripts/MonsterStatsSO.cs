@@ -7,6 +7,7 @@ public class MonsterStatsSO : ScriptableObject
     public float sprintMultiplier;
     public float airMultiplier;
     public float friction;
+    public float airFriction;
 
     [Tooltip("The amount of units the jump is going to be.")]
     public float jumpHeight;
