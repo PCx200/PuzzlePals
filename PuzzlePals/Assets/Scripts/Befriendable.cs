@@ -16,6 +16,7 @@ public class Befriendable : MonoBehaviour
             animator.Play(animationName);
             Destroy(other.gameObject);
             Debug.Log("Cupcake eaten");
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.monsterEat, transform.position);
         }
     }
 }
