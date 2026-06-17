@@ -15,6 +15,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference doorOpen { get; private set; }
     [field: SerializeField] public EventReference monsterEat { get; private set; }
     [field: SerializeField] public EventReference throwBall { get; private set; }
+    [field: SerializeField] public EventReference sprint { get; private set; }
 
     [field: Header("Music")]
     [field: SerializeField] public EventReference mainMenuMusic { get; private set; }

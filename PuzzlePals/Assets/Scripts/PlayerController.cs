@@ -89,6 +89,7 @@ public class PlayerController : MonoBehaviour
     {
         if (currentMonster.Name != MonsterCharacter.MonsterName.Jullia) return;
         isSprinting = true;
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.sprint, transform.position);
     }
 
     private void OnSprintCanceled(InputAction.CallbackContext ctx)
