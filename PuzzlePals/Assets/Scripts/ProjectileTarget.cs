@@ -9,5 +9,6 @@ public class ProjectileTarget : MonoBehaviour
     {
         animation.SetTrigger("Open");
         Debug.Log("target hit");
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.buttonClick, transform.position);
     }
 }
