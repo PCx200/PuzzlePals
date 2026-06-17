@@ -832,6 +832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EventBus.EndPoint
   area: {fileID: 445262498}
   level: {fileID: 1690630647}
+  nextScene: 2
 --- !u!65 &445262498
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3866,7 +3867,7 @@ GameObject:
   - component: {fileID: 1408116999}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5273,7 +5274,7 @@ GameObject:
   - component: {fileID: 1940292855}
   m_Layer: 0
   m_Name: --- Player ---
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
