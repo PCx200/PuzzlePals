@@ -86,16 +86,18 @@ public class WindStream : MonoBehaviour
             var rigidbody = other.GetComponent<Rigidbody>();
 
             //updates the wind strength depending on how far the player is from the source
-            var distanceFromSource = windSource - other.transform.position;
-            windStrength = windSpeed / distanceFromSource.magnitude;
+            //var distanceFromSource = windSource - other.transform.position;
+            //windStrength = windSpeed / distanceFromSource.magnitude;
+
+
 
             if (player.currentMonster.Name == MonsterCharacter.MonsterName.Jullia)
             {
-                rigidbody.AddForce(windDirection * windStrength / 15f, ForceMode.Force);
+                rigidbody.AddForce(windDirection * windSpeed / 15f, ForceMode.Force);
             }
             else
             {
-                rigidbody.AddForce(windDirection * windStrength, ForceMode.Force);
+                rigidbody.AddForce(windDirection * windSpeed, ForceMode.Force);
             }
         }
     }
