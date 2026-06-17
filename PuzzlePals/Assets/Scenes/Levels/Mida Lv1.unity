@@ -423,7 +423,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 1940292855}
+    m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 4057111834360437702, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
       propertyPath: m_ExcludeLayers.m_Bits
@@ -431,6 +431,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7139461868187034435, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7139461868187034435, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7909299255337871770, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
@@ -451,15 +455,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7909299255337871770, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7909299255337871770, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7909299255337871770, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 7909299255337871770, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4843,8 +4847,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 2054378561}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1955952940
@@ -5039,6 +5042,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EventBus.EndPoint
   area: {fileID: 1962624154}
   level: {fileID: 760966036}
+  nextScene: 4
 --- !u!65 &1962624154
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5688,5 +5692,6 @@ SceneRoots:
   - {fileID: 1093533701}
   - {fileID: 1016601470}
   - {fileID: 1940292855}
+  - {fileID: 224727593}
   - {fileID: 1959695837}
   - {fileID: 1814919252}
