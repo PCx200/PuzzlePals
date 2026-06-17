@@ -435,7 +435,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7909299255337871770, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -11.24
+      value: -22.24
       objectReference: {fileID: 0}
     - target: {fileID: 7909299255337871770, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
       propertyPath: m_LocalPosition.y
@@ -443,7 +443,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7909299255337871770, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.54
+      value: 6.46
       objectReference: {fileID: 0}
     - target: {fileID: 7909299255337871770, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2769,8 +2769,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116812444}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.32407892, y: 0.00000004335842, z: -0.000000018298135, w: 0.9460301}
-  m_LocalPosition: {x: -11.24, y: 8.730078, z: -9.907724}
+  m_LocalRotation: {x: 0.3242169, y: 0.0000000089606225, z: -0.0000000030710767, w: 0.9459828}
+  m_LocalPosition: {x: -22.24, y: 8.730078, z: 2.0922751}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3178,8 +3178,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1263250165}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.32407892, y: 0.00000004202138, z: -0.00000001439515, w: 0.9460301}
-  m_LocalPosition: {x: -11.24, y: 8.180878, z: -9.199199}
+  m_LocalRotation: {x: 0.3242169, y: -0.000000011282478, z: 0.000000003866846, w: 0.9459828}
+  m_LocalPosition: {x: -22.24, y: 7.40469, z: 3.8007507}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -4548,7 +4548,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a234c0e6f3eeda47a5a7b657bf1121e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ProjectileTarget
-  animation: {fileID: 0}
+  onPress:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1730996660}
+        m_TargetAssemblyTypeName: UnityEngine.Animator, UnityEngine
+        m_MethodName: Play
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: Wall
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!65 &1824792880
 BoxCollider:
   m_ObjectHideFlags: 0
