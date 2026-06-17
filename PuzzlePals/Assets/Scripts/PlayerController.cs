@@ -27,6 +27,9 @@ public class PlayerController : MonoBehaviour
     private InputManager inputManager;
 
     public IInteractable currentInteractable;
+    [SerializeField] private float interactCooldown = 0.2f;
+    private float lastInteractTime = -999f;
+
 
     private void Awake()
     {
@@ -64,6 +67,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnInteract(InputAction.CallbackContext ctx)
     {
+        if (Time.time < lastInteractTime + interactCooldown) return;
+
+        lastInteractTime = Time.time;
+
         currentInteractable?.Interact();
         Debug.Log(currentInteractable);
 

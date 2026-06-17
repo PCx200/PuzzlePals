@@ -24,6 +24,8 @@ public class IceCreamBalls : SuperPower
         {
             var ball = Instantiate(iceCreamBallPrefab, ballSpawnPoint.transform.position, Quaternion.identity);
 
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.throwBall, transform.position);
+
             Rigidbody rb = ball.GetComponent<Rigidbody>();
 
             rb.AddForce(Vector3.up * upwardForce, ForceMode.Impulse);
