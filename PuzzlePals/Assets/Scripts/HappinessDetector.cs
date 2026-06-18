@@ -10,8 +10,8 @@ public class HappinessDetector : MonoBehaviour
     private void Update()
     {
         bool foundAny = false;
-
-        foreach (var renderer in FindObjectsByType<MeshRenderer>(FindObjectsSortMode.None))
+        var renderers = FindObjectsByType<MeshRenderer>(FindObjectsSortMode.None);
+        foreach (var renderer in renderers)
         {
             if (((1 << renderer.gameObject.layer) & sadObjectLayer) == 0)
                 continue;
