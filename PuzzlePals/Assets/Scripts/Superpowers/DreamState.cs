@@ -15,7 +15,7 @@ namespace EventBus
         .ToList();
         }
 
-        public override void UseSuperPower()
+        public override void SuperPowerPressed()
         {
             if (!visible)
             {

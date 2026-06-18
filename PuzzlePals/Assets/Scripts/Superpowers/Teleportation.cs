@@ -6,17 +6,7 @@ public class Teleportation : SuperPower
     [SerializeField] private Transform player;
     [SerializeField] private BedTeleport currentBed;
 
-    private void Start()
-    {
-        
-    }
-
-    private void Update()
-    {
-        
-    }
-
-    public override void UseSuperPower()
+    public override void SuperPowerPressed()
     {
         if (currentBed == null) return;
 
