@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public MonsterCharacter currentMonster;
+
+    public MonsterCharacter previousMonster;
+
+    public List<MonsterCharacter> monsters = new List<MonsterCharacter>();
 
     private Vector3 movementDirection;
 

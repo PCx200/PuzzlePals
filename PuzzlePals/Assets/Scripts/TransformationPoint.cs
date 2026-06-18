@@ -27,7 +27,7 @@ public class TransformationPoint : MonoBehaviour, IInteractable
             return;
         }
 
-        if (player.GetCurrentMonster().Name == characterToTransformInto.Name)
+        if (player.currentMonster.Name == characterToTransformInto.Name)
         {            
             Debug.Log("Transformed into previous monster " + player.previousMonster.name);
             Transform(player, player.previousMonster);

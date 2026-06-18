@@ -91,7 +91,7 @@ public class WindStream : MonoBehaviour
 
 
 
-            if (player.GetCurrentMonster().Name == MonsterCharacter.MonsterName.Jullia)
+            if (player.currentMonster.Name == MonsterCharacter.MonsterName.Jullia)
             {
                 rigidbody.AddForce(windDirection * windSpeed / 15f, ForceMode.Force);
             }
