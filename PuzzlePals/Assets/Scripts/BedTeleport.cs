@@ -22,7 +22,6 @@ public class BedTeleport : MonoBehaviour
         OnValidate();
 
         Gizmos.color = Color.darkBlue;
-        Gizmos.DrawWireCube(area.center, area.size);
 
         Gizmos.DrawLine(transform.position, linkedBed.transform.position);
     }
