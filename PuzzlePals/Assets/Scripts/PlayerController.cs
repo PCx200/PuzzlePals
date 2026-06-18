@@ -1,5 +1,8 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System;
+using System.Collections.Generic;
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -8,6 +11,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public MonsterCharacter currentMonster;
+
+    public MonsterCharacter previousMonster;
+
+    public List<MonsterCharacter> monsters = new List<MonsterCharacter>();
 
     private Vector3 movementDirection;
 
@@ -74,6 +81,14 @@ public class PlayerController : MonoBehaviour
     private void OnSuperPower2Used(InputAction.CallbackContext ctx)
     {
         currentMonster.UseSuperPower(1);
+    }
+    public MonsterCharacter GetCurrentMonster()
+    {
+        return currentMonster;
+    }
+    public void ChangeCurrentMonster(MonsterCharacter _currentMonster)
+    {
+        _currentMonster = currentMonster;
     }
 
     private void OnSprintPerformed(InputAction.CallbackContext ctx)

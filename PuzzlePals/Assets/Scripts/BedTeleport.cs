@@ -25,7 +25,7 @@ public class BedTeleport : MonoBehaviour, IInteractable
             return;
         }
 
-        if (player.currentMonster.Name != MonsterCharacter.MonsterName.Home) return;
+        if (player.GetCurrentMonster().Name != MonsterCharacter.MonsterName.Home) return;
 
         Teleport(player);
     }
