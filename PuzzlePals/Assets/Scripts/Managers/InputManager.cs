@@ -16,32 +16,13 @@ public class InputManager : MonoBehaviour
     private InputAction jumpAction;
     public InputAction JumpAction => jumpAction;
 
-    private InputAction interactAction;
-    public InputAction InteractAction => interactAction;
+    private InputAction superPower1;
+    public InputAction SuperPower1Action => superPower1;
 
-    private InputAction attackAction;
-    public InputAction AttackAction => attackAction;
-
-    private InputAction sprintAction;
-    public InputAction SprintAction => sprintAction;
-
-    private InputAction dreamAction;
-    public InputAction DreamAction => dreamAction;
-
-    private InputAction releaseHappiness;
-    public InputAction ReleaseHappiness => releaseHappiness;
-
-    private InputAction createCupcakeAction;
-    public InputAction CreateCupcakeAction => createCupcakeAction;
-
-    private InputAction bounceAction;
-
-    private InputAction axis;
-
-    public InputAction Axis => axis;
+    private InputAction superPower2;
+    public InputAction SuperPower2Action => superPower2;
 
     //public InputAction SeeInvisible;
-    public InputAction BounceAction => bounceAction;
 
     private InputAction pauseMenuAction;
     public InputAction PauseMenuAction => pauseMenuAction;
@@ -61,18 +42,10 @@ public class InputManager : MonoBehaviour
 
         moveAction = inputActionAsset.FindAction("Move");
         jumpAction = inputActionAsset.FindAction("Jump");
-        interactAction = inputActionAsset.FindAction("Interact");
-        attackAction = inputActionAsset.FindAction("Attack");
-        sprintAction = inputActionAsset.FindAction("Sprint");
-        dreamAction = inputActionAsset.FindAction("Dream");
-        releaseHappiness = inputActionAsset.FindAction("ReleaseHappiness");
-        createCupcakeAction = inputActionAsset.FindAction("CreateCupcake");
-        bounceAction = inputActionAsset.FindAction("Bounce");
-        axis = inputActionAsset.FindAction("Axis");
+        superPower1 = inputActionAsset.FindAction("SuperPower1");
+        superPower2 = inputActionAsset.FindAction("SuperPower2");
 
         pauseMenuAction = inputActionAsset.FindAction("Pause");
-
-        //SeeInvisible = inputActionAsset.FindAction("SeeInvisible");
     }
 
     private void OnEnable()

@@ -41,23 +41,15 @@ public class PlayerController : MonoBehaviour
         inputManager = InputManager.Instance;
 
         inputManager.JumpAction.performed += OnJumpPerformed;
-        inputManager.InteractAction.performed += OnInteract;
-        inputManager.AttackAction.performed += OnSuperPowerUsed;
-
-        inputManager.SprintAction.performed += OnSprintPerformed;
-        inputManager.ReleaseHappiness.performed += OnSuperPowerUsed2;
-        inputManager.SprintAction.canceled += OnSprintCanceled;
+        inputManager.SuperPower1Action.performed += OnSuperPower1Used;
+        inputManager.SuperPower2Action.performed += OnSuperPower2Used;
     }
 
     private void OnDisable()
     {
         inputManager.JumpAction.performed -= OnJumpPerformed;
-        inputManager.InteractAction.performed -= OnInteract;
-        inputManager.AttackAction.performed -= OnSuperPowerUsed;
-
-        inputManager.SprintAction.performed -= OnSprintPerformed;
-        inputManager.ReleaseHappiness.performed -= OnSuperPowerUsed2;
-        inputManager.SprintAction.canceled -= OnSprintCanceled;
+        inputManager.SuperPower1Action.performed -= OnSuperPower1Used;
+        inputManager.SuperPower2Action.performed -= OnSuperPower2Used;
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext ctx)
@@ -73,14 +65,13 @@ public class PlayerController : MonoBehaviour
 
         currentInteractable?.Interact();
         Debug.Log(currentInteractable);
-
     }
-    private void OnSuperPowerUsed(InputAction.CallbackContext ctx)
+    
+    private void OnSuperPower1Used(InputAction.CallbackContext ctx)
     {
-        //if (currentMonster.Name != MonsterCharacter.MonsterName.Mida) return;
         currentMonster.UseSuperPower(0);
     }
-    private void OnSuperPowerUsed2(InputAction.CallbackContext ctx)
+    private void OnSuperPower2Used(InputAction.CallbackContext ctx)
     {
         currentMonster.UseSuperPower(1);
     }
