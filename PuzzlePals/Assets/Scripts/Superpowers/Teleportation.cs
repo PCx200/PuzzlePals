@@ -1,0 +1,52 @@
+using System.Collections;
+using UnityEngine;
+
+public class Teleportation : SuperPower
+{
+    [SerializeField] private Transform player;
+    [SerializeField] private BedTeleport currentBed;
+
+    private void Start()
+    {
+        
+    }
+
+    private void Update()
+    {
+        
+    }
+
+    public override void UseSuperPower()
+    {
+        if (currentBed == null) return;
+
+        player.position = currentBed.LinkedBed.transform.position + Vector3.up;
+        var rb = player.GetComponent<Rigidbody>();
+        rb.isKinematic = true;
+
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.bed, transform.position);
+
+        Debug.Log("Teleported to: " + player.position);
+
+        StartCoroutine(ResetKinematic(rb));
+    }
+
+    IEnumerator ResetKinematic(Rigidbody rb)
+    {
+        yield return new WaitForSeconds(0.1f);
+        rb.isKinematic = false;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Bed"))
+        {
+            currentBed = other.GetComponent<BedTeleport>();
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        currentBed = null;
+    }
+}
