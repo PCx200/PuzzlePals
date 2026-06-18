@@ -10,13 +10,13 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("SFX")]
     [field: SerializeField] public EventReference transformation { get; private set; }
-    [field: SerializeField] public EventReference bed { get; private set; }
     [field: SerializeField] public EventReference buttonClick { get; private set; }
     [field: SerializeField] public EventReference doorOpen { get; private set; }
+    [field: SerializeField] public EventReference bed { get; private set; }
+    [field: SerializeField] public EventReference dreamState { get; private set; }
     [field: SerializeField] public EventReference monsterEat { get; private set; }
     [field: SerializeField] public EventReference throwBall { get; private set; }
     [field: SerializeField] public EventReference sprint { get; private set; }
-    [field: SerializeField] public EventReference dreamState { get; private set; }
     [field: SerializeField] public EventReference happiness { get; private set; }
 
     [field: Header("Music")]
