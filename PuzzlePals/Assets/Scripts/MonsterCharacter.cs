@@ -17,13 +17,7 @@ public class MonsterCharacter : MonoBehaviour
     public MonsterStatsSO Stats => stats;
 
     [SerializeField] private List<SuperPower> superPowers;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
+    
     public void UseSuperPower(int superPowerNumber)
     {
         if (superPowers == null || superPowers[superPowerNumber] == null) return;
