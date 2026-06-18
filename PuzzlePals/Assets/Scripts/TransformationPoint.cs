@@ -9,7 +9,7 @@ public class TransformationPoint : MonoBehaviour, IInteractable
 
     [SerializeField] private TransformationType transformationType;
 
-    [SerializeField] private MonsterCharacter characterToTransform;
+    [SerializeField] private MonsterCharacter characterToTransformInto;
     [SerializeField] BoxCollider area;
 
     [SerializeField] private List<MonsterCharacter> monsters = new List<MonsterCharacter>(); 
@@ -24,7 +24,7 @@ public class TransformationPoint : MonoBehaviour, IInteractable
             return;
         }
 
-        if (player.currentMonster.Name == characterToTransform.Name)
+        if (player.currentMonster.Name == characterToTransformInto.Name)
         {
             Debug.Log("Trying to transform to the same monster");
             return;
@@ -35,9 +35,10 @@ public class TransformationPoint : MonoBehaviour, IInteractable
 
     private void Transform(PlayerController player)
     {
-        var currentMonster = monsters.Find(m => m.Name == player.currentMonster.Name);
+        // why is 
+        var currentMonster = monsters.Find(monster => monster.Name == player.currentMonster.Name);
 
-        var prefabToSpawn = monsters.Find(m => m.Name == characterToTransform.Name);
+        var prefabToSpawn = monsters.Find(m => m.Name == characterToTransformInto.Name);
 
         var newMonster = Instantiate(prefabToSpawn, player.transform.position, Quaternion.identity);
 
@@ -45,7 +46,7 @@ public class TransformationPoint : MonoBehaviour, IInteractable
 
         newMonster.transform.SetParent(player.transform);
 
-        characterToTransform = currentMonster;
+        characterToTransformInto = currentMonster;
 
         player.currentMonster = newMonster;
         
@@ -60,7 +61,7 @@ public class TransformationPoint : MonoBehaviour, IInteractable
 
     private void ChangeAreaColor()
     {
-        switch (characterToTransform.Name)
+        switch (characterToTransformInto.Name)
         {
             case MonsterCharacter.MonsterName.Mida:
                 Gizmos.color = Color.cyan;

@@ -13,7 +13,7 @@ public class IceCreamBalls : SuperPower
     [SerializeField] private float upwardForce;
     [SerializeField] private float throwForce;
 
-    public override void UseSuperPower()
+    public override void SuperPowerPressed()
     {
         ThrowIceCreamBalls();
     }

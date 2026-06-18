@@ -1,13 +1,24 @@
+using System;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Sprint : SuperPower
 {
     [SerializeField] private float sprintMultiplier;
+    [SerializeField] private PlayerController playerController;
 
-    public override void UseSuperPower()
+    private void Start()
     {
-        var player = FindAnyObjectByType<PlayerController>();
-        player.currentMonster.Stats.sprintMultiplier = sprintMultiplier;
+        playerController = FindAnyObjectByType<PlayerController>();
+    }
+
+    public override void SuperPowerPressed()
+    {
+        playerController.isSprinting = true;
+    }
+
+    public override void SuperPowerReleased()
+    {
+        playerController.isSprinting = false;
     }
 }

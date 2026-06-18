@@ -18,9 +18,14 @@ public class MonsterCharacter : MonoBehaviour
 
     [SerializeField] private List<SuperPower> superPowers;
     
-    public void UseSuperPower(int superPowerNumber)
+    public void SuperPowerPressed(int superPowerNumber)
     {
         if (superPowers == null || superPowers[superPowerNumber] == null) return;
-        superPowers[superPowerNumber].UseSuperPower();
+        superPowers[superPowerNumber].SuperPowerPressed();
+    }
+    public void SuperPowerReleased(int superPowerNumber)
+    {
+        if (superPowers == null || superPowers[superPowerNumber] == null) return;
+        superPowers[superPowerNumber].SuperPowerReleased();
     }
 }
