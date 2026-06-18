@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e153a7529e0f14ab6fbc5e5b8567c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  currentMonster: {fileID: 513100669973169270}
+  currentMonster: {fileID: 4692009313786472003}
   previousMonster: {fileID: 0}
   monsters:
   - {fileID: 2682934340545177571}
@@ -148,6 +148,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   lookAtTransform: {fileID: 4044055079437780429}
+  isSprinting: 0
   interactCooldown: 0.2
 --- !u!65 &1679652684322809280
 BoxCollider:
@@ -198,8 +199,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2557252174751234515}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.28509545, y: 0.23737943, z: -0.07310312, w: 0.9257578}
-  m_LocalPosition: {x: -0.34732974, y: 1.4911547, z: -0.63274646}
+  m_LocalRotation: {x: 0.32407892, y: 0.0000000068865744, z: -0.0000000023591151, w: 0.9460301}
+  m_LocalPosition: {x: 0, y: 4.3903437, z: -4.367725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -376,7 +377,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6292226796184869269}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.28509545, y: 0.23737943, z: -0.07310313, w: 0.9257578}
+  m_LocalRotation: {x: 0.32407892, y: 0.000000006003735, z: 2.1801429e-10, w: 0.9460301}
   m_LocalPosition: {x: 0, y: 4.3903437, z: -4.3677244}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -634,6 +635,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8735073042165751712}
     m_Modifications:
+    - target: {fileID: 3151666663063686441, guid: 33f20a09b2c4e004d9ee767b6487d581, type: 3}
+      propertyPath: superPowers.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3151666663063686441, guid: 33f20a09b2c4e004d9ee767b6487d581, type: 3}
+      propertyPath: 'superPowers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 8882425705421582483}
     - target: {fileID: 5818672790649625518, guid: 33f20a09b2c4e004d9ee767b6487d581, type: 3}
       propertyPath: m_Name
       value: Home
@@ -689,19 +698,41 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5818672790649625518, guid: 33f20a09b2c4e004d9ee767b6487d581, type: 3}
+      insertIndex: 3
+      addedObject: {fileID: 8882425705421582483}
   m_SourcePrefab: {fileID: 100100000, guid: 33f20a09b2c4e004d9ee767b6487d581, type: 3}
 --- !u!114 &3345763475689017447 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3151666663063686441, guid: 33f20a09b2c4e004d9ee767b6487d581, type: 3}
   m_PrefabInstance: {fileID: 419523086211194190}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6130074284230919904}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cff98ad2f3ca9314380315cda3a2d4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
+--- !u!1 &6130074284230919904 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5818672790649625518, guid: 33f20a09b2c4e004d9ee767b6487d581, type: 3}
+  m_PrefabInstance: {fileID: 419523086211194190}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8882425705421582483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6130074284230919904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e1f5a47e5e214e4fa69a118d91beac7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Teleportation
+  player: {fileID: 8735073042165751712}
+  currentBed: {fileID: 0}
 --- !u!4 &6798666020944288858 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6596582406320718100, guid: 33f20a09b2c4e004d9ee767b6487d581, type: 3}
@@ -718,6 +749,10 @@ PrefabInstance:
     - target: {fileID: 2633103177869250929, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
       propertyPath: m_Name
       value: Copcak
+      objectReference: {fileID: 0}
+    - target: {fileID: 2633103177869250929, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3441165521048374219, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -794,7 +829,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3692598400303464047, guid: 34970f6603b92154384bdb7e50aa4b0e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7966768795175995226, guid: 34970f6603b92154384bdb7e50aa4b0e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -967,6 +1002,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Sprint
   sprintMultiplier: 2
+  playerController: {fileID: 0}
 --- !u!114 &8372687117610547336
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -19,7 +19,7 @@ public class ReleaseHappiness : SuperPower
             HappinessDetector.Instance.happyObjCount++;            
             Debug.Log($"{obj.collider.gameObject.name} turned happy");
         }
-        HappinessDetector.Instance.CheckHappiness();
+        if (HappinessDetector.Instance != null) HappinessDetector.Instance.CheckHappiness();
     }
     private void OnDrawGizmos()
     {
