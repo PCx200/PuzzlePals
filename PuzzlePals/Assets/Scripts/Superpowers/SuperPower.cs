@@ -3,5 +3,7 @@ using UnityEngine;
 //the specific super powers are supposed to inherit from this class and override the method UseSuperPower()
 public abstract class SuperPower: MonoBehaviour
 {
-    public abstract void UseSuperPower();
+    public virtual void SuperPowerPressed(){ }
+
+    public virtual void SuperPowerReleased(){ }
 }

@@ -1,8 +1,5 @@
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using System;
-using System.Collections.Generic;
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -11,10 +8,6 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public MonsterCharacter currentMonster;
-
-    public MonsterCharacter previousMonster;
-
-    public List<MonsterCharacter> monsters = new List<MonsterCharacter>();
 
     private Vector3 movementDirection;
 
@@ -27,12 +20,13 @@ public class PlayerController : MonoBehaviour
     private Vector3 jumpForce;
     private bool jumpPressed;
 
-    private bool isSprinting;
-    private bool isGrounded;
+    [HideInInspector] public bool isSprinting;
+    [HideInInspector] private bool isGrounded;
 
     //Player Inputs
     private InputManager inputManager;
 
+    // should probably not be in player controller
     public IInteractable currentInteractable;
     [SerializeField] private float interactCooldown = 0.2f;
     private float lastInteractTime = -999f;
@@ -48,15 +42,21 @@ public class PlayerController : MonoBehaviour
         inputManager = InputManager.Instance;
 
         inputManager.JumpAction.performed += OnJumpPerformed;
-        inputManager.SuperPower1Action.performed += OnSuperPower1Used;
-        inputManager.SuperPower2Action.performed += OnSuperPower2Used;
+        inputManager.SuperPower1Action.performed += OnSuperPower1Pressed;
+        inputManager.SuperPower2Action.performed += OnSuperPower2Pressed;
+        inputManager.SuperPower1Action.canceled += OnSuperPower1Released;
+        inputManager.SuperPower2Action.canceled += OnSuperPower2Released;
+
+        Debug.Log(inputManager.SuperPower2Action.enabled);
     }
 
     private void OnDisable()
     {
         inputManager.JumpAction.performed -= OnJumpPerformed;
-        inputManager.SuperPower1Action.performed -= OnSuperPower1Used;
-        inputManager.SuperPower2Action.performed -= OnSuperPower2Used;
+        inputManager.SuperPower1Action.performed -= OnSuperPower1Pressed;
+        inputManager.SuperPower2Action.performed -= OnSuperPower2Pressed;
+        inputManager.SuperPower1Action.canceled -= OnSuperPower1Released;
+        inputManager.SuperPower2Action.canceled -= OnSuperPower2Released;
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext ctx)
@@ -64,53 +64,30 @@ public class PlayerController : MonoBehaviour
         jumpPressed = true;
     }
 
-    private void OnInteract(InputAction.CallbackContext ctx)
+    #region SuperPowers
+
+    private void OnSuperPower1Pressed(InputAction.CallbackContext ctx)
     {
-        if (Time.time < lastInteractTime + interactCooldown) return;
-
-        lastInteractTime = Time.time;
-
-        currentInteractable?.Interact();
-        Debug.Log(currentInteractable);
+        currentMonster.SuperPowerPressed(0);
+        Debug.Log("SuperPower 1 Pressed");
     }
+    private void OnSuperPower2Pressed(InputAction.CallbackContext ctx)
+    {
+        currentMonster.SuperPowerPressed(1);
+        Debug.Log("SuperPower 2 Pressed");
+    }
+    private void OnSuperPower1Released(InputAction.CallbackContext ctx)
+    {
+        currentMonster.SuperPowerReleased(0);
+    }
+    private void OnSuperPower2Released(InputAction.CallbackContext ctx)
+    {
+        currentMonster.SuperPowerReleased(1);
+    }
+
+    #endregion
     
-    private void OnSuperPower1Used(InputAction.CallbackContext ctx)
-    {
-        currentMonster.UseSuperPower(0);
-    }
-    private void OnSuperPower2Used(InputAction.CallbackContext ctx)
-    {
-        currentMonster.UseSuperPower(1);
-    }
-    public MonsterCharacter GetCurrentMonster()
-    {
-        return currentMonster;
-    }
-    public void ChangeCurrentMonster(MonsterCharacter _currentMonster)
-    {
-        _currentMonster = currentMonster;
-    }
-
-    private void OnSprintPerformed(InputAction.CallbackContext ctx)
-    {
-        if (currentMonster.Name != MonsterCharacter.MonsterName.Jullia) return;
-        isSprinting = true;
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.sprint, transform.position);
-    }
-
-    private void OnSprintCanceled(InputAction.CallbackContext ctx)
-    {
-        if (currentMonster.Name != MonsterCharacter.MonsterName.Jullia) return;
-        isSprinting = false;
-    }
-
-    private void FixedUpdate()
-    {
-        isGrounded = IsGrounded();
-        
-        Move();
-        Jump();
-    }
+    #region Movement
 
     private void Jump()
     {
@@ -156,6 +133,15 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    #endregion
+    
+    private void FixedUpdate()
+    {
+        isGrounded = IsGrounded();
+        
+        Move();
+        Jump();
+    }
     private bool IsGrounded()
     {
         return Physics.CheckSphere(legsTransform.position, groundCheckRadius, groundLayer);
