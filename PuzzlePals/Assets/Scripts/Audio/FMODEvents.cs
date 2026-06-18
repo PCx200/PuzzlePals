@@ -17,6 +17,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference throwBall { get; private set; }
     [field: SerializeField] public EventReference sprint { get; private set; }
     [field: SerializeField] public EventReference dreamState { get; private set; }
+    [field: SerializeField] public EventReference happiness { get; private set; }
 
     [field: Header("Music")]
     [field: SerializeField] public EventReference mainMenuMusic { get; private set; }

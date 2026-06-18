@@ -9,6 +9,7 @@ public class ReleaseHappiness : SuperPower
     public override void UseSuperPower()
     {
         var hitObj = Physics.SphereCastAll(transform.position, radius, transform.forward, 0, sadObj);
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.happiness, transform.position);
 
         foreach (var obj in hitObj)
         { 
