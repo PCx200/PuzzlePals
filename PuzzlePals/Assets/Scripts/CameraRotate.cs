@@ -13,9 +13,9 @@ public class CameraRotate : MonoBehaviour
     private void Start()
     {
         inputManager = InputManager.Instance;
-        inputManager.Axis.Enable();
+        //inputManager.Axis.Enable();
         StartCoroutine(Rotate());
-        inputManager.Axis.performed += context => { rotation = context.ReadValue<Vector2>(); };
+        //inputManager.Axis.performed += context => { rotation = context.ReadValue<Vector2>(); };
     }
     private void OnEnable()
     {

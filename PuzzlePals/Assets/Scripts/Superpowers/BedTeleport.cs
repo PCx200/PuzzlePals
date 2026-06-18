@@ -1,8 +1,10 @@
 using UnityEngine;
 
-public class BedTeleport : MonoBehaviour, IInteractable
+public class BedTeleport : MonoBehaviour
 {
     [SerializeField] private BedTeleport linkedBed;
+
+    public BedTeleport LinkedBed => linkedBed;
 
     [SerializeField] private BoxCollider area;
 
@@ -14,33 +16,13 @@ public class BedTeleport : MonoBehaviour, IInteractable
         }
     }
 
-    public void Interact()
-    {
-        var player = FindAnyObjectByType<PlayerController>();
-
-
-        if (player == null)
-        {
-            Debug.Log("Player is null");
-            return;
-        }
-
-        if (player.currentMonster.Name != MonsterCharacter.MonsterName.Home) return;
-
-        Teleport(player);
-    }
-    private void Teleport(PlayerController player)
-    {
-        player.transform.position = linkedBed.area.transform.position;
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.bed, transform.position);
-    }
-
     private void OnDrawGizmos()
     {
+        if (linkedBed == null) return;
         OnValidate();
 
         Gizmos.color = Color.darkBlue;
-        Gizmos.DrawWireCube(area.transform.position, area.size);
+        Gizmos.DrawWireCube(area.center, area.size);
 
         Gizmos.DrawLine(transform.position, linkedBed.transform.position);
     }

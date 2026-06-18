@@ -3116,6 +3116,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9204901882543034728, guid: 30764bb400f7b68488c913a29bf06d9f, type: 3}
+      propertyPath: lookAtTransform
+      value: 
+      objectReference: {fileID: 2099981913}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3142,7 +3146,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1116812445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3738,7 +3742,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1263250166
 MonoBehaviour:
   m_ObjectHideFlags: 0

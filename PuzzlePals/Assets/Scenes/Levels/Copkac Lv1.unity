@@ -1159,6 +1159,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1346462868647415703, guid: e99572eaada8c394eb1f194a4846fb38, type: 3}
+      propertyPath: lookAtTransform
+      value: 
+      objectReference: {fileID: 2099981913}
     - target: {fileID: 1869408412062518536, guid: e99572eaada8c394eb1f194a4846fb38, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5850,7 +5854,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1116812445
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6959,7 +6963,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1263250166
 MonoBehaviour:
   m_ObjectHideFlags: 0
