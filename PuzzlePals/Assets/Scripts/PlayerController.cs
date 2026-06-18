@@ -40,6 +40,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        FindCurrentMonster();
+        previousMonster = currentMonster;
     }
 
     void Start()
@@ -146,6 +148,15 @@ public class PlayerController : MonoBehaviour
         
         Move();
         Jump();
+    }
+    private void FindCurrentMonster()
+    {
+        for(int i = 0; i<monsters.Count; i++)
+        {
+            if (monsters[i].isActiveAndEnabled == true)
+                currentMonster = monsters[i];   
+        }
+        Debug.Log("Current monster is " +  currentMonster.Name);
     }
     private bool IsGrounded()
     {
