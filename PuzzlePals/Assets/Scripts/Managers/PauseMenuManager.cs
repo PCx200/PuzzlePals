@@ -13,6 +13,7 @@ public class PauseMenuManager : MonoBehaviour
     {
         inputManager = InputManager.Instance;
         inputManager.PauseMenuAction.performed += PauseGame;
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnDestroy()
