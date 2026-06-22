@@ -20,6 +20,8 @@ public class PauseMenuManager : MonoBehaviour
     {
         if (inputManager != null)
             inputManager.PauseMenuAction.performed -= PauseGame;
+        
+        Time.timeScale = 1.0f;
     }
 
 

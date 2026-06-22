@@ -18,7 +18,7 @@ public class Level : MonoBehaviour
     {
         if (levelData != null)
         {
-            name = levelData.scene.name;
+            name = levelData.sceneName;
         }
     }
 

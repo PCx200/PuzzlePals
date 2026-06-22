@@ -29,9 +29,9 @@ public class LevelManager : MonoBehaviour
         RecalculateStars();
     }
 
-    public void LoadLevel(SceneAsset levelToLoad)
+    public void LoadLevel(string sceneName)
     {
-        SceneManager.LoadScene(levelToLoad.name);
+        SceneManager.LoadScene(sceneName);
     }
 
     public void OnLevelCompleted()
