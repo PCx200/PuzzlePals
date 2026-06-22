@@ -3,12 +3,9 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class WindStream : MonoBehaviour
 {
-    public enum Direction { Froward, Backward, Up, Down }
-    [SerializeField] private Direction direction;
-
     [SerializeField] private BoxCollider area;
     [SerializeField] private float windSpeed;
-    [SerializeField] private Vector3 windSource;
+    private Vector3 windSource;
     private Vector3 windDirection;
     private float windStrength;
 
