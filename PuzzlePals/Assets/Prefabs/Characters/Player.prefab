@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e153a7529e0f14ab6fbc5e5b8567c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  normalHeight: 2
   currentMonster: {fileID: 513100669973169270}
   previousMonster: {fileID: 0}
   monsters:
@@ -177,8 +178,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2557252174751234515}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3240789, y: 1.2322684e-11, z: -4.2213477e-12, w: 0.9460301}
-  m_LocalPosition: {x: 0, y: 4.3903437, z: -4.367725}
+  m_LocalRotation: {x: 0.32407898, y: -4.3469646e-12, z: 1.489128e-12, w: 0.94603}
+  m_LocalPosition: {x: -13.21, y: 8.080344, z: 1.002275}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -355,7 +356,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6292226796184869269}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3240789, y: 1.27737525e-11, z: -5.53808e-12, w: 0.9460301}
+  m_LocalRotation: {x: 0.32397613, y: 0, z: 0, w: 0.94606525}
   m_LocalPosition: {x: 0, y: 4.3903437, z: -4.3677244}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -731,7 +732,7 @@ PrefabInstance:
     - target: {fileID: 924632654036312916, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
       propertyPath: 'superPowers.Array.data[1]'
       value: 
-      objectReference: {fileID: 4896476182683840092}
+      objectReference: {fileID: 8579919543062308953}
     - target: {fileID: 2633103177869250929, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
       propertyPath: m_Name
       value: Copcak
@@ -783,14 +784,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2633103177869250929, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8579919543062308953}
   m_SourcePrefab: {fileID: 100100000, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
 --- !u!114 &513100669973169270 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 924632654036312916, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
   m_PrefabInstance: {fileID: 849511446014043938}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3404927250994493011}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cff98ad2f3ca9314380315cda3a2d4de, type: 3}
@@ -801,17 +805,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3441165521048374219, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
   m_PrefabInstance: {fileID: 849511446014043938}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4896476182683840092 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5204425098434201982, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
+--- !u!1 &3404927250994493011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2633103177869250929, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
   m_PrefabInstance: {fileID: 849511446014043938}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &8579919543062308953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404927250994493011}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23fd714dca27d4a4998aae33cb011625, type: 3}
+  m_Script: {fileID: 11500000, guid: 38990bb0e3c76084ca39dc77add6fa49, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Cupcake
+  m_EditorClassIdentifier: Assembly-CSharp::HighJump
+  jumpHeight: 8
 --- !u!1001 &7724115512570563281
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -917,12 +928,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16bdf287b78f1f47a8d80abf5961556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoThroughWall
-  midaLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  regularPlayerLayer:
-    serializedVersion: 2
-    m_Bits: 16384
 --- !u!1001 &8896758999715076364
 PrefabInstance:
   m_ObjectHideFlags: 0

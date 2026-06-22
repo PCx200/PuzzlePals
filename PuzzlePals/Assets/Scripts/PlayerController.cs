@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
 
+    [SerializeField] private float normalJumpHeight;
+
     public MonsterCharacter currentMonster;
 
     public MonsterCharacter previousMonster;
@@ -67,8 +69,9 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext ctx)
-    {
-        jumpPressed = true;
+    {     
+        Jump(normalJumpHeight);
+        Debug.Log("Jump pressed");
     }
 
     #region SuperPowers
@@ -96,16 +99,22 @@ public class PlayerController : MonoBehaviour
     
     #region Movement
 
-    private void Jump()
+    private void Jump(float jumpHeight)
     {
-        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * currentMonster.Stats.jumpHeight) * Vector3.up;
-        if (jumpPressed && IsGrounded())
+        Debug.Log("Jump() called");
+        
+        isGrounded = IsGrounded();
+
+        Debug.Log($"Grounded: {isGrounded}");
+
+        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * jumpHeight) * Vector3.up;
+        if (isGrounded)
         {
             //resets the velocity so if jumping on slopes it should be with the same force
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
             rb.AddForce(jumpForce, ForceMode.Impulse);
         }
-        jumpPressed = false;
+        
     }
 
     private void Move()
@@ -144,10 +153,11 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        isGrounded = IsGrounded();
-        
-        Move();
-        Jump();
+        Move();        
+    }
+    public void SuperJump(float jumpHeight)
+    {
+        Jump(jumpHeight);
     }
     private void FindCurrentMonster()
     {
