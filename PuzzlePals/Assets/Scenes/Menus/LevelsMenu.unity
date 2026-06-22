@@ -168,17 +168,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &441459384 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1450488033928049056, guid: 4d5fd65bfed580a419525507144345c3, type: 3}
-  m_PrefabInstance: {fileID: 1697062976}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0efd94f2fb690ec4aaf6a84980b24309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
 --- !u!1 &867606029
 GameObject:
   m_ObjectHideFlags: 0
@@ -565,7 +554,11 @@ PrefabInstance:
     - target: {fileID: 400366751285911718, guid: aa7acc55c78070f4ab7c2bb6a52b5b0f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 441459384}
+      objectReference: {fileID: 1450488033928049056, guid: 4d5fd65bfed580a419525507144345c3, type: 3}
+    - target: {fileID: 400366751285911718, guid: aa7acc55c78070f4ab7c2bb6a52b5b0f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 543981761494146890, guid: aa7acc55c78070f4ab7c2bb6a52b5b0f, type: 3}
       propertyPath: m_Name
       value: LevelMenuCanvas
@@ -650,10 +643,30 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2056685038320103645, guid: aa7acc55c78070f4ab7c2bb6a52b5b0f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1450488033928049056, guid: 4d5fd65bfed580a419525507144345c3, type: 3}
+    - target: {fileID: 2056685038320103645, guid: aa7acc55c78070f4ab7c2bb6a52b5b0f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 6102664585271048616, guid: aa7acc55c78070f4ab7c2bb6a52b5b0f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1450488033928049056, guid: 4d5fd65bfed580a419525507144345c3, type: 3}
+    - target: {fileID: 6102664585271048616, guid: aa7acc55c78070f4ab7c2bb6a52b5b0f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
     - target: {fileID: 6518827748576885244, guid: aa7acc55c78070f4ab7c2bb6a52b5b0f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 441459384}
+      objectReference: {fileID: 1450488033928049056, guid: 4d5fd65bfed580a419525507144345c3, type: 3}
+    - target: {fileID: 6518827748576885244, guid: aa7acc55c78070f4ab7c2bb6a52b5b0f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LoadLevel
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

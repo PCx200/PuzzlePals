@@ -383,17 +383,6 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
---- !u!114 &750223190 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1450488033928049056, guid: 4d5fd65bfed580a419525507144345c3, type: 3}
-  m_PrefabInstance: {fileID: 1233781961}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0efd94f2fb690ec4aaf6a84980b24309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelManager
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
@@ -473,15 +462,15 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: b6203b2a19e71ae4d8105693dee9fd0b, type: 2}
     - target: {fileID: 5239708291482588993, guid: 4d5fd65bfed580a419525507144345c3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 634.6421
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5239708291482588993, guid: 4d5fd65bfed580a419525507144345c3, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.00001
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5239708291482588993, guid: 4d5fd65bfed580a419525507144345c3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 1915.3074
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5239708291482588993, guid: 4d5fd65bfed580a419525507144345c3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -687,10 +676,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3435854101098105850, guid: 91768dd5cc8e8d94d93a37a569cac251, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 750223190}
     - target: {fileID: 9003105952624695974, guid: 91768dd5cc8e8d94d93a37a569cac251, type: 3}
       propertyPath: m_Name
       value: MainMenuCanvas

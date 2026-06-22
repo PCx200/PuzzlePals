@@ -128,10 +128,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e153a7529e0f14ab6fbc5e5b8567c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  normalJumpHeight: 2
   currentMonster: {fileID: 0}
+  previousMonster: {fileID: 0}
+  monsters: []
   legsTransform: {fileID: 3576398835792575120}
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   lookAtTransform: {fileID: 0}
+  isSprinting: 0
+  interactCooldown: 0.2

@@ -89,7 +89,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 0bf444b26211d1a4fac022f42d016c57, type: 2}
     - target: {fileID: 919132149155446097, guid: fade2cf4d5223a748950c52ca8350c0d, type: 3}
       propertyPath: m_Name
-      value: Copcak (1)
+      value: Copcak
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fade2cf4d5223a748950c52ca8350c0d, type: 3}
       propertyPath: m_TagString
@@ -120,6 +120,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fade2cf4d5223a748950c52ca8350c0d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5204425098434201982}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: fade2cf4d5223a748950c52ca8350c0d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -6041089894251144338}
   m_SourcePrefab: {fileID: 100100000, guid: fade2cf4d5223a748950c52ca8350c0d, type: 3}
 --- !u!1 &2633103177869250929 stripped
 GameObject:
@@ -156,7 +159,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cupcake
   spawnPoint: {fileID: 4424258127757324525}
   cupcake: {fileID: 4605795945092375489, guid: 75e86da477af6604984a5ef552e64ef4, type: 3}
-  cooldown: 3
+--- !u!114 &-6041089894251144338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2633103177869250929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 38990bb0e3c76084ca39dc77add6fa49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HighJump
+  jumpHeight: 8
 --- !u!4 &3441165521048374219 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fade2cf4d5223a748950c52ca8350c0d, type: 3}

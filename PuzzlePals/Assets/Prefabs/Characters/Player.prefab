@@ -135,7 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e153a7529e0f14ab6fbc5e5b8567c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  normalHeight: 2
+  normalJumpHeight: 2
   currentMonster: {fileID: 513100669973169270}
   previousMonster: {fileID: 0}
   monsters:
@@ -1218,7 +1218,10 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3441165521048374219, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
       insertIndex: 0
       addedObject: {fileID: 635416265175179087}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2633103177869250929, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8579919543062308953}
   m_SourcePrefab: {fileID: 100100000, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
 --- !u!114 &513100669973169270 stripped
 MonoBehaviour:
@@ -1253,6 +1256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38990bb0e3c76084ca39dc77add6fa49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cupcake
+  jumpHeight: 0
 --- !u!1001 &3077467824073588082
 PrefabInstance:
   m_ObjectHideFlags: 0
