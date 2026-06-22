@@ -19,7 +19,6 @@ public class SkylandersCamera : MonoBehaviour
     [SerializeField] private float defaultBlendSpeed = 3f;
 
     [Header("Setup")]
-    [SerializeField] private bool disableCompetingCinemachine = true;
     [SerializeField] private bool snapOnPlay = true;
 
     private Vector3 currentOffset;
@@ -32,13 +31,21 @@ public class SkylandersCamera : MonoBehaviour
 
     private readonly HashSet<CameraZone> activeZones = new HashSet<CameraZone>();
     private bool warnedMissingTarget;
+    private bool followEnabled = true;
+
+    public bool FollowEnabled => followEnabled;
+
+    public void SetFollowEnabled(bool enabled)
+    {
+        followEnabled = enabled;
+
+        if (followEnabled && EnsureReady())
+            ApplyCameraTransform();
+    }
 
     private void Awake()
     {
         ResolveReferences();
-        if (disableCompetingCinemachine)
-            DisableCompetingCinemachine();
-
         ResetToDefaults(immediate: true);
     }
 
@@ -53,6 +60,9 @@ public class SkylandersCamera : MonoBehaviour
     private void LateUpdate()
     {
         if (!EnsureReady())
+            return;
+
+        if (!followEnabled)
             return;
 
         BlendZoneSettings();
@@ -172,23 +182,6 @@ public class SkylandersCamera : MonoBehaviour
     private static bool Approximately(Vector3 a, Vector3 b)
     {
         return Vector3.Distance(a, b) < 0.001f;
-    }
-
-    private void DisableCompetingCinemachine()
-    {
-        MonoBehaviour[] behaviours = FindObjectsByType<MonoBehaviour>(
-            FindObjectsInactive.Include,
-            FindObjectsSortMode.None);
-
-        foreach (MonoBehaviour behaviour in behaviours)
-        {
-            if (behaviour == null)
-                continue;
-
-            string typeName = behaviour.GetType().FullName;
-            if (typeName != null && typeName.StartsWith("Unity.Cinemachine."))
-                behaviour.enabled = false;
-        }
     }
 
     public void EnterZone(CameraZone zone)

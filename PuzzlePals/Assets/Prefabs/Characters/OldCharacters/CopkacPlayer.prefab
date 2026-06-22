@@ -131,13 +131,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e153a7529e0f14ab6fbc5e5b8567c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  normalJumpHeight: 2
   currentMonster: {fileID: 6177865537418875381}
+  previousMonster: {fileID: 0}
+  monsters: []
   legsTransform: {fileID: 166055577873221482}
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   lookAtTransform: {fileID: 0}
+  isSprinting: 0
   interactCooldown: 0.2
 --- !u!65 &755913084019531150
 BoxCollider:
@@ -294,4 +298,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Cupcake
   spawnPoint: {fileID: 1869408412062518536}
   cupcake: {fileID: 4605795945092375489, guid: 75e86da477af6604984a5ef552e64ef4, type: 3}
-  cooldown: 3

@@ -18,7 +18,7 @@ public class Level : MonoBehaviour
     {
         if (levelData != null)
         {
-            name = levelData.scene.name;
+            name = levelData.sceneName;
         }
     }
 
@@ -65,6 +65,9 @@ public class Level : MonoBehaviour
                 levelData.stars = 1;
         }
 
-        LevelManager.Instance.OnLevelCompleted();
+        if (LevelManager.Instance != null)
+        { 
+            LevelManager.Instance.OnLevelCompleted();
+        }
     }
 }
