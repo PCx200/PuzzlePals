@@ -1,16 +1,16 @@
 using UnityEngine;
 
-public class HighJump : MonoBehaviour
+public class HighJump : SuperPower
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    private PlayerController player;
+    [SerializeField] private float jumpHeight;
+    private void Awake()
     {
-        
+        player = GetComponentInParent<PlayerController>();
     }
-
-    // Update is called once per frame
-    void Update()
+    public override void SuperPowerPressed()
     {
-        
+        player.SuperJump(jumpHeight);
+        Debug.Log("Jumped with height 8");
     }
 }
