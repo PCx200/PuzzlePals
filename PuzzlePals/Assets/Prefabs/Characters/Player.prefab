@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e153a7529e0f14ab6fbc5e5b8567c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  normalHeight: 2
   currentMonster: {fileID: 513100669973169270}
   previousMonster: {fileID: 0}
   monsters:
@@ -1162,7 +1163,7 @@ PrefabInstance:
     - target: {fileID: 924632654036312916, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
       propertyPath: 'superPowers.Array.data[1]'
       value: 
-      objectReference: {fileID: 4896476182683840092}
+      objectReference: {fileID: 8579919543062308953}
     - target: {fileID: 2633103177869250929, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
       propertyPath: m_Name
       value: Copcak
@@ -1224,7 +1225,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 924632654036312916, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
   m_PrefabInstance: {fileID: 849511446014043938}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3404927250994493011}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cff98ad2f3ca9314380315cda3a2d4de, type: 3}
@@ -1235,15 +1236,21 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3441165521048374219, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
   m_PrefabInstance: {fileID: 849511446014043938}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4896476182683840092 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5204425098434201982, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
+--- !u!1 &3404927250994493011 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2633103177869250929, guid: 3137eab881c1a9f44acd4f366fedd05e, type: 3}
   m_PrefabInstance: {fileID: 849511446014043938}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+--- !u!114 &8579919543062308953
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404927250994493011}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23fd714dca27d4a4998aae33cb011625, type: 3}
+  m_Script: {fileID: 11500000, guid: 38990bb0e3c76084ca39dc77add6fa49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cupcake
 --- !u!1001 &3077467824073588082
