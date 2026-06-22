@@ -43,6 +43,7 @@ GameObject:
   - component: {fileID: 2430822730665205750}
   - component: {fileID: 5549009723263664302}
   - component: {fileID: 4868228077723294988}
+  - component: {fileID: 5375888359647986173}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -149,6 +150,19 @@ MonoBehaviour:
   lookAtTransform: {fileID: 4044055079437780429}
   isSprinting: 0
   interactCooldown: 0.2
+--- !u!114 &5375888359647986173
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1147690658892476916}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf6631004c9ab14e93276dcc206fb5b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CheckPointHandler
+  currentCheckpoint: {x: 0, y: 0, z: 0}
 --- !u!1 &2557252174751234515
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +191,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2557252174751234515}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3240789, y: 1.2322684e-11, z: -4.2213477e-12, w: 0.9460301}
+  m_LocalRotation: {x: 0.32407898, y: 4.7427947e-11, z: -1.6247264e-11, w: 0.94603}
   m_LocalPosition: {x: 0, y: 4.3903437, z: -4.367725}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -917,12 +931,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e16bdf287b78f1f47a8d80abf5961556, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GoThroughWall
-  midaLayer:
-    serializedVersion: 2
-    m_Bits: 128
-  regularPlayerLayer:
-    serializedVersion: 2
-    m_Bits: 16384
 --- !u!1001 &8896758999715076364
 PrefabInstance:
   m_ObjectHideFlags: 0
