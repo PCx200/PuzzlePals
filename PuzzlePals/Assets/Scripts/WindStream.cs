@@ -20,7 +20,7 @@ public class WindStream : MonoBehaviour
             area = GetComponent<BoxCollider>();
         
         windDirection = transform.forward;
-        windSource = new Vector3(transform.position.x , transform.position.y, transform.position.z) - transform.forward * area.size.z / 2.0f;
+        windSource = transform.position - transform.forward * area.size.z / 2.0f;
         windParticles.transform.position = windSource;
         windParticles.transform.rotation = Quaternion.LookRotation(windDirection);
     }
@@ -63,6 +63,6 @@ public class WindStream : MonoBehaviour
         Gizmos.DrawWireSphere(windSource, 1f);
         //Gizmos.DrawWireCube(transform.position, area.size);
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(windSource, transform.position);
+        Gizmos.DrawLine(windSource, transform.position + transform.forward * area.size.z / 2.0f);
     }
 }
