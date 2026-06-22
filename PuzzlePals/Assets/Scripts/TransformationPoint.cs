@@ -10,9 +10,12 @@ public class TransformationPoint : MonoBehaviour, IInteractable
     [SerializeField] private TransformationType transformationType;
 
     [SerializeField] private MonsterCharacter characterToTransformInto;
+
+    //private MonsterCharacter previousMonster;
+
     [SerializeField] BoxCollider area;
 
-    [SerializeField] private List<MonsterCharacter> monsters = new List<MonsterCharacter>(); 
+    private bool transformed = false;
 
     public void Interact()
     {
@@ -25,30 +28,26 @@ public class TransformationPoint : MonoBehaviour, IInteractable
         }
 
         if (player.currentMonster.Name == characterToTransformInto.Name)
-        {
-            Debug.Log("Trying to transform to the same monster");
-            return;
+        {            
+            Debug.Log("Transformed into previous monster " + player.previousMonster.name);
+            Transform(player, player.previousMonster);
         }
-
-        Transform(player);
+        else Transform(player, characterToTransformInto);
     }
 
-    private void Transform(PlayerController player)
+    private void Transform(PlayerController player, MonsterCharacter transformInto)
     {
-        // why is 
-        var currentMonster = monsters.Find(monster => monster.Name == player.currentMonster.Name);
+        player.previousMonster = player.currentMonster;
+        
+        player.currentMonster.gameObject.SetActive(false);
 
-        var prefabToSpawn = monsters.Find(m => m.Name == characterToTransformInto.Name);
+        var newCurrentMonster = player.monsters.Find(m => m.Name == transformInto.Name);
 
-        var newMonster = Instantiate(prefabToSpawn, player.transform.position, Quaternion.identity);
+        newCurrentMonster.gameObject.SetActive(true);
 
-        Destroy(player.GetComponentInChildren<MonsterCharacter>().gameObject);
+        player.currentMonster = newCurrentMonster;
 
-        newMonster.transform.SetParent(player.transform);
-
-        characterToTransformInto = currentMonster;
-
-        player.currentMonster = newMonster;
+        Debug.Log("Transformed into " +  newCurrentMonster.Name);
         
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.transformation, transform.position);
     }
@@ -78,15 +77,25 @@ public class TransformationPoint : MonoBehaviour, IInteractable
             default:
                 break;
         }
-    }
+    }    
 
     private void OnTriggerEnter(Collider other)
     {
         var player = other.GetComponent<PlayerController>();
 
-        if (player != null && transformationType == TransformationType.Instant)
+        if (player == null || transformationType != TransformationType.Instant)
+            return;
+
+        if (!transformed)
         {
-            Transform(player);
+            player.previousMonster = player.currentMonster;
+            Transform(player, characterToTransformInto);
+            transformed = true;
+        }
+        else
+        {
+            Transform(player, player.previousMonster);
+            transformed = false;
         }
     }
 }

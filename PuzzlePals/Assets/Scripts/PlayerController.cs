@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,10 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     public MonsterCharacter currentMonster;
+
+    public MonsterCharacter previousMonster;
+
+    public List<MonsterCharacter> monsters = new List<MonsterCharacter>();
 
     private Vector3 movementDirection;
 
@@ -35,6 +40,8 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
+        FindCurrentMonster();
+        previousMonster = currentMonster;
     }
 
     void Start()
@@ -141,6 +148,15 @@ public class PlayerController : MonoBehaviour
         
         Move();
         Jump();
+    }
+    private void FindCurrentMonster()
+    {
+        for(int i = 0; i<monsters.Count; i++)
+        {
+            if (monsters[i].isActiveAndEnabled == true)
+                currentMonster = monsters[i];   
+        }
+        Debug.Log("Current monster is " +  currentMonster.Name);
     }
     private bool IsGrounded()
     {

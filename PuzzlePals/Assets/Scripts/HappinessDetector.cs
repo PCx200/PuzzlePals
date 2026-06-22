@@ -1,31 +1,30 @@
+using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
+using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class HappinessDetector : MonoBehaviour
 {
     [SerializeField] private LayerMask sadObjectLayer;
     [SerializeField] private Material happyMaterial;
     [SerializeField] private UnityEvent onAllHappy;
+    [SerializeField] private List<GameObject> sadObjects;
+    public int happyObjCount;
 
-    private void Update()
+    public static HappinessDetector Instance;
+    private void Awake()
     {
-        bool foundAny = false;
-        var renderers = FindObjectsByType<MeshRenderer>(FindObjectsSortMode.None);
-        foreach (var renderer in renderers)
-        {
-            if (((1 << renderer.gameObject.layer) & sadObjectLayer) == 0)
-                continue;
-
-            foundAny = true;
-
-            if (renderer.sharedMaterial != happyMaterial)
-                return;
-        }
-
-        if (!foundAny)
-            return;
-
-        onAllHappy.Invoke();
-        enabled = false;
+        Instance = this;
     }
+
+    public void CheckHappiness()
+    {
+        if(happyObjCount == sadObjects.Count)
+        {
+            onAllHappy.Invoke();
+            Debug.Log("All objects are happy");
+        }
+    }
+
 }
