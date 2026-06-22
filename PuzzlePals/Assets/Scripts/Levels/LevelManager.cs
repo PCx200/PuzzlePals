@@ -13,6 +13,8 @@ public class LevelManager : MonoBehaviour
 
     [SerializeField] private byte starsCollected;
 
+    public byte StarsCollected => starsCollected;
+
     private void Awake()
     {
         if (Instance)
@@ -48,6 +50,8 @@ public class LevelManager : MonoBehaviour
 
     private void RecalculateStars()
     {
+        starsCollected = 0;
+
         foreach (var level in levels)
         {
             starsCollected += level.stars;
