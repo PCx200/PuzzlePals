@@ -21,12 +21,14 @@ public class Level : MonoBehaviour
 
     private void OnEnable()
     {
-        endPoint.OnLevelCompleted += OnLevelCompleted;
+        if (endPoint != null) endPoint.OnLevelCompleted += OnLevelCompleted;
+        else Debug.LogWarning($"Level endpoint is null on {name}");
     }
 
     private void OnDisable()
     {
-        endPoint.OnLevelCompleted -= OnLevelCompleted;
+        if (endPoint != null) endPoint.OnLevelCompleted -= OnLevelCompleted;
+        else Debug.LogWarning($"Level endpoint is null on {name}");
     }
 
     void Update()
