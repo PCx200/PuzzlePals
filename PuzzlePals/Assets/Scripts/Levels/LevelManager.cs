@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour
         Debug.Log("bazinga");
 
         RecalculateStars();
-        StartCoroutine(ReturnToMenu());
+        //StartCoroutine(ReturnToMenu());
     }
 
     private IEnumerator ReturnToMenu()
