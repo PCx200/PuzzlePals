@@ -218,7 +218,7 @@ public class PlayerController : MonoBehaviour
         {
             PLAYBACK_STATE playbackState;
             homeFootsteps.getPlaybackState(out playbackState);
-            if (playbackState.Equals(PLAYBACK_STATE.PLAYING))
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED) || playbackState.Equals(PLAYBACK_STATE.STOPPING))
             {
                 homeFootsteps.start();
                 Debug.Log("Footsteps are being played");
