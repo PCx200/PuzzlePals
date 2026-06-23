@@ -7,6 +7,7 @@ namespace EventBus
     {
         [SerializeField] List<GameObject> invisibleObjs = new();
         [SerializeField] bool visible;
+        [SerializeField] private ParticleSystem dreamParticles;
 
         private void Awake()
         {
@@ -17,6 +18,7 @@ namespace EventBus
 
         public override void SuperPowerPressed()
         {
+            dreamParticles.Play();
             if (!visible)
             {
                 foreach (var obj in invisibleObjs)
