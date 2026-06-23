@@ -42,8 +42,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        FindCurrentMonster();
-        previousMonster = currentMonster;
     }
 
     void Start()
@@ -56,6 +54,8 @@ public class PlayerController : MonoBehaviour
         inputManager.SuperPower1Action.canceled += OnSuperPower1Released;
         inputManager.SuperPower2Action.canceled += OnSuperPower2Released;
 
+        FindCurrentMonster();
+        previousMonster = currentMonster;
         Debug.Log(inputManager.SuperPower2Action.enabled);
     }
 
@@ -161,10 +161,20 @@ public class PlayerController : MonoBehaviour
     }
     private void FindCurrentMonster()
     {
-        for(int i = 0; i<monsters.Count; i++)
+        foreach (MonsterCharacter monster in monsters)
         {
-            if (monsters[i].isActiveAndEnabled == true)
-                currentMonster = monsters[i];   
+            if (monster.isActiveAndEnabled)
+            {
+                currentMonster = monster;
+                break;
+            }
+        }
+        foreach (MonsterCharacter monster in monsters)
+        {
+            if (monster != currentMonster &&  monster.enabled)
+            {
+                monster.enabled = false;
+            }
         }
         Debug.Log("Current monster is " +  currentMonster.Name);
     }
