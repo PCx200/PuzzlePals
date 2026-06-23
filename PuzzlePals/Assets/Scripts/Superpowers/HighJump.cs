@@ -29,6 +29,7 @@ public class HighJump : SuperPower
             //resets the velocity so if jumping on slopes it should be with the same force
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
             rb.AddForce(jumpForce, ForceMode.Impulse);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.copkacJump, transform.position);
             highJump.Play();
         }
     }

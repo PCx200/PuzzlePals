@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using FMOD.Studio;
+using UnityEngine.Windows;
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -62,7 +63,7 @@ public class PlayerController : MonoBehaviour
         FindCurrentMonster();
         Debug.Log(inputManager.SuperPower2Action.enabled);
 
-        homeFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.homeFootsteps);
+        //homeFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.homeFootsteps);
         //midaFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.midaFootsteps);
         //julliaFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.julliaFootsteps);
         //copkacFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.copkacFootsteps);
@@ -129,7 +130,6 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         Vector2 input = inputManager.MoveAction.ReadValue<Vector2>();
-
         //Yaw only
         Vector3 camForward = lookAtTransform.forward;
         camForward.y = 0;
@@ -210,19 +210,19 @@ public class PlayerController : MonoBehaviour
     // Footsteps sounds (currently every monster has Home's footsteps)
     private void UpdateSound()
     {
-        if ((rb.linearVelocity.x != 0 || rb.linearVelocity.z != 0) && isGrounded)
+        if (inputManager.MoveAction.IsPressed())
         {
             PLAYBACK_STATE playbackState;
-            homeFootsteps.getPlaybackState(out playbackState);
+            currentMonster.footsteps.getPlaybackState(out playbackState);
             if (playbackState.Equals(PLAYBACK_STATE.STOPPED) || playbackState.Equals(PLAYBACK_STATE.STOPPING))
             {
-                homeFootsteps.start();
+                currentMonster.footsteps.start();
                 Debug.Log("Footsteps are being played");
             }
         }
         else
         {
-            homeFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+            currentMonster.footsteps.stop(STOP_MODE.ALLOWFADEOUT);
         }    
     }
 }
