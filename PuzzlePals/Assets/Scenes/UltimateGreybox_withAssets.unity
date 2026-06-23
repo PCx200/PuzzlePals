@@ -3915,7 +3915,7 @@ PrefabInstance:
     - target: {fileID: 3651842988542232994, guid: eccf0be4457e72f4a948aa93368ee221, type: 3}
       propertyPath: characterToTransformInto
       value: 
-      objectReference: {fileID: 18559360}
+      objectReference: {fileID: 1159949043}
     - target: {fileID: 6150196380880504746, guid: eccf0be4457e72f4a948aa93368ee221, type: 3}
       propertyPath: m_Name
       value: TransformationPoint (1)
@@ -5104,6 +5104,17 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_RenderingLayers: 1
   m_ShadowRenderingLayers: 1
+--- !u!114 &1159949043 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4692009313786472003, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
+  m_PrefabInstance: {fileID: 8357316582781852323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff98ad2f3ca9314380315cda3a2d4de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
 --- !u!1 &1179337473
 GameObject:
   m_ObjectHideFlags: 0
@@ -8055,6 +8066,18 @@ PrefabInstance:
       value: event:/Monster SFX/Home/Footsteps/HomeFootsteps
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <midaFootsteps>k__BackingField.Path
+      value: event:/Monster SFX/Mida/Footsteps/MidaFootsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <copkacFootsteps>k__BackingField.Path
+      value: event:/Monster SFX/Copkac/Footsteps/CopkacFootsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <julliaFootsteps>k__BackingField.Path
+      value: event:/Monster SFX/Jullia/Footsteps/JulliaFootsteps
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <homeFootsteps>k__BackingField.Guid.Data1
       value: -538017976
       objectReference: {fileID: 0}
@@ -8069,6 +8092,54 @@ PrefabInstance:
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <homeFootsteps>k__BackingField.Guid.Data4
       value: -1701570629
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <midaFootsteps>k__BackingField.Guid.Data1
+      value: 746065350
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <midaFootsteps>k__BackingField.Guid.Data2
+      value: 1291439117
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <midaFootsteps>k__BackingField.Guid.Data3
+      value: -994639
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <midaFootsteps>k__BackingField.Guid.Data4
+      value: -1959056651
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <copkacFootsteps>k__BackingField.Guid.Data1
+      value: 369073613
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <copkacFootsteps>k__BackingField.Guid.Data2
+      value: 1140901924
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <copkacFootsteps>k__BackingField.Guid.Data3
+      value: -1964253564
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <copkacFootsteps>k__BackingField.Guid.Data4
+      value: 812405060
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <julliaFootsteps>k__BackingField.Guid.Data1
+      value: -589376743
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <julliaFootsteps>k__BackingField.Guid.Data2
+      value: 1183960518
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <julliaFootsteps>k__BackingField.Guid.Data3
+      value: 1324107192
+      objectReference: {fileID: 0}
+    - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+      propertyPath: <julliaFootsteps>k__BackingField.Guid.Data4
+      value: -222358472
       objectReference: {fileID: 0}
     - target: {fileID: 4793776511802377532, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: m_LocalPosition.x
