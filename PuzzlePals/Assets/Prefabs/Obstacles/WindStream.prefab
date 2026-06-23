@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1888641925519023869}
   - component: {fileID: 140307413373262021}
   - component: {fileID: 7572976416996026693}
+  - component: {fileID: 5579063669168244380}
   m_Layer: 0
   m_Name: WindStream
   m_TagString: Untagged
@@ -70,6 +71,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 5, y: 5, z: 20}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &5579063669168244380
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 23906837884957067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 314972028
+      Data2: 1192564936
+      Data3: -1729379963
+      Data4: -933016908
+    Path: event:/WindStream
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 11.249287
 --- !u!1 &359608753790994465
 GameObject:
   m_ObjectHideFlags: 0
