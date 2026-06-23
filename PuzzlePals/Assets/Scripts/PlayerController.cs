@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMOD.Studio;
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -29,7 +30,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool isSprinting;
     [HideInInspector] private bool isGrounded;
 
-    //Player Inputs
+    // Player Inputs
     private InputManager inputManager;
 
     // should probably not be in player controller
@@ -37,6 +38,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float interactCooldown = 0.2f;
     private float lastInteractTime = -999f;
 
+    // Audio
+    private EventInstance homeFootsteps;
+    private EventInstance midaFootsteps;
+    private EventInstance julliaFootsteps;
+    private EventInstance copkacFootsteps;
 
     private void Awake()
     {
@@ -55,6 +61,11 @@ public class PlayerController : MonoBehaviour
 
         FindCurrentMonster();
         Debug.Log(inputManager.SuperPower2Action.enabled);
+
+        homeFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.homeFootsteps);
+        //midaFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.midaFootsteps);
+        //julliaFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.julliaFootsteps);
+        //copkacFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.copkacFootsteps);
     }
 
     private void OnDisable()
@@ -151,7 +162,8 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
-        Move();        
+        Move();
+        UpdateSound();
     }
     public void SuperJump(float jumpHeight)
     {
@@ -197,5 +209,24 @@ public class PlayerController : MonoBehaviour
     {
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(legsTransform.position, groundCheckRadius);
+    }
+
+    // Footsteps sounds (currently every monster has Home's footsteps)
+    private void UpdateSound()
+    {
+        if ((rb.linearVelocity.x != 0 || rb.linearVelocity.z != 0) && isGrounded)
+        {
+            PLAYBACK_STATE playbackState;
+            homeFootsteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.PLAYING))
+            {
+                homeFootsteps.start();
+                Debug.Log("Footsteps are being played");
+            }
+        }
+        else
+        {
+            homeFootsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        }    
     }
 }
