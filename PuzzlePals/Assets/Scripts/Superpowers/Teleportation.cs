@@ -27,7 +27,7 @@ public class Teleportation : SuperPower
         rb.isKinematic = false;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Bed"))
         {
