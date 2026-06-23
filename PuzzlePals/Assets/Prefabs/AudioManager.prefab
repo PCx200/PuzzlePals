@@ -51,70 +51,91 @@ MonoBehaviour:
       Data2: 1129721969
       Data3: 636550794
       Data4: -953864501
-    Path: event:/Transformation
+    Path: event:/Interactables/Transformation
   <buttonClick>k__BackingField:
     Guid:
       Data1: -505005938
       Data2: 1077815865
       Data3: 703029695
       Data4: -1285594335
-    Path: event:/ButtonClick
+    Path: event:/Interactables/ButtonClick
   <doorOpen>k__BackingField:
     Guid:
       Data1: -1505577124
       Data2: 1216422622
       Data3: 548061113
       Data4: -1062682253
-    Path: event:/DoorOpen
-  <windStream>k__BackingField:
+    Path: event:/Obstacles/DoorOpen
+  <returnSpawnpoint>k__BackingField:
     Guid:
-      Data1: 314972028
-      Data2: 1192564936
-      Data3: -1729379963
-      Data4: -933016908
-    Path: event:/WindStream
+      Data1: -31721316
+      Data2: 1295424980
+      Data3: 1638764970
+      Data4: 705292042
+    Path: event:/Interactables/ReturnSpawnpoint
   <bed>k__BackingField:
     Guid:
       Data1: -306819486
       Data2: 1086577271
       Data3: 911478709
       Data4: 1915482239
-    Path: event:/HomeBed
+    Path: event:/Monster SFX/Home/HomeBed
   <dreamState>k__BackingField:
     Guid:
       Data1: 1373060028
       Data2: 1227842046
       Data3: 204822432
       Data4: 1580463062
-    Path: event:/DreamState
+    Path: event:/Monster SFX/Home/DreamState
   <monsterEat>k__BackingField:
     Guid:
       Data1: -1976483057
       Data2: 1187536195
       Data3: -1560903277
       Data4: 2053786602
-    Path: event:/MonsterEat
+    Path: event:/Interactables/MonsterEat
   <throwBall>k__BackingField:
     Guid:
       Data1: 1785444012
       Data2: 1098014408
       Data3: -1982064208
       Data4: 320875461
-    Path: event:/ThrowBall
+    Path: event:/Monster SFX/Mida/ThrowBall
+  <ghostMode>k__BackingField:
+    Guid:
+      Data1: 859262132
+      Data2: 1232145189
+      Data3: 441218718
+      Data4: 1379191541
+    Path: event:/Monster SFX/Mida/GhostMode
   <sprint>k__BackingField:
     Guid:
       Data1: -552390005
       Data2: 1158917389
       Data3: -2049731909
       Data4: 858325875
-    Path: event:/Sprint
+    Path: event:/Monster SFX/Jullia/Sprint
   <happiness>k__BackingField:
     Guid:
       Data1: 1600311796
       Data2: 1201568141
       Data3: 878790064
       Data4: -742887254
-    Path: event:/Happiness
+    Path: event:/Monster SFX/Jullia/Happiness
+  <copkacJump>k__BackingField:
+    Guid:
+      Data1: -2144298582
+      Data2: 1082160583
+      Data3: 695915924
+      Data4: -809320209
+    Path: event:/Monster SFX/Copkac/Boing
+  <createCupcake>k__BackingField:
+    Guid:
+      Data1: 1379496817
+      Data2: 1244441371
+      Data3: -1943554130
+      Data4: 1281225598
+    Path: event:/Monster SFX/Copkac/CreateCupcake
   <mainMenuMusic>k__BackingField:
     Guid:
       Data1: 0

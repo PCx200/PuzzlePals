@@ -10,6 +10,7 @@ public class Cupcake : SuperPower
         if (spawnPoint.childCount == 0)
         {
             Instantiate(cupcake, spawnPoint.transform.position, Quaternion.identity, spawnPoint);
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.createCupcake, transform.position);
         }
         else Debug.Log("There already exists a cupcake");
     }

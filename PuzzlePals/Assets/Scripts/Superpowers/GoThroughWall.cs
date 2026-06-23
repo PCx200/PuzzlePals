@@ -18,19 +18,16 @@ public class GoThroughWall : SuperPower
             player.gameObject.layer = LayerMask.NameToLayer("MIDA");
             active = true;
             gameObject.GetComponentInChildren<MeshRenderer>().material = transparentMaterial;
-            if (IceWalls.instance != null)
-                IceWalls.instance.TurnTransparent();
-            else Debug.LogWarning($"IceWalls instance is null on {gameObject.name}");
+            IceWalls.instance.TurnTransparent();
             Debug.Log("Set the layer of the player to MIDA");
         }else
         {
             player.gameObject.layer = LayerMask.NameToLayer("Player");
             active= false;
             gameObject.GetComponentInChildren<MeshRenderer>().material = opaqueMaterial;
-            if (IceWalls.instance != null)
-                IceWalls.instance.TurnOpaque();
-            else Debug.LogWarning($"IceWalls instance is null on {gameObject.name}");
-            Debug.Log("Set the layer of the player to PLayer");
+            IceWalls.instance.TurnOpaque();
+            Debug.Log("Set the layer of the player to Player");
         }
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.ghostMode, transform.position);
     }
 }

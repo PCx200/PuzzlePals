@@ -11,6 +11,7 @@ public class HighJump : SuperPower
     }
     public override void SuperPowerPressed()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.copkacJump, transform.position);
         player.SuperJump(jumpHeight);
         highJump.Play();
         Debug.Log("Jumped with height 8");
