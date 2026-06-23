@@ -7,7 +7,7 @@ public class CheckPointHandler : MonoBehaviour
     private void TeleportToCheckpoint()
     {
             transform.position = currentCheckpoint;
-            // mayble play some sounds and animation
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.returnSpawnpoint, transform.position);
     }
 
     private void Start()

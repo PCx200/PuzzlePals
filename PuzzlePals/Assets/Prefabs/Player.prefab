@@ -5384,14 +5384,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4717093738206951865}
+  - {fileID: 4044055079437780429}
   - {fileID: 6547518055433254072}
   - {fileID: 4022044463496941866}
   - {fileID: 2622773239041010555}
   - {fileID: 2597288253935758569}
   - {fileID: 6798666020944288858}
   - {fileID: 413825528328064395}
-  - {fileID: 4044055079437780429}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2430822730665205750
@@ -11023,7 +11022,7 @@ GameObject:
   - component: {fileID: 4650736844332871630}
   - component: {fileID: 4999161592272224435}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: CinemachineBrain
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15190,7 +15189,7 @@ GameObject:
   - component: {fileID: 4195344554163704751}
   - component: {fileID: 8383919901049182168}
   m_Layer: 0
-  m_Name: FreeLook Camera (1)
+  m_Name: CinemachineCamera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -16285,7 +16284,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2397074937345105965, guid: 1fe35b020c5524241b5f6d7f416dd13b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -31.7
+      value: -43
       objectReference: {fileID: 0}
     - target: {fileID: 2397074937345105965, guid: 1fe35b020c5524241b5f6d7f416dd13b, type: 3}
       propertyPath: m_LocalRotation.w
