@@ -166,14 +166,6 @@ public class PlayerController : MonoBehaviour
             if (monster.isActiveAndEnabled)
             {
                 currentMonster = monster;
-                break;
-            }
-        }
-        foreach (MonsterCharacter monster in monsters)
-        {
-            if (monster != currentMonster &&  monster.enabled)
-            {
-                monster.enabled = false;
             }
         }
         Debug.Log("Current monster is " +  currentMonster.Name);
