@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
     private void OnJumpPerformed(InputAction.CallbackContext ctx)
     {     
-        Jump(normalJumpHeight);
+        Jump();
         Debug.Log("Jump pressed");
     }
 
@@ -99,7 +99,7 @@ public class PlayerController : MonoBehaviour
     
     #region Movement
 
-    private void Jump(float jumpHeight)
+    private void Jump()
     {
         Debug.Log("Jump() called");
         
@@ -107,7 +107,7 @@ public class PlayerController : MonoBehaviour
 
         Debug.Log($"Grounded: {isGrounded}");
 
-        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * jumpHeight) * Vector3.up;
+        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * normalJumpHeight) * Vector3.up;
         if (isGrounded)
         {
             //resets the velocity so if jumping on slopes it should be with the same force
@@ -154,10 +154,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();        
-    }
-    public void SuperJump(float jumpHeight)
-    {
-        Jump(jumpHeight);
     }
     private void FindCurrentMonster()
     {
