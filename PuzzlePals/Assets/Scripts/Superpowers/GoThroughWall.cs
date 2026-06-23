@@ -26,7 +26,8 @@ public class GoThroughWall : SuperPower
             active= false;
             gameObject.GetComponentInChildren<MeshRenderer>().material = opaqueMaterial;
             IceWalls.instance.TurnOpaque();
-            Debug.Log("Set the layer of the player to PLayer");
+            Debug.Log("Set the layer of the player to Player");
         }
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.ghostMode, transform.position);
     }
 }
