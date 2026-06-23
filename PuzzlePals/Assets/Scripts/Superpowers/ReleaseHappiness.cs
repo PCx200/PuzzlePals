@@ -6,10 +6,15 @@ public class ReleaseHappiness : SuperPower
     [SerializeField] private float radius;
     [SerializeField] private Material happyMaterial;
     [SerializeField] private LayerMask sadObj;
+    [Header ("ParticleSystem Effects")] 
+    [SerializeField] private ParticleSystem circle;
+    [SerializeField] private ParticleSystem particles;
     
     public override void SuperPowerPressed()
     {
         Debug.Log($"happiness released");
+        circle.Play();
+        particles.Play();
         var hitObj = Physics.SphereCastAll(transform.position, radius, transform.forward, 0, sadObj);
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.happiness, transform.position);
 

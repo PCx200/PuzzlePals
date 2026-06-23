@@ -6,6 +6,7 @@ public class Sprint : SuperPower
 {
     [SerializeField] private float sprintMultiplier;
     [SerializeField] private PlayerController playerController;
+    [SerializeField] private GameObject particleEffects;
 
     private void Start()
     {
@@ -15,10 +16,12 @@ public class Sprint : SuperPower
     public override void SuperPowerPressed()
     {
         playerController.isSprinting = true;
+        particleEffects.SetActive(true);
     }
 
     public override void SuperPowerReleased()
     {
         playerController.isSprinting = false;
+        particleEffects.SetActive(false);
     }
 }
