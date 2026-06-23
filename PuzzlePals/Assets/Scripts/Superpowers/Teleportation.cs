@@ -5,11 +5,12 @@ public class Teleportation : SuperPower
 {
     [SerializeField] private Transform player;
     [SerializeField] private BedTeleport currentBed;
+    [SerializeField] private ParticleSystem bedParticles;
 
     public override void SuperPowerPressed()
     {
         if (currentBed == null) return;
-
+        bedParticles.Play();
         player.position = currentBed.LinkedBed.transform.position + Vector3.up;
         var rb = player.GetComponent<Rigidbody>();
         rb.isKinematic = true;
