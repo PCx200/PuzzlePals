@@ -10,9 +10,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private float normalJumpHeight;
 
-    // maybe put monster transformation data in a separate script (better architecture)
+    // maybe put monster transformation data in a separate script (better architecture) 
     public MonsterCharacter currentMonster;
-    public MonsterCharacter previousMonster;
 
     public List<MonsterCharacter> monsters = new List<MonsterCharacter>();
 
@@ -55,7 +54,6 @@ public class PlayerController : MonoBehaviour
         inputManager.SuperPower2Action.canceled += OnSuperPower2Released;
 
         FindCurrentMonster();
-        previousMonster = currentMonster;
         Debug.Log(inputManager.SuperPower2Action.enabled);
     }
 
