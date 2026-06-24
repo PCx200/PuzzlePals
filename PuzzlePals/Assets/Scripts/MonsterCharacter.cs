@@ -9,6 +9,8 @@ public class MonsterCharacter : MonoBehaviour
     [SerializeField]  private MonsterName monsterName;
     public MonsterName Name => monsterName;
 
+    [SerializeField] private ParticleSystem footStepsPartEff;
+
     [SerializeField] private MonsterStatsSO stats;
 
     public MonsterStatsSO Stats => stats;
@@ -60,12 +62,14 @@ public class MonsterCharacter : MonoBehaviour
             if (playbackState.Equals(PLAYBACK_STATE.STOPPED) || playbackState.Equals(PLAYBACK_STATE.STOPPING))
             {
                 footsteps.start();
+                if(footStepsPartEff !=null) footStepsPartEff.Play();
                 Debug.Log("Footsteps are being played");
             }
         }
         else
         {
             footsteps.stop(STOP_MODE.ALLOWFADEOUT);
+            if (footStepsPartEff != null) footStepsPartEff.Stop();
         }
     }
 
