@@ -68,8 +68,41 @@ PrefabInstance:
       propertyPath: m_Name
       value: trampoline
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0f49678603f51e04e90be7954e9e5794, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f49678603f51e04e90be7954e9e5794, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3464769048376162974}
   m_SourcePrefab: {fileID: 100100000, guid: 0f49678603f51e04e90be7954e9e5794, type: 3}
+--- !u!1 &4847048650124663891 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0f49678603f51e04e90be7954e9e5794, type: 3}
+  m_PrefabInstance: {fileID: 5730061696143892738}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &3464769048376162974
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4847048650124663891}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.033827513, y: 0.0018772117, z: 0.033827517}
+  m_Center: {x: 0, y: 0, z: 0}
