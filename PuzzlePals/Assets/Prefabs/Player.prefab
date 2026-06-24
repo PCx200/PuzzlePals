@@ -6198,8 +6198,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2557252174751234515}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
-  m_LocalPosition: {x: -18.8, y: 6.31, z: -1.1500001}
+  m_LocalRotation: {x: 0, y: 0.9486833, z: -0.31622782, w: 0}
+  m_LocalPosition: {x: -21.8, y: 6.31, z: 1.8499994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6790,7 +6790,7 @@ Animator:
   m_GameObject: {fileID: 3399697589497557441}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6be383219cd78814faef1fefccdb8445, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -6867,9 +6867,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::JuliaAnimator
   animator: {fileID: 6642400806071187153}
-  superPowerIndexName:
-  - 0
-  - 1
 --- !u!1 &3404927250994493011
 GameObject:
   m_ObjectHideFlags: 0
@@ -6924,7 +6921,7 @@ Animator:
   m_GameObject: {fileID: 3404927250994493011}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f6093bf469d9e824da71d8fe069b9149, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -7000,9 +6997,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CopkacAnimator
   animator: {fileID: 4397927216558112517}
-  superPowerIndexName:
-  - 0
-  - 1
 --- !u!1 &3555985844511742800
 GameObject:
   m_ObjectHideFlags: 0
@@ -8726,7 +8720,7 @@ Animator:
   m_GameObject: {fileID: 6130074284230919904}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77723288c4f26a248890fae4550c50e7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -8768,7 +8762,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1c383412c51ca42acb02c5674cd6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventBus.DreamState
-  invisibleObjs: []
   visible: 0
   dreamParticles: {fileID: 8363509140781040304}
 --- !u!114 &8882425705421582483
@@ -8820,9 +8813,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HomeAnimator
   animator: {fileID: 4184852546746400277}
-  superPowerIndexName:
-  - 0
-  - 1
 --- !u!1 &6204170986114267160
 GameObject:
   m_ObjectHideFlags: 0
@@ -8988,8 +8978,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6330782839768168682}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
-  m_LocalPosition: {x: -18.8, y: 6.31, z: -1.1500001}
+  m_LocalRotation: {x: 0, y: 0.9486833, z: -0.31622782, w: 0}
+  m_LocalPosition: {x: -21.8, y: 6.31, z: 1.8499994}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9185,7 +9175,7 @@ Animator:
   m_GameObject: {fileID: 6345339380845589694}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 73036dacd8778f54ebe71cfec0010f73, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -9260,9 +9250,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MidaAnimator
   animator: {fileID: 8635714684294196969}
-  superPowerIndexName:
-  - 0
-  - 1
 --- !u!1 &6450031688836375564
 GameObject:
   m_ObjectHideFlags: 0
@@ -10534,8 +10521,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8017216250077884625}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
-  m_LocalPosition: {x: 3, y: 3, z: 0}
+  m_LocalRotation: {x: 0, y: 0.9486833, z: -0.31622782, w: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -5,15 +5,13 @@ public class MidaAnimator : MonoBehaviour, IMonsterAnimator
 {
     [SerializeField] private Animator animator;
 
-    [SerializeField] private List<string> superPowerIndexName;
-
     public void PlayIdle() => animator.Play("Idle");
 
     public void PlayJump() => animator.Play("Jump");
 
     public void PlayRun() { }
 
-    public void PlaySuperPower(int superPowerIndex) => animator.Play(superPowerIndexName[superPowerIndex]);
+    public void PlaySuperPower(string superPowerName) => animator.Play(superPowerName);
 
     public void PlayWalk() => animator.Play("Walk");
 }

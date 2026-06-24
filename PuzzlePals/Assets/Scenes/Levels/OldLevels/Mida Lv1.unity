@@ -955,6 +955,10 @@ PrefabInstance:
       propertyPath: m_Center.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8070014294280238928, guid: 4784003d935fb3443810ce991417a53f, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1045,6 +1049,54 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 960fe250a9176f84d80911b78f08113f, type: 3}
+--- !u!1 &332409696
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 332409698}
+  - component: {fileID: 332409697}
+  m_Layer: 0
+  m_Name: IceWallManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &332409697
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332409696}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3978041a7d020f240b3f1df80ce13249, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::IceWalls
+  transparentMaterial: {fileID: 2100000, guid: daa1569cf0583624a8f159d54b1ffdab, type: 2}
+  opaqueMaterial: {fileID: 2100000, guid: 52a1530742f12244487f4c1fd4a9086f, type: 2}
+  iceCreamwalls:
+  - {fileID: 1307836374}
+--- !u!4 &332409698
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 332409696}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -19.23217, y: 4.81255, z: 3.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &362800878
 GameObject:
   m_ObjectHideFlags: 0
@@ -1576,7 +1628,7 @@ GameObject:
   - component: {fileID: 760966037}
   - component: {fileID: 760966036}
   m_Layer: 0
-  m_Name: Mida Lv1
+  m_Name: Mida
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2307,6 +2359,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -40
       objectReference: {fileID: 0}
+    - target: {fileID: 8635714684294196969, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 73036dacd8778f54ebe71cfec0010f73, type: 2}
     - target: {fileID: 8735073042165751712, guid: e7513887582a42649be1371b2a71bd3b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -21.8
@@ -3009,6 +3065,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 960fe250a9176f84d80911b78f08113f, type: 3}
+--- !u!1 &1307836374 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 701648338604725071, guid: 5412505bd843d314685af59522977582, type: 3}
+  m_PrefabInstance: {fileID: 86455067}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1310008191
 GameObject:
   m_ObjectHideFlags: 0
@@ -5363,6 +5424,7 @@ SceneRoots:
   - {fileID: 1858633619}
   - {fileID: 2367449017652327112}
   - {fileID: 525178518}
+  - {fileID: 332409698}
   - {fileID: 1093533701}
   - {fileID: 1016601470}
   - {fileID: 1940292855}
