@@ -5465,7 +5465,7 @@ Transform:
   m_GameObject: {fileID: 2557252174751234515}
   serializedVersion: 2
   m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
-  m_LocalPosition: {x: -3, y: 13.25, z: -31.650002}
+  m_LocalPosition: {x: -17.74, y: 6.81009, z: -0.74000025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5921,7 +5921,7 @@ Transform:
   m_GameObject: {fileID: 3112697893661709731}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.0000009536742, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 100, z: 40.2}
+  m_LocalPosition: {x: -0, y: 100, z: 62.9}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5940,6 +5940,7 @@ GameObject:
   - component: {fileID: 2682934340545177571}
   - component: {fileID: 8067088281732798133}
   - component: {fileID: 8372687117610547336}
+  - component: {fileID: 2854406313831873814}
   m_Layer: 0
   m_Name: Julia
   m_TagString: Player
@@ -6044,6 +6045,19 @@ MonoBehaviour:
     m_Bits: 1024
   circle: {fileID: 8552605428524422367}
   particles: {fileID: 7078476042549377756}
+--- !u!114 &2854406313831873814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3399697589497557441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c646ee24e50d4e64a96275c9b7c15a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuliaAnimator
+  animator: {fileID: 8074619432052388872}
 --- !u!1 &3404927250994493011
 GameObject:
   m_ObjectHideFlags: 0
@@ -6057,6 +6071,7 @@ GameObject:
   - component: {fileID: 513100669973169270}
   - component: {fileID: 4896476182683840092}
   - component: {fileID: 2874332951976279116}
+  - component: {fileID: 7020857154865390457}
   m_Layer: 0
   m_Name: Copcak
   m_TagString: Player
@@ -6160,6 +6175,19 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &7020857154865390457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404927250994493011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cac89dea36182d4681dce521995b74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CopkacAnimator
+  animator: {fileID: 6701526612269908021}
 --- !u!1 &3555985844511742800
 GameObject:
   m_ObjectHideFlags: 0
@@ -7048,6 +7076,7 @@ GameObject:
   - component: {fileID: 6433222163176872929}
   - component: {fileID: 8882425705421582483}
   - component: {fileID: 3687517210615897284}
+  - component: {fileID: 4041511162141866464}
   m_Layer: 0
   m_Name: Home
   m_TagString: Player
@@ -7165,6 +7194,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 150
   m_Center: {x: 0, y: 75, z: 0}
+--- !u!114 &4041511162141866464
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6130074284230919904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11707a3538160044c9ae52899eaef017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HomeAnimator
+  animator: {fileID: 2294820336820171703}
 --- !u!1 &6330782839768168682
 GameObject:
   m_ObjectHideFlags: 0
@@ -7194,7 +7236,7 @@ Transform:
   m_GameObject: {fileID: 6330782839768168682}
   serializedVersion: 2
   m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
-  m_LocalPosition: {x: -3, y: 13.25, z: -31.650002}
+  m_LocalPosition: {x: -17.74, y: 6.81009, z: -0.74000025}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7354,6 +7396,7 @@ GameObject:
   - component: {fileID: 4692009313786472003}
   - component: {fileID: 420779515770581471}
   - component: {fileID: 7628075987158101804}
+  - component: {fileID: 3809781034408419848}
   m_Layer: 0
   m_Name: Mida
   m_TagString: Player
@@ -7451,6 +7494,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GoThroughWall
   transparentMaterial: {fileID: 2100000, guid: daa1569cf0583624a8f159d54b1ffdab, type: 2}
   opaqueMaterial: {fileID: 2100000, guid: 52a1530742f12244487f4c1fd4a9086f, type: 2}
+--- !u!114 &3809781034408419848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345339380845589694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2481b2e419b7344ba181f6bcb33a716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MidaAnimator
+  animator: {fileID: 5660159137609068595}
 --- !u!1 &6450031688836375564
 GameObject:
   m_ObjectHideFlags: 0
