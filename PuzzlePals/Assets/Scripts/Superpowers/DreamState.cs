@@ -5,7 +5,7 @@ namespace EventBus
 {
     public class DreamState : SuperPower
     {
-        [SerializeField] List<GameObject> invisibleObjs = new();
+        private List<GameObject> invisibleObjs = new();
         [SerializeField] bool visible;
         [SerializeField] private ParticleSystem dreamParticles;
 

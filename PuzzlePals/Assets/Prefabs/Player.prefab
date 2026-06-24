@@ -6200,8 +6200,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2557252174751234515}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.22360681, y: -0.67082036, z: 0.22360681, w: -0.6708204}
-  m_LocalPosition: {x: -3, y: 3, z: 0}
+  m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
+  m_LocalPosition: {x: -18.8, y: 6.31, z: -1.1500001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6747,9 +6747,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2622773239041010555}
+  - component: {fileID: 6642400806071187153}
   - component: {fileID: 2682934340545177571}
   - component: {fileID: 8067088281732798133}
   - component: {fileID: 8372687117610547336}
+  - component: {fileID: 8805024840487140791}
   m_Layer: 0
   m_Name: Julia
   m_TagString: Player
@@ -6780,6 +6782,28 @@ Transform:
   - {fileID: 8404942872615037413}
   m_Father: {fileID: 8735073042165751712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &6642400806071187153
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3399697589497557441}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &2682934340545177571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6832,6 +6856,22 @@ MonoBehaviour:
     m_Bits: 1024
   circle: {fileID: 8552605428524422367}
   particles: {fileID: 7078476042549377756}
+--- !u!114 &8805024840487140791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3399697589497557441}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c646ee24e50d4e64a96275c9b7c15a88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::JuliaAnimator
+  animator: {fileID: 6642400806071187153}
+  superPowerIndexName:
+  - 0
+  - 1
 --- !u!1 &3404927250994493011
 GameObject:
   m_ObjectHideFlags: 0
@@ -6841,9 +6881,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2597288253935758569}
+  - component: {fileID: 4397927216558112517}
   - component: {fileID: 513100669973169270}
   - component: {fileID: 4896476182683840092}
   - component: {fileID: 2874332951976279116}
+  - component: {fileID: 2118958890491384003}
   m_Layer: 0
   m_Name: Copcak
   m_TagString: Player
@@ -6874,6 +6916,28 @@ Transform:
   - {fileID: 96939781954651348}
   m_Father: {fileID: 8735073042165751712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4397927216558112517
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404927250994493011}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &513100669973169270
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6925,6 +6989,22 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+--- !u!114 &2118958890491384003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3404927250994493011}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cac89dea36182d4681dce521995b74c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CopkacAnimator
+  animator: {fileID: 4397927216558112517}
+  superPowerIndexName:
+  - 0
+  - 1
 --- !u!1 &3555985844511742800
 GameObject:
   m_ObjectHideFlags: 0
@@ -8605,10 +8685,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6798666020944288858}
+  - component: {fileID: 4184852546746400277}
   - component: {fileID: 3345763475689017447}
   - component: {fileID: 6433222163176872929}
   - component: {fileID: 8882425705421582483}
   - component: {fileID: 3687517210615897284}
+  - component: {fileID: 1679073331615021703}
   m_Layer: 0
   m_Name: Home
   m_TagString: Player
@@ -8636,6 +8718,28 @@ Transform:
   - {fileID: 3831588167082995445}
   m_Father: {fileID: 8735073042165751712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &4184852546746400277
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6130074284230919904}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &3345763475689017447
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8705,6 +8809,22 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 150
   m_Center: {x: 0, y: 75, z: 0}
+--- !u!114 &1679073331615021703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6130074284230919904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11707a3538160044c9ae52899eaef017, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HomeAnimator
+  animator: {fileID: 4184852546746400277}
+  superPowerIndexName:
+  - 0
+  - 1
 --- !u!1 &6204170986114267160
 GameObject:
   m_ObjectHideFlags: 0
@@ -8870,8 +8990,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6330782839768168682}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.22360681, y: -0.67082036, z: 0.22360681, w: -0.6708204}
-  m_LocalPosition: {x: -3, y: 3, z: 0}
+  m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
+  m_LocalPosition: {x: -18.8, y: 6.31, z: -1.1500001}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9027,9 +9147,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 413825528328064395}
+  - component: {fileID: 8635714684294196969}
   - component: {fileID: 4692009313786472003}
   - component: {fileID: 420779515770581471}
   - component: {fileID: 7628075987158101804}
+  - component: {fileID: 5996126484693848181}
   m_Layer: 0
   m_Name: Mida
   m_TagString: Player
@@ -9055,6 +9177,28 @@ Transform:
   - {fileID: 8748476359382672867}
   m_Father: {fileID: 8735073042165751712}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &8635714684294196969
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345339380845589694}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!114 &4692009313786472003
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9105,6 +9249,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GoThroughWall
   transparentMaterial: {fileID: 2100000, guid: daa1569cf0583624a8f159d54b1ffdab, type: 2}
   opaqueMaterial: {fileID: 2100000, guid: 52a1530742f12244487f4c1fd4a9086f, type: 2}
+--- !u!114 &5996126484693848181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6345339380845589694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c2481b2e419b7344ba181f6bcb33a716, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MidaAnimator
+  animator: {fileID: 8635714684294196969}
+  superPowerIndexName:
+  - 0
+  - 1
 --- !u!1 &6450031688836375564
 GameObject:
   m_ObjectHideFlags: 0
@@ -10376,8 +10536,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8017216250077884625}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.22360681, y: -0.67082036, z: 0.22360681, w: -0.6708204}
-  m_LocalPosition: {x: -3, y: 3, z: 0}
+  m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
+  m_LocalPosition: {x: 3, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -118,8 +118,8 @@ public class PlayerController : MonoBehaviour
             //resets the velocity so if jumping on slopes it should be with the same force
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
             rb.AddForce(jumpForce, ForceMode.Impulse);
-        }
-        
+            currentMonster.Animator.PlayJump();
+        }  
     }
 
     private void Move()
@@ -146,10 +146,15 @@ public class PlayerController : MonoBehaviour
         if (!isGrounded) frictionForce = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z) * currentMonster.Stats.airFriction;
         
         rb.AddForce(moveForce - frictionForce, ForceMode.Force);
-        
+
         if (moveForce.magnitude > 0)
         {
             transform.rotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+            currentMonster.Animator.PlayWalk();
+        }
+        else
+        { 
+            currentMonster.Animator.PlayIdle();
         }
     }
 
