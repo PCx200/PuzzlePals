@@ -5465,7 +5465,7 @@ Transform:
   m_GameObject: {fileID: 2557252174751234515}
   serializedVersion: 2
   m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
-  m_LocalPosition: {x: -17.74, y: 6.81009, z: -0.74000025}
+  m_LocalPosition: {x: 3, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5503,7 +5503,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 50
+  far clip plane: 10000
   field of view: 90
   orthographic: 0
   orthographic size: 5
@@ -7236,7 +7236,7 @@ Transform:
   m_GameObject: {fileID: 6330782839768168682}
   serializedVersion: 2
   m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
-  m_LocalPosition: {x: -17.74, y: 6.81009, z: -0.74000025}
+  m_LocalPosition: {x: 3, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7274,7 +7274,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 50
+  far clip plane: 10000
   field of view: 90
   orthographic: 0
   orthographic size: 5
@@ -8078,7 +8078,7 @@ MonoBehaviour:
     FieldOfView: 90
     OrthographicSize: 5
     NearClipPlane: 0.3
-    FarClipPlane: 50
+    FarClipPlane: 10000
     Dutch: 0
     ModeOverride: 0
     PhysicalProperties:
