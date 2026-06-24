@@ -16,10 +16,16 @@ public class MonsterCharacter : MonoBehaviour
     [SerializeField] private List<SuperPower> superPowers;
 
     public EventInstance footsteps;
+    private InputManager inputManager;
 
     private void Start()
     {
         SetFootSteps();
+        inputManager = InputManager.Instance;
+    }
+    private void Update()
+    {
+        UpdateSound();
     }
     private void SetFootSteps()
     {
@@ -43,6 +49,23 @@ public class MonsterCharacter : MonoBehaviour
             default:
                 Debug.LogWarning($"No footsteps assigned for {monsterName}");
                 break;
+        }
+    }
+    private void UpdateSound()
+    {
+        if (inputManager.MoveAction.IsPressed())
+        {
+            PLAYBACK_STATE playbackState;
+            footsteps.getPlaybackState(out playbackState);
+            if (playbackState.Equals(PLAYBACK_STATE.STOPPED) || playbackState.Equals(PLAYBACK_STATE.STOPPING))
+            {
+                footsteps.start();
+                Debug.Log("Footsteps are being played");
+            }
+        }
+        else
+        {
+            footsteps.stop(STOP_MODE.ALLOWFADEOUT);
         }
     }
 
