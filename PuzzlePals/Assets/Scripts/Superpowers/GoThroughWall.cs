@@ -13,6 +13,7 @@ public class GoThroughWall : SuperPower
     }
     public override void SuperPowerPressed()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.ghostMode, transform.position);
         if (!active)
         {
             player.gameObject.layer = LayerMask.NameToLayer("MIDA");
@@ -28,6 +29,5 @@ public class GoThroughWall : SuperPower
             IceWalls.instance.TurnOpaque();
             Debug.Log("Set the layer of the player to Player");
         }
-        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.ghostMode, transform.position);
     }
 }

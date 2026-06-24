@@ -15,6 +15,7 @@ public class Sprint : SuperPower
 
     public override void SuperPowerPressed()
     {
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.sprint, transform.position);
         playerController.isSprinting = true;
         particleEffects.SetActive(true);
     }
