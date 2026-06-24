@@ -163,7 +163,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        UpdateSound();
+        //UpdateSound();
     }
     private void FindCurrentMonster()
     {
@@ -208,21 +208,5 @@ public class PlayerController : MonoBehaviour
     }
 
     // Footsteps sounds (currently every monster has Home's footsteps)
-    private void UpdateSound()
-    {
-        if (inputManager.MoveAction.IsPressed())
-        {
-            PLAYBACK_STATE playbackState;
-            currentMonster.footsteps.getPlaybackState(out playbackState);
-            if (playbackState.Equals(PLAYBACK_STATE.STOPPED) || playbackState.Equals(PLAYBACK_STATE.STOPPING))
-            {
-                currentMonster.footsteps.start();
-                Debug.Log("Footsteps are being played");
-            }
-        }
-        else
-        {
-            currentMonster.footsteps.stop(STOP_MODE.ALLOWFADEOUT);
-        }    
-    }
+    
 }
