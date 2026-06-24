@@ -5391,6 +5391,7 @@ Transform:
   - {fileID: 2597288253935758569}
   - {fileID: 6798666020944288858}
   - {fileID: 413825528328064395}
+  - {fileID: 4717093738206951865}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2430822730665205750
@@ -5457,7 +5458,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   normalJumpHeight: 2
   currentMonster: {fileID: 0}
-  previousMonster: {fileID: 0}
   monsters:
   - {fileID: 2682934340545177571}
   - {fileID: 513100669973169270}
@@ -11037,7 +11037,7 @@ Transform:
   m_GameObject: {fileID: 2557252174751234515}
   serializedVersion: 2
   m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
-  m_LocalPosition: {x: -2.12891, y: 7.03, z: -9.079411}
+  m_LocalPosition: {x: 3, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11754,6 +11754,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HighJump
   jumpHeight: 8
   highJump: {fileID: 2064949206764320093}
+  legsTransform: {fileID: 4022044463496941866}
+  groundCheckRadius: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &3555985844511742800
 GameObject:
   m_ObjectHideFlags: 0
@@ -13699,7 +13704,7 @@ Transform:
   m_GameObject: {fileID: 6330782839768168682}
   serializedVersion: 2
   m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
-  m_LocalPosition: {x: -2.12891, y: 7.03, z: -9.079411}
+  m_LocalPosition: {x: 3, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
