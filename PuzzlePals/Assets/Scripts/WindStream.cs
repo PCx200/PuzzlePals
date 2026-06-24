@@ -5,6 +5,7 @@ public class WindStream : MonoBehaviour
 {
     [SerializeField] private BoxCollider area;
     [SerializeField] private float windSpeed;
+    [SerializeField] private FMODUnity.StudioEventEmitter windSound;
     private Vector3 windSource;
     private Vector3 windDirection;
     private float windStrength;
@@ -17,8 +18,9 @@ public class WindStream : MonoBehaviour
             area = GetComponent<BoxCollider>();
         
         windDirection = transform.forward;
-        windSource = transform.position - transform.forward * area.size.z / 2.0f;
+        windSource = transform.position + area.center - transform.forward * area.size.z / 2.0f;
         windParticles.transform.position = windSource;
+        windSound.transform.position = transform.position + area.center;
         windParticles.transform.rotation = Quaternion.LookRotation(windDirection);
     }
 
@@ -60,6 +62,6 @@ public class WindStream : MonoBehaviour
         Gizmos.DrawWireSphere(windSource, 1f);
         //Gizmos.DrawWireCube(transform.position, area.size);
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(windSource, transform.position + transform.forward * area.size.z / 2.0f);
+        Gizmos.DrawLine(windSource, transform.position + area.center + transform.forward * area.size.z / 2.0f);
     }
 }

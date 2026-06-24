@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using FMOD.Studio;
+using System.Runtime.CompilerServices;
 
 public class MonsterCharacter : MonoBehaviour
 {
@@ -20,14 +21,29 @@ public class MonsterCharacter : MonoBehaviour
     public EventInstance footsteps;
     private InputManager inputManager;
 
+    public IMonsterAnimator Animator;
+
+
+ 
     private void Start()
     {
         SetFootSteps();
         inputManager = InputManager.Instance;
+
+        SetAnimator();
+
     }
+
+
     private void Update()
     {
         UpdateSound();
+    }
+    private void SetAnimator()
+    {
+        Animator = GetComponent<IMonsterAnimator>();
+        if (Animator == null)
+            Debug.LogError($"No IMonsterAnimator found on {name}");
     }
     private void SetFootSteps()
     {
