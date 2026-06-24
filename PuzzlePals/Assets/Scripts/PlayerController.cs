@@ -110,8 +110,6 @@ public class PlayerController : MonoBehaviour
         
         isGrounded = IsGrounded();
 
-        Debug.Log($"Grounded: {isGrounded}");
-
         jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * normalJumpHeight) * Vector3.up;
         if (isGrounded)
         {
@@ -162,6 +160,7 @@ public class PlayerController : MonoBehaviour
     
     private void FixedUpdate()
     {
+        isGrounded = IsGrounded();
         Move();
     }
     private void FindCurrentMonster()
