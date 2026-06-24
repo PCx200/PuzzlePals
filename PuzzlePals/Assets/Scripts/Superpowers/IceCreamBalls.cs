@@ -4,6 +4,7 @@ using UnityEngine;
 //it can throw ice cream balls in front
 public class IceCreamBalls : SuperPower
 {
+    private PlayerController player;
     [SerializeField] private GameObject iceCreamBallPrefab;
     [SerializeField] private Transform ballSpawnPoint;
     [SerializeField] private float cooldown;
@@ -12,6 +13,11 @@ public class IceCreamBalls : SuperPower
 
     [SerializeField] private float upwardForce;
     [SerializeField] private float throwForce;
+
+    private void Start()
+    {
+        player = GetComponentInParent<PlayerController>();
+    }
 
     public override void SuperPowerPressed()
     {
@@ -25,6 +31,7 @@ public class IceCreamBalls : SuperPower
             var ball = Instantiate(iceCreamBallPrefab, ballSpawnPoint.transform.position, Quaternion.identity);
 
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.throwBall, transform.position);
+            player.currentMonster.Animator.PlaySuperPower("ThrowIceCream");
 
             Rigidbody rb = ball.GetComponent<Rigidbody>();
 

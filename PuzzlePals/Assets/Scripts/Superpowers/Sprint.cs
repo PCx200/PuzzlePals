@@ -10,7 +10,7 @@ public class Sprint : SuperPower
 
     private void Start()
     {
-        playerController = FindAnyObjectByType<PlayerController>();
+        playerController = GetComponentInParent<PlayerController>();
     }
 
     public override void SuperPowerPressed()
@@ -18,6 +18,7 @@ public class Sprint : SuperPower
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.sprint, transform.position);
         playerController.isSprinting = true;
         particleEffects.SetActive(true);
+        playerController.currentMonster.Animator.PlaySuperPower("Sprint");
     }
 
     public override void SuperPowerReleased()
