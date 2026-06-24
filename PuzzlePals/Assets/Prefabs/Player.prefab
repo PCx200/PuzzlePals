@@ -6200,8 +6200,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2557252174751234515}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
-  m_LocalPosition: {x: 3, y: 3, z: 0}
+  m_LocalRotation: {x: -0.22360681, y: -0.67082036, z: 0.22360681, w: -0.6708204}
+  m_LocalPosition: {x: -3, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6793,6 +6793,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
   monsterName: 3
+  footStepsPartEff: {fileID: 7589710418449274988}
   stats: {fileID: 11400000, guid: 0956ed5832aa6dd4b82155ad7c5db85c, type: 2}
   superPowers:
   - {fileID: 8067088281732798133}
@@ -6886,6 +6887,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
   monsterName: 1
+  footStepsPartEff: {fileID: 0}
   stats: {fileID: 11400000, guid: f692ce669358dcc4db4cc570adff4088, type: 2}
   superPowers:
   - {fileID: 4896476182683840092}
@@ -8647,6 +8649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
   monsterName: 2
+  footStepsPartEff: {fileID: 0}
   stats: {fileID: 11400000, guid: 78c666639d1fae04b82755f2cd453f0e, type: 2}
   superPowers:
   - {fileID: 6433222163176872929}
@@ -8867,8 +8870,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6330782839768168682}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.22360681, y: -0.6708204, z: 0.22360681, w: 0.67082036}
-  m_LocalPosition: {x: 3, y: 3, z: 0}
+  m_LocalRotation: {x: -0.22360681, y: -0.67082036, z: 0.22360681, w: -0.6708204}
+  m_LocalPosition: {x: -3, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9065,6 +9068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
   monsterName: 0
+  footStepsPartEff: {fileID: 0}
   stats: {fileID: 11400000, guid: 5b1b89b9d8f27e24c81a19c409ebc526, type: 2}
   superPowers:
   - {fileID: 420779515770581471}
@@ -11576,7 +11580,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4374214182981718436, guid: 6638850640ac4ff4ea39562734f4b381, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4374214182981718436, guid: 6638850640ac4ff4ea39562734f4b381, type: 3}
       propertyPath: ShapeModule.angle
@@ -11747,6 +11751,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6638850640ac4ff4ea39562734f4b381, type: 3}
+--- !u!198 &7589710418449274988 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4374214182981718436, guid: 6638850640ac4ff4ea39562734f4b381, type: 3}
+  m_PrefabInstance: {fileID: 6188022812680767944}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &8404942872615037413 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2397074937345105965, guid: 6638850640ac4ff4ea39562734f4b381, type: 3}
