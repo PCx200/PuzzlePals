@@ -62,11 +62,6 @@ public class PlayerController : MonoBehaviour
 
         FindCurrentMonster();
         Debug.Log(inputManager.SuperPower2Action.enabled);
-
-        //homeFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.homeFootsteps);
-        //midaFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.midaFootsteps);
-        //julliaFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.julliaFootsteps);
-        //copkacFootsteps = AudioManager.Instance.CreateInstance(FMODEvents.Instance.copkacFootsteps);
     }
 
     private void OnDisable()
@@ -163,7 +158,6 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        //UpdateSound();
     }
     private void FindCurrentMonster()
     {
@@ -206,7 +200,4 @@ public class PlayerController : MonoBehaviour
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(legsTransform.position, groundCheckRadius);
     }
-
-    // Footsteps sounds (currently every monster has Home's footsteps)
-    
 }
