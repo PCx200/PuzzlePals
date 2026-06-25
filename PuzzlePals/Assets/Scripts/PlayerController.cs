@@ -11,6 +11,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rb;
 
     [SerializeField] private float normalJumpHeight;
+    [SerializeField] private ParticleSystem walkingParticles;
 
     // maybe put monster transformation data in a separate script (better architecture) 
     public MonsterCharacter currentMonster;
@@ -52,6 +53,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        if (walkingParticles != null)
+            Debug.Log("You forgot to assign walking Particle", this);
+        
         inputManager = InputManager.Instance;
 
         inputManager.JumpAction.performed += OnJumpPerformed;
@@ -161,6 +165,18 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         isGrounded = IsGrounded();
+        if (walkingParticles != null)
+        {
+            if (!isGrounded)
+            {
+                walkingParticles.Stop();
+            }
+            else
+            {
+                walkingParticles.Play();
+            }
+        }
+        
         Move();
     }
     private void FindCurrentMonster()
