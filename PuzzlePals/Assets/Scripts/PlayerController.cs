@@ -1,6 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using FMOD.Studio;
+using UnityEngine.Windows;
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -8,9 +10,10 @@ public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
 
-    public MonsterCharacter currentMonster;
+    [SerializeField] private float normalJumpHeight;
 
-    public MonsterCharacter previousMonster;
+    // maybe put monster transformation data in a separate script (better architecture) 
+    public MonsterCharacter currentMonster;
 
     public List<MonsterCharacter> monsters = new List<MonsterCharacter>();
 
@@ -28,7 +31,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool isSprinting;
     [HideInInspector] private bool isGrounded;
 
-    //Player Inputs
+    // Player Inputs
     private InputManager inputManager;
 
     // should probably not be in player controller
@@ -36,12 +39,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float interactCooldown = 0.2f;
     private float lastInteractTime = -999f;
 
+    // Audio
+    private EventInstance homeFootsteps;
+    private EventInstance midaFootsteps;
+    private EventInstance julliaFootsteps;
+    private EventInstance copkacFootsteps;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
-        FindCurrentMonster();
-        previousMonster = currentMonster;
     }
 
     void Start()
@@ -54,6 +60,7 @@ public class PlayerController : MonoBehaviour
         inputManager.SuperPower1Action.canceled += OnSuperPower1Released;
         inputManager.SuperPower2Action.canceled += OnSuperPower2Released;
 
+        FindCurrentMonster();
         Debug.Log(inputManager.SuperPower2Action.enabled);
     }
 
@@ -67,8 +74,9 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext ctx)
-    {
-        jumpPressed = true;
+    {     
+        Jump();
+        Debug.Log("Jump pressed");
     }
 
     #region SuperPowers
@@ -98,20 +106,23 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * currentMonster.Stats.jumpHeight) * Vector3.up;
-        if (jumpPressed && IsGrounded())
+        Debug.Log("Jump() called");
+        
+        isGrounded = IsGrounded();
+
+        jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * normalJumpHeight) * Vector3.up;
+        if (isGrounded)
         {
             //resets the velocity so if jumping on slopes it should be with the same force
             rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
             rb.AddForce(jumpForce, ForceMode.Impulse);
-        }
-        jumpPressed = false;
+            currentMonster.Animator.PlayJump();
+        }  
     }
 
     private void Move()
     {
         Vector2 input = inputManager.MoveAction.ReadValue<Vector2>();
-
         //Yaw only
         Vector3 camForward = lookAtTransform.forward;
         camForward.y = 0;
@@ -133,10 +144,15 @@ public class PlayerController : MonoBehaviour
         if (!isGrounded) frictionForce = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z) * currentMonster.Stats.airFriction;
         
         rb.AddForce(moveForce - frictionForce, ForceMode.Force);
-        
+
         if (moveForce.magnitude > 0)
         {
             transform.rotation = Quaternion.LookRotation(movementDirection, Vector3.up);
+            currentMonster.Animator.PlayWalk();
+        }
+        else
+        { 
+            currentMonster.Animator.PlayIdle();
         }
     }
 
@@ -145,16 +161,16 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         isGrounded = IsGrounded();
-        
         Move();
-        Jump();
     }
     private void FindCurrentMonster()
     {
-        for(int i = 0; i<monsters.Count; i++)
+        foreach (MonsterCharacter monster in monsters)
         {
-            if (monsters[i].isActiveAndEnabled == true)
-                currentMonster = monsters[i];   
+            if (monster.isActiveAndEnabled)
+            {
+                currentMonster = monster;
+            }
         }
         Debug.Log("Current monster is " +  currentMonster.Name);
     }

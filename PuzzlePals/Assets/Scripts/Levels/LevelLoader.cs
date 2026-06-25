@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] private SceneAsset levelToLoad;
+    [SerializeField] private LevelData level;
 
     public void LoadLevel()
     {
-        LevelManager.Instance.LoadLevel(levelToLoad);
+        LevelManager.Instance.LoadLevel(level.sceneName);
     }
 }

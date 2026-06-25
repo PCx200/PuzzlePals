@@ -24,8 +24,9 @@ public class EndPoint : MonoBehaviour
     {
         if(other.CompareTag("Player"))
         {
-            // OnLevelCompleted.Invoke();
-            SceneManager.LoadScene(nextScene);
+            OnLevelCompleted.Invoke();
+            Time.timeScale = 0.0f;
+            //SceneManager.LoadScene(nextScene);
         }
     }
 

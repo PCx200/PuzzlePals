@@ -3,12 +3,10 @@ using UnityEngine;
 [RequireComponent(typeof(BoxCollider))]
 public class WindStream : MonoBehaviour
 {
-    public enum Direction { Froward, Backward, Up, Down }
-    [SerializeField] private Direction direction;
-
     [SerializeField] private BoxCollider area;
     [SerializeField] private float windSpeed;
-    [SerializeField] private Vector3 windSource;
+    [SerializeField] private FMODUnity.StudioEventEmitter windSound;
+    private Vector3 windSource;
     private Vector3 windDirection;
     private float windStrength;
 
@@ -18,65 +16,19 @@ public class WindStream : MonoBehaviour
     {
         if (area == null)
             area = GetComponent<BoxCollider>();
-
-        DetermineWindSource();
-        DetermineWindDirection();
+        
+        windDirection = transform.forward;
+        windSource = transform.position + area.center - transform.forward * area.size.z / 2.0f;
+        windParticles.transform.position = windSource;
+        windSound.transform.position = transform.position + area.center;
+        windParticles.transform.rotation = Quaternion.LookRotation(windDirection);
     }
 
     void Start()
     {
-
+        OnValidate();
     }
-
-    private void DetermineWindDirection()
-    {
-        switch (direction)
-        {
-            case Direction.Froward:
-                windDirection = Vector3.right;
-                windParticles.transform.rotation = Quaternion.LookRotation(windDirection);
-                break;
-            case Direction.Backward:
-                windDirection = Vector3.left;
-                windParticles.transform.rotation = Quaternion.LookRotation(windDirection);
-                break;
-            case Direction.Up:
-                windDirection = Vector3.up;
-                windParticles.transform.rotation = Quaternion.LookRotation(windDirection);
-                break;
-            case Direction.Down:
-                windDirection = Vector3.down;
-                windParticles.transform.rotation = Quaternion.LookRotation(windDirection);
-                break;
-            default:
-                break;
-        }
-    }
-    private void DetermineWindSource()
-    {
-        switch (direction)
-        {
-            case Direction.Froward:
-                windSource = new Vector3(transform.position.x - area.size.x / 2.0f, transform.position.y, transform.position.z);
-                windParticles.transform.position = windSource;
-                break;
-            case Direction.Backward:
-                windSource = new Vector3(transform.position.x + area.size.x / 2.0f, transform.position.y, transform.position.z);
-                windParticles.transform.position = windSource;
-                break;
-            case Direction.Up:
-                windSource = new Vector3(transform.position.x, transform.position.y - area.size.y / 2.0f, transform.position.z);
-                windParticles.transform.position = windSource;
-                break;
-            case Direction.Down:
-                windSource = new Vector3(transform.position.x, transform.position.y + area.size.y / 2.0f, transform.position.z);
-                windParticles.transform.position = windSource;
-                break;
-            default:
-                break;
-        }
-    }
-
+    
     private void OnTriggerStay(Collider other)
     {
         var player = other.GetComponent<PlayerController>();
@@ -108,8 +60,8 @@ public class WindStream : MonoBehaviour
 
         Gizmos.color = Color.green;
         Gizmos.DrawWireSphere(windSource, 1f);
-        Gizmos.DrawWireCube(transform.position, area.size);
+        //Gizmos.DrawWireCube(transform.position, area.size);
         Gizmos.color = Color.red;
-        Gizmos.DrawLine(windSource, transform.position);
+        Gizmos.DrawLine(windSource, transform.position + area.center + transform.forward * area.size.z / 2.0f);
     }
 }

@@ -5,33 +5,41 @@ public class Level : MonoBehaviour
 {
     [SerializeField] private LevelData levelData;
 
-    [SerializeField] private float timeElapsed; // the time since the start of the level.
-    public float TimeElapsed => timeElapsed;
+    public LevelData LevelData => levelData;
+
+    [SerializeField] private float completionTime; // the time since the start of the level.
+    public float CompletionTime => completionTime;
 
 
     [SerializeField] private EndPoint endPoint;
+    private bool completed;
 
     private void OnValidate()
     {
         if (levelData != null)
         {
-            name = levelData.scene.name;
+            name = levelData.sceneName;
         }
     }
 
     private void OnEnable()
     {
-        endPoint.OnLevelCompleted += OnLevelCompleted;
+        if (endPoint != null) endPoint.OnLevelCompleted += OnLevelCompleted;
+        else Debug.LogWarning($"Level endpoint is null on {name}");
     }
 
     private void OnDisable()
     {
-        endPoint.OnLevelCompleted -= OnLevelCompleted;
+        if (endPoint != null) endPoint.OnLevelCompleted -= OnLevelCompleted;
+        else Debug.LogWarning($"Level endpoint is null on {name}");
     }
 
     void Update()
     {
-        timeElapsed += Time.deltaTime;
+        if (!completed)
+        {
+            completionTime += Time.deltaTime;
+        }
     }
 
     private void OnLevelCompleted()
@@ -40,21 +48,26 @@ public class Level : MonoBehaviour
         if (levelData == null)
             return;
 
-        if (timeElapsed < levelData.bestCompletionTime)
-            levelData.bestCompletionTime = (ushort)timeElapsed;
+        completed = true;
+
+        if (completionTime < levelData.bestCompletionTime)
+            levelData.bestCompletionTime = (ushort)completionTime;
 
         var timeForStars = levelData.timeForStars;
 
         if (timeForStars.Count == 2)
         {
-            if (timeElapsed <= timeForStars[0])
+            if (completionTime <= timeForStars[0])
                 levelData.stars = 3;
-            else if (timeElapsed <= timeForStars[1])
+            else if (completionTime <= timeForStars[1])
                 levelData.stars = 2;
             else
                 levelData.stars = 1;
         }
 
-        LevelManager.Instance.OnLevelCompleted();
+        if (LevelManager.Instance != null)
+        { 
+            LevelManager.Instance.OnLevelCompleted();
+        }
     }
 }

@@ -31,7 +31,6 @@ public class AudioManager : MonoBehaviour
     private Bus sfxBus;
     private Bus ambienceBus;
     
-
     private void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(gameObject); return;} // Singleton
@@ -47,7 +46,6 @@ public class AudioManager : MonoBehaviour
         ambienceBus = RuntimeManager.GetBus("bus:/Ambience");
     }
     
-
     private void Update()
     {
         masterBus.setVolume(masterVolume);

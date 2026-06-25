@@ -12,12 +12,23 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference transformation { get; private set; }
     [field: SerializeField] public EventReference buttonClick { get; private set; }
     [field: SerializeField] public EventReference doorOpen { get; private set; }
+    [field: SerializeField] public EventReference returnSpawnpoint { get; private set; }
+    [field: SerializeField] public EventReference monsterEat { get; private set; }
+
+    [field: SerializeField] public EventReference homeFootsteps { get; private set; }
     [field: SerializeField] public EventReference bed { get; private set; }
     [field: SerializeField] public EventReference dreamState { get; private set; }
-    [field: SerializeField] public EventReference monsterEat { get; private set; }
+    
+    [field: SerializeField] public EventReference midaFootsteps { get; private set; }
     [field: SerializeField] public EventReference throwBall { get; private set; }
+    [field: SerializeField] public EventReference ghostMode { get; private set; }
+    [field: SerializeField] public EventReference julliaFootsteps { get; private set; }
     [field: SerializeField] public EventReference sprint { get; private set; }
     [field: SerializeField] public EventReference happiness { get; private set; }
+    [field: SerializeField] public EventReference copkacFootsteps { get; private set; }
+    [field: SerializeField] public EventReference copkacJump { get; private set; }
+    [field: SerializeField] public EventReference createCupcake { get; private set; }
+
 
     [field: Header("Music")]
     [field: SerializeField] public EventReference mainMenuMusic { get; private set; }

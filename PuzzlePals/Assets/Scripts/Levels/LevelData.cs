@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "LevelData", menuName = "Scriptable Objects/LevelData")]
 public class LevelData : ScriptableObject
 {
-    public SceneAsset scene;
+    public string sceneName;
     public ushort bestCompletionTime = ushort.MaxValue;
     public byte stars;
     public List<byte> timeForStars;
