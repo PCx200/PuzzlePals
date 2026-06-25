@@ -8129,6 +8129,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1016601470}
     m_Modifications:
+    - target: {fileID: 1696341928386627680, guid: ca72ebd5d251e534f8b9707f1e62c5b3, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: ee2c8bea4596f174a99d1c608ed6bc9a, type: 2}
+    - target: {fileID: 1696341928386627680, guid: ca72ebd5d251e534f8b9707f1e62c5b3, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -5096257206584490055, guid: ee2c8bea4596f174a99d1c608ed6bc9a, type: 2}
+    - target: {fileID: 1696341928386627680, guid: ca72ebd5d251e534f8b9707f1e62c5b3, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6569814400773034087, guid: ca72ebd5d251e534f8b9707f1e62c5b3, type: 3}
       propertyPath: m_Name
       value: TimeElapsedText
@@ -8159,7 +8171,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7333140408798531561, guid: ca72ebd5d251e534f8b9707f1e62c5b3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 200
+      value: 500
       objectReference: {fileID: 0}
     - target: {fileID: 7333140408798531561, guid: ca72ebd5d251e534f8b9707f1e62c5b3, type: 3}
       propertyPath: m_SizeDelta.y
