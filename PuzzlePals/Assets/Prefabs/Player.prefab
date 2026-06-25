@@ -138,7 +138,7 @@ Transform:
   m_GameObject: {fileID: 2552938311677737791}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9486833, z: -0.31622782, w: 0}
-  m_LocalPosition: {x: 0, y: 3, z: 3}
+  m_LocalPosition: {x: 0, y: 3, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -345,7 +345,7 @@ Transform:
   m_GameObject: {fileID: 4566980910612029086}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.9486833, z: -0.31622782, w: 0}
-  m_LocalPosition: {x: 0, y: 3, z: 3}
+  m_LocalPosition: {x: 0, y: 3, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -768,12 +768,16 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5363651919933296486, guid: 8cb92403460a384488c3c145ec1e7d3b, type: 3}
+      propertyPath: cullingMode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5363651919933296486, guid: 8cb92403460a384488c3c145ec1e7d3b, type: 3}
       propertyPath: lengthInSec
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5363651919933296486, guid: 8cb92403460a384488c3c145ec1e7d3b, type: 3}
       propertyPath: playOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5363651919933296486, guid: 8cb92403460a384488c3c145ec1e7d3b, type: 3}
       propertyPath: ShapeModule.type
@@ -1044,6 +1048,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6887851073908723283, guid: 8cb92403460a384488c3c145ec1e7d3b, type: 3}
+      propertyPath: particleEffects
+      value: 
+      objectReference: {fileID: 6468288108929339544}
+    - target: {fileID: 6887851073908723283, guid: 8cb92403460a384488c3c145ec1e7d3b, type: 3}
       propertyPath: playerController
       value: 
       objectReference: {fileID: 1208849824487452549}
@@ -1128,6 +1136,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff98ad2f3ca9314380315cda3a2d4de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
+--- !u!198 &6468288108929339544 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5363651919933296486, guid: 8cb92403460a384488c3c145ec1e7d3b, type: 3}
+  m_PrefabInstance: {fileID: 1417645161418760190}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7237668558758663013 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8637097002711665819, guid: 8cb92403460a384488c3c145ec1e7d3b, type: 3}

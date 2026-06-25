@@ -6,7 +6,7 @@ public class Sprint : SuperPower
 {
     [SerializeField] private float sprintMultiplier;
     [SerializeField] private PlayerController playerController;
-    [SerializeField] private GameObject particleEffects;
+    [SerializeField] private ParticleSystem particleEffects;
 
     private void Start()
     {
@@ -17,13 +17,13 @@ public class Sprint : SuperPower
     {
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.sprint, transform.position);
         playerController.isSprinting = true;
-        particleEffects.SetActive(true);
+        particleEffects.Play();
         playerController.currentMonster.Animator.PlaySuperPower("Sprint");
     }
 
     public override void SuperPowerReleased()
     {
         playerController.isSprinting = false;
-        particleEffects.SetActive(false);
+        particleEffects.Stop();
     }
 }
