@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
@@ -8,6 +9,8 @@ public class PauseMenuManager : MonoBehaviour
     [SerializeField] GameObject pausePanel;
 
     private InputManager inputManager;
+    public Action PauseEvent; // pause audio
+    public Action UnPauseEvent; // un pause audio
 
     private void Start()
     {
@@ -32,12 +35,14 @@ public class PauseMenuManager : MonoBehaviour
             Time.timeScale = 0.0f;
             pausePanel.SetActive(true);
             Cursor.lockState = CursorLockMode.None;
+            PauseEvent?.Invoke();
         }
         else
         {
             Time.timeScale = 1.0f;
             pausePanel.SetActive(false);
             Cursor.lockState = CursorLockMode.Locked;
+            UnPauseEvent?.Invoke();
         }
         isPaused = !isPaused;
     }

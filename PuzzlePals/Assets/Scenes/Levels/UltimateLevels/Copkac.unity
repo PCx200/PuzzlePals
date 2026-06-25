@@ -3152,6 +3152,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7306779224769317688, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7828732445330848842, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
       propertyPath: far clip plane
       value: 10000
@@ -3311,7 +3315,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 597218129476008960, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1864877847}
   m_SourcePrefab: {fileID: 100100000, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
 --- !u!1001 &343724618
 PrefabInstance:
@@ -8049,7 +8056,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c918b7f256bcc4181b3582d63a25ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuManager
-  pausePanel: {fileID: 0}
+  pausePanel: {fileID: 1350810986}
 --- !u!1001 &1028398503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10133,6 +10140,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9102422079133011112, guid: f95816b6265ac8f469b348bbc0a88732, type: 3}
   m_PrefabInstance: {fileID: 1284671043}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1303319079 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8904131897699649861, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
+  m_PrefabInstance: {fileID: 342652068}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1304693776
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10613,6 +10625,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 7179222050471217985, guid: f0677312ac4103b4a97cd18a947988ce, type: 3}
   m_PrefabInstance: {fileID: 1350276324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1350810986 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 746486531014924125, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+  m_PrefabInstance: {fileID: 1940496505}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1362486110
 PrefabInstance:
@@ -13952,6 +13969,25 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 964ca96f543fd804ea981bb029dfdb1e, type: 3}
   m_PrefabInstance: {fileID: 1860375737}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1864877842 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 597218129476008960, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
+  m_PrefabInstance: {fileID: 342652068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1864877847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1864877842}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioListener
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 1303319079}
 --- !u!1001 &1875124435
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15866,6 +15902,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+--- !u!1001 &4471625553086349128
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4623301370379357291, guid: 6d924aac5f5d51b45b1649821351ad67, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.7715
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623301370379357291, guid: 6d924aac5f5d51b45b1649821351ad67, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623301370379357291, guid: 6d924aac5f5d51b45b1649821351ad67, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -39.43022
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623301370379357291, guid: 6d924aac5f5d51b45b1649821351ad67, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623301370379357291, guid: 6d924aac5f5d51b45b1649821351ad67, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623301370379357291, guid: 6d924aac5f5d51b45b1649821351ad67, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623301370379357291, guid: 6d924aac5f5d51b45b1649821351ad67, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623301370379357291, guid: 6d924aac5f5d51b45b1649821351ad67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623301370379357291, guid: 6d924aac5f5d51b45b1649821351ad67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4623301370379357291, guid: 6d924aac5f5d51b45b1649821351ad67, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5834107887333931395, guid: 6d924aac5f5d51b45b1649821351ad67, type: 3}
+      propertyPath: m_Name
+      value: MusicManager
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6d924aac5f5d51b45b1649821351ad67, type: 3}
 --- !u!1001 &6038865560990549303
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15986,3 +16079,4 @@ SceneRoots:
   - {fileID: 1959695837}
   - {fileID: 1814919252}
   - {fileID: 8236201}
+  - {fileID: 4471625553086349128}

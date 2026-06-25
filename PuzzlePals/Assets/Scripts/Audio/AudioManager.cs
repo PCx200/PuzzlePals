@@ -46,6 +46,22 @@ public class AudioManager : MonoBehaviour
         ambienceBus = RuntimeManager.GetBus("bus:/Ambience");
     }
     
+    private void OnEnable()
+    {
+        SceneManager.sceneUnloaded += OnSceneUnLoaded;
+        SceneManager.sceneLoaded += OnSceneLoad;
+    }
+    
+    private void OnSceneLoad(Scene scene, LoadSceneMode mode)
+    {
+        
+    }
+    
+    private void OnSceneUnLoaded(Scene scene)
+    {
+        CleanUp();
+    }
+    
     private void Update()
     {
         masterBus.setVolume(masterVolume);
