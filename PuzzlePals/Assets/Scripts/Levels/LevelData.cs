@@ -6,7 +6,9 @@ using UnityEngine;
 public class LevelData : ScriptableObject
 {
     public string sceneName;
-    public ushort bestCompletionTime = ushort.MaxValue;
+    [HideInInspector]
+    public ushort bestCompletionTime;
+    [HideInInspector]
     public byte stars;
     public List<byte> timeForStars;
 }
