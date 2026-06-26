@@ -15,6 +15,10 @@ public class LevelManager : MonoBehaviour
 
     public byte StarsCollected => starsCollected;
 
+    private SaveData saveData;
+
+    public SaveData SaveData => saveData;
+
     private void Awake()
     {
         if (Instance)
@@ -26,6 +30,8 @@ public class LevelManager : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
+        saveData = SaveSystem.Load();
+        ApplySaveToLevels();
         RecalculateStars();
     }
 
@@ -34,27 +40,52 @@ public class LevelManager : MonoBehaviour
         SceneManager.LoadScene(sceneName);
     }
 
-    public void OnLevelCompleted()
+    private void ApplySaveToLevels()
     {
-        Debug.Log("bazinga");
+        foreach (var level in levels)
+        {
+            if (level == null)
+            {
+                Debug.LogError("LevelManager: A NULL LevelData was found in the list!");
+                continue;
+            }
 
+            if (string.IsNullOrEmpty(level.sceneName))
+            {
+                Debug.LogError($"LevelData '{level.name}' has EMPTY sceneName!");
+                continue;
+            }
+
+            if (saveData == null)
+            {
+                Debug.LogError("SaveData is NULL!");
+                return;
+            }
+
+            var entry = saveData.GetOrCreate(level.sceneName);
+        }
+    }
+    //gets the data from the savefile and checks if it beats the best time or not, then updates the stars and all the data and saves it back
+    public void UpdateLevelProgress(string sceneName, ushort newTime, byte stars)
+    {
+        var entry = saveData.GetOrCreate(sceneName);
+
+        if (entry.bestTime == 0 || newTime < entry.bestTime)
+            entry.bestTime = newTime;
+
+        if (stars > entry.stars)
+            entry.stars = stars;
+
+        SaveSystem.Save(saveData);
         RecalculateStars();
-        //StartCoroutine(ReturnToMenu());
     }
 
-    private IEnumerator ReturnToMenu()
-    {
-        yield return new WaitForSeconds(2f);
-        SceneManager.LoadScene("LevelsMenu");
-    }
 
     private void RecalculateStars()
     {
         starsCollected = 0;
 
-        foreach (var level in levels)
-        {
-            starsCollected += level.stars;
-        }
+        foreach (var entry in saveData.levels)
+            starsCollected += entry.stars;
     }
 }

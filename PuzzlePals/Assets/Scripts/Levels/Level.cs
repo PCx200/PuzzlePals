@@ -1,4 +1,6 @@
 using EventBus;
+using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Level : MonoBehaviour
@@ -12,7 +14,12 @@ public class Level : MonoBehaviour
 
 
     [SerializeField] private EndPoint endPoint;
-    private bool completed;
+    [SerializeField] private bool completed;
+
+    
+    public byte StarsEarnedThisRun { get; private set; }
+    public event Action OnStarsCalculated;
+
 
     private void OnValidate()
     {
@@ -50,24 +57,24 @@ public class Level : MonoBehaviour
 
         completed = true;
 
-        if (completionTime < levelData.bestCompletionTime)
-            levelData.bestCompletionTime = (ushort)completionTime;
-
+        byte starsEarned = 1;
         var timeForStars = levelData.timeForStars;
 
         if (timeForStars.Count == 2)
         {
             if (completionTime <= timeForStars[0])
-                levelData.stars = 3;
+                starsEarned = 3;
             else if (completionTime <= timeForStars[1])
-                levelData.stars = 2;
-            else
-                levelData.stars = 1;
+                starsEarned = 2;
         }
 
-        if (LevelManager.Instance != null)
-        { 
-            LevelManager.Instance.OnLevelCompleted();
-        }
+        StarsEarnedThisRun = starsEarned;
+        OnStarsCalculated?.Invoke();
+
+        LevelManager.Instance.UpdateLevelProgress(
+            levelData.sceneName,
+            (ushort)completionTime,
+            starsEarned
+        );
     }
 }

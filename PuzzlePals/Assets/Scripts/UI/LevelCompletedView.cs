@@ -1,30 +1,35 @@
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class LevelCompletedView : MonoBehaviour
 {
-    private EndPoint endPoint;
     private Level level;
 
     [SerializeField] private GameObject panel;
 
     [SerializeField] private TextMeshProUGUI completionTimeText;
-    [SerializeField] private TextMeshProUGUI BestTimeText;
+    [SerializeField] private TextMeshProUGUI bestTimeText;
+
+    [SerializeField] private List<Image> stars;
 
     private void Awake()
     {
         level = FindFirstObjectByType<Level>();
-        endPoint = FindFirstObjectByType<EndPoint>();
     }
 
     private void OnEnable()
     {
-        endPoint.OnLevelCompleted += EnableLevelCompletedPanel;
+        level.OnStarsCalculated += EnableLevelCompletedPanel;
+        level.OnStarsCalculated += EnableStarsOnLevelCompletion;
     }
 
     private void OnDisable()
     {
-        endPoint.OnLevelCompleted -= EnableLevelCompletedPanel;
+        level.OnStarsCalculated -= EnableLevelCompletedPanel;
+        level.OnStarsCalculated -= EnableStarsOnLevelCompletion;
     }
 
     private void EnableLevelCompletedPanel()
@@ -34,16 +39,46 @@ public class LevelCompletedView : MonoBehaviour
             Debug.LogWarning($"Level: {level} is null");
             return;
         }
-        if (endPoint == null)
-        {
-            Debug.LogWarning($"EndPoint: {endPoint} is null");
-            return;
-        }
 
-            Cursor.lockState = CursorLockMode.None;
+        Cursor.lockState = CursorLockMode.None;
         panel.SetActive(true);
 
-        completionTimeText.text = $"Completion Time: {level.CompletionTime / 60:00}:{level.CompletionTime % 60:00}";
-        BestTimeText.text = $"Best Time: {level.LevelData.bestCompletionTime / 60:00}:{level.LevelData.bestCompletionTime % 60:00}";
+        completionTimeText.text = $"Completion Time: {FormatTime(level.CompletionTime)}";
+
+        var entry = LevelManager.Instance.SaveData.GetOrCreate(level.LevelData.sceneName);
+
+        ushort bestTime = entry.bestTime;
+
+        if (bestTime == 0 || level.CompletionTime < bestTime)
+            bestTime = (ushort)level.CompletionTime;
+
+        bestTimeText.text = $"Best Time: {FormatTime(bestTime)}";
     }
-}
+
+    private void EnableStarsOnLevelCompletion()
+    {
+        StartCoroutine(EnableStars());
+    }
+
+    private IEnumerator EnableStars()
+    {
+        foreach (var star in stars)
+        {
+            star.gameObject.SetActive(false);
+        }
+
+        for (int i = 0; i < level.StarsEarnedThisRun; i++)
+        {
+            stars[i].gameObject.SetActive(true);
+            //using this because we stop the time when the level is completed
+            yield return new WaitForSecondsRealtime(0.5f);
+        }
+    }
+
+    private string FormatTime(float time)
+    {
+        int minutes = (int)(time / 60f);
+        int seconds = (int)(time % 60f);
+        return $"{minutes:00}:{seconds:00}";
+    }
+}   
