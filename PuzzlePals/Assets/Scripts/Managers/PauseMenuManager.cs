@@ -14,6 +14,7 @@ public class PauseMenuManager : MonoBehaviour
 
     private void Start()
     {
+        if (pausePanel != null) Debug.LogWarning("Forgot to assign pause panel on Canvas", this);
         inputManager = InputManager.Instance;
         inputManager.PauseMenuAction.performed += PauseGame;
         Cursor.lockState = CursorLockMode.Locked;
@@ -30,39 +31,47 @@ public class PauseMenuManager : MonoBehaviour
 
     public void PauseGame(InputAction.CallbackContext ctx)
     {
-        if (!isPaused)
+        if (pausePanel != null)
         {
-            Time.timeScale = 0.0f;
-            pausePanel.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            PauseEvent?.Invoke();
+            if (!isPaused)
+            {
+                Time.timeScale = 0.0f;
+                pausePanel.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                PauseEvent?.Invoke();
+                isPaused = true;
+            }
+            else
+            {
+                Time.timeScale = 1.0f;
+                pausePanel.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                UnPauseEvent?.Invoke();
+                isPaused = false;
+            }
         }
-        else
-        {
-            Time.timeScale = 1.0f;
-            pausePanel.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            UnPauseEvent?.Invoke();
-        }
-        isPaused = !isPaused;
     }
     public void PauseGameButton()
     {
-        if (!isPaused)
+        if (pausePanel != null)
         {
-            Time.timeScale = 0.0f;
-            pausePanel.SetActive(true);
-            Cursor.lockState = CursorLockMode.None;
-            PauseEvent?.Invoke();
+            if (!isPaused)
+            {
+                Time.timeScale = 0.0f;
+                pausePanel.SetActive(true);
+                Cursor.lockState = CursorLockMode.None;
+                PauseEvent?.Invoke();
+                isPaused = true;
+            }
+            else
+            {
+                Time.timeScale = 1.0f;
+                pausePanel.SetActive(false);
+                Cursor.lockState = CursorLockMode.Locked;
+                UnPauseEvent?.Invoke();
+                isPaused = false;
+            }
         }
-        else
-        {
-            Time.timeScale = 1.0f;
-            pausePanel.SetActive(false);
-            Cursor.lockState = CursorLockMode.Locked;
-            UnPauseEvent?.Invoke();
-        }
-        isPaused = !isPaused;
     }
     public void Restart()
     {
