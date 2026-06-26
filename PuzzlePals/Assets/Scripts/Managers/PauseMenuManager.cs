@@ -46,6 +46,24 @@ public class PauseMenuManager : MonoBehaviour
         }
         isPaused = !isPaused;
     }
+    public void PauseGameButton()
+    {
+        if (!isPaused)
+        {
+            Time.timeScale = 0.0f;
+            pausePanel.SetActive(true);
+            Cursor.lockState = CursorLockMode.None;
+            PauseEvent?.Invoke();
+        }
+        else
+        {
+            Time.timeScale = 1.0f;
+            pausePanel.SetActive(false);
+            Cursor.lockState = CursorLockMode.Locked;
+            UnPauseEvent?.Invoke();
+        }
+        isPaused = !isPaused;
+    }
     public void Restart()
     {
         Time.timeScale = 1.0f;
