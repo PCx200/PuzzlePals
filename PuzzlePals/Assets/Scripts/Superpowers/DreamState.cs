@@ -37,6 +37,15 @@ namespace EventBus
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.dreamState, transform.position);
         }
 
+        private void OnDisable()
+        {
+            foreach (var obj in invisibleObjs)
+            {
+                obj.SetActive(false);
+            }
+            visible = false;
+        }
+
         private void OnDestroy()
         {
             foreach (var obj in invisibleObjs)
