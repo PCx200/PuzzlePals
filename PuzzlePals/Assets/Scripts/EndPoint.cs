@@ -29,11 +29,5 @@ public class EndPoint : MonoBehaviour
             //SceneManager.LoadScene(nextScene);
         }
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.green;
-        Gizmos.DrawWireCube(transform.position + area.center, area.size);
-    }
 }
  
