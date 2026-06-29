@@ -8,14 +8,15 @@ public class MusicManager : MonoBehaviour
     public bool menu;
     public bool puzzle;
     
-    private EventInstance ambientEventInstance;
+    private EventInstance menuEventInstance;
     private EventInstance puzzleMusicEventInstance;
+    private EventInstance ambientMusicEventInstance;
     private void Start()
     {
         if (menu)
         {
-            ambientEventInstance = AudioManager.Instance.CreateInstance(FMODEvents.Instance.mainMenuMusic);
-            ambientEventInstance.start();
+            menuEventInstance = AudioManager.Instance.CreateInstance(FMODEvents.Instance.mainMenuMusic);
+            menuEventInstance.start();
         }
 
         if (puzzle)
@@ -23,6 +24,9 @@ public class MusicManager : MonoBehaviour
             puzzleMusicEventInstance = AudioManager.Instance.CreateInstance(FMODEvents.Instance.puzzleMusic);
             puzzleMusicEventInstance.start();
         }
+
+        ambientMusicEventInstance = AudioManager.Instance.CreateInstance(FMODEvents.Instance.ambience);
+        ambientMusicEventInstance.start();
     }
 
     /*private void OnDisable()

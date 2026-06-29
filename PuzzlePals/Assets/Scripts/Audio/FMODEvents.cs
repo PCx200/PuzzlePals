@@ -18,7 +18,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference homeFootsteps { get; private set; }
     [field: SerializeField] public EventReference bed { get; private set; }
     [field: SerializeField] public EventReference dreamState { get; private set; }
-    
+
     [field: SerializeField] public EventReference midaFootsteps { get; private set; }
     [field: SerializeField] public EventReference throwBall { get; private set; }
     [field: SerializeField] public EventReference ghostMode { get; private set; }
@@ -31,12 +31,13 @@ public class FMODEvents : MonoBehaviour
 
     [field: Header("Music")]
     [field: SerializeField] public EventReference clickUI { get; private set; }
-    [field: SerializeField] public EventReference star { get; private set; }
+    [field: SerializeField] public EventReference starAppear { get; private set; }
 
     [field: Header("Music")]
     [field: SerializeField] public EventReference mainMenuMusic { get; private set; }
     [field: SerializeField] public EventReference lobbyMusic { get; private set; }
     [field: SerializeField] public EventReference puzzleMusic { get; private set; }
+
     [field: Header("Ambience")]
     [field: SerializeField] public EventReference ambience { get; private set; }
 

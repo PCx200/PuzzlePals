@@ -71,8 +71,8 @@ public class LevelCompletedView : MonoBehaviour
         {
             //using this because we stop the time when the level is completed
             yield return new WaitForSecondsRealtime(0.5f);
-            stars[i].gameObject.SetActive(true);
-
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.starAppear, transform.position);
+            stars[i].gameObject.SetActive(true);   
         }
     }
 
