@@ -23,10 +23,9 @@ public class MusicManager : MonoBehaviour
         {
             puzzleMusicEventInstance = AudioManager.Instance.CreateInstance(FMODEvents.Instance.puzzleMusic);
             puzzleMusicEventInstance.start();
+            ambientMusicEventInstance = AudioManager.Instance.CreateInstance(FMODEvents.Instance.ambience);
+            ambientMusicEventInstance.start();
         }
-
-        ambientMusicEventInstance = AudioManager.Instance.CreateInstance(FMODEvents.Instance.ambience);
-        ambientMusicEventInstance.start();
     }
 
     /*private void OnDisable()
