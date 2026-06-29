@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VectorGraphics;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,6 +9,8 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
+    [SerializeField] private float transitionTime = 1.5f;
+    [SerializeField] private Animator transition;
 
     [SerializeField] private List<LevelData> levels;
     public List<LevelData> AllLevels => levels;
@@ -37,17 +41,29 @@ public class LevelManager : MonoBehaviour
 
     public void LoadLevel(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
+        StartCoroutine(LoadLevelTransition(sceneName));   
     }
+    IEnumerator LoadLevelTransition(string sceneName)
+    {
+        transition.SetTrigger("Start");
 
+        yield return new WaitForSeconds(transitionTime);
+
+        SceneManager.LoadScene(sceneName);        
+    }
     public void ReplayLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        string sceneName = SceneManager.GetActiveScene().ToString();
+
+        StartCoroutine(LoadLevelTransition(sceneName));
+
     }
 
     public void NextLevel()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        string sceneName = SceneManager.GetActiveScene() + 1.ToString();
+
+        StartCoroutine(LoadLevelTransition(sceneName));
     }
 
     private void ApplySaveToLevels()
