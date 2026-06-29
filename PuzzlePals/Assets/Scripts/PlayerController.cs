@@ -32,6 +32,8 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool isSprinting;
     [HideInInspector] private bool isGrounded;
 
+    public bool Grounded => isGrounded;
+
     // Player Inputs
     private InputManager inputManager;
 
@@ -161,7 +163,7 @@ public class PlayerController : MonoBehaviour
     }
 
     #endregion
-    
+
     private void FixedUpdate()
     {
         isGrounded = IsGrounded();

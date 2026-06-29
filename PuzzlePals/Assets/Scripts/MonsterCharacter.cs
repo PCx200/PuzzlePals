@@ -5,6 +5,8 @@ using System.Runtime.CompilerServices;
 
 public class MonsterCharacter : MonoBehaviour
 {
+    PlayerController player;
+
     public enum MonsterName { Mida, Copkac, Home, Jullia }
 
     [SerializeField]  private MonsterName monsterName;
@@ -27,6 +29,8 @@ public class MonsterCharacter : MonoBehaviour
  
     private void Start()
     {
+        player = GetComponentInParent<PlayerController>();
+
         SetFootSteps();
         inputManager = InputManager.Instance;
 
@@ -71,7 +75,7 @@ public class MonsterCharacter : MonoBehaviour
     }
     private void UpdateSound()
     {
-        if (inputManager.MoveAction.IsPressed())
+        if (inputManager.MoveAction.IsPressed() && player.Grounded)
         {
             PLAYBACK_STATE playbackState;
             footsteps.getPlaybackState(out playbackState);
