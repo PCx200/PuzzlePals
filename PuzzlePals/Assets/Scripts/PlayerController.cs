@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
     [HideInInspector] public bool isSprinting;
     [HideInInspector] private bool isGrounded;
     private bool isWalking;
-    private bool isJumping;
+    [SerializeField] private bool isJumping;
 
     public bool Grounded => isGrounded;
 
@@ -117,7 +117,7 @@ public class PlayerController : MonoBehaviour
     {
         if (!isGrounded) return;
 
-        currentMonster.Animator.PlayJump();
+        currentMonster.Animator.SetTrigger("Jump");
 
         jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * normalJumpHeight) * Vector3.up;
 
@@ -152,15 +152,18 @@ public class PlayerController : MonoBehaviour
         
         rb.AddForce(moveForce - frictionForce, ForceMode.Force);
 
-        if (moveForce.magnitude > 0)
+        if (movementDirection.magnitude > 0)
         {
             transform.rotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-            currentMonster.Animator.PlayWalk();            
+            isWalking = true;
         }
         else
         {
-                currentMonster.Animator.PlayIdle();
+            isWalking = false;
         }
+
+        currentMonster.Animator.SetBool("isWalking", isWalking);
+    
     }
 
     #endregion
@@ -178,6 +181,11 @@ public class PlayerController : MonoBehaviour
             {
                 walkingParticles.Play();
             }
+        }
+
+        if (isGrounded)
+        {
+            isJumping = false;
         }
         
         Move();
