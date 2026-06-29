@@ -18,6 +18,7 @@ public class IceWalls : MonoBehaviour
         foreach (var wall in iceCreamwalls)
         {
             wall.GetComponent<MeshRenderer>().material = transparentMaterial;
+            Debug.Log($"{wall} made transparent");
         }
     }
     public void TurnOpaque()
@@ -25,6 +26,7 @@ public class IceWalls : MonoBehaviour
         foreach (var wall in iceCreamwalls)
         {
             wall.GetComponent<MeshRenderer>().material = opaqueMaterial;
+            Debug.Log($"{wall} made opaque");
         }
     }
 }
