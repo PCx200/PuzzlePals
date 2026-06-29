@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4793776511802377532}
   - component: {fileID: 1765234377916268968}
   - component: {fileID: 2062721765756672585}
+  - component: {fileID: -8056422694870981458}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: Untagged
@@ -164,6 +165,20 @@ MonoBehaviour:
       Data3: -1943554130
       Data4: 1281225598
     Path: event:/Monster SFX/Copkac/CreateCupcake
+  <clickUI>k__BackingField:
+    Guid:
+      Data1: 1364591778
+      Data2: 1207372138
+      Data3: 102230151
+      Data4: 643253560
+    Path: event:/UI/Click
+  <star>k__BackingField:
+    Guid:
+      Data1: 531312251
+      Data2: 1193905968
+      Data3: 1830173846
+      Data4: 1681764389
+    Path: event:/UI/Star
   <mainMenuMusic>k__BackingField:
     Guid:
       Data1: -1026063978
@@ -208,3 +223,15 @@ MonoBehaviour:
   musicVolume: 1
   sfxVolume: 1
   ambienceVolume: 1
+--- !u!114 &-8056422694870981458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6886044281138096885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24f63121b7be81147916a6faf7ae8aea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayUISound

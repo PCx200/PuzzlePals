@@ -397,7 +397,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 349.74084, y: -152.23386}
+  m_AnchoredPosition: {x: 345.45, y: -152.07124}
   m_SizeDelta: {x: 354.9076, y: 132.247}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &4949693486373283339
@@ -485,6 +485,18 @@ MonoBehaviour:
       - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PauseMenuManager, Assembly-CSharp
         m_MethodName: PauseGameButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -8056422694870981458, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+        m_TargetAssemblyTypeName: PlayUISound, Assembly-CSharp
+        m_MethodName: PlayClick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -604,7 +616,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 349.74084, y: -251.52095}
+  m_AnchoredPosition: {x: 345.45, y: -251.0331}
   m_SizeDelta: {x: 303.453, y: 118.6267}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3000292089111498310
@@ -701,6 +713,18 @@ MonoBehaviour:
           m_StringArgument: LevelsMenu
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: -8056422694870981458, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+        m_TargetAssemblyTypeName: PlayUISound, Assembly-CSharp
+        m_MethodName: PlayClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &5840871433932927893
 GameObject:
   m_ObjectHideFlags: 0
@@ -736,7 +760,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 349.74084, y: -350.80804}
+  m_AnchoredPosition: {x: 345.45, y: -349.99496}
   m_SizeDelta: {x: 247.4582, y: 89.8726}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &4009844990688680316
@@ -831,6 +855,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: MainMenu
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -8056422694870981458, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
+        m_TargetAssemblyTypeName: PlayUISound, Assembly-CSharp
+        m_MethodName: PlayClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &8379127945191318648

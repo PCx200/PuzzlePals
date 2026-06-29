@@ -29,6 +29,9 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference copkacJump { get; private set; }
     [field: SerializeField] public EventReference createCupcake { get; private set; }
 
+    [field: Header("Music")]
+    [field: SerializeField] public EventReference clickUI { get; private set; }
+    [field: SerializeField] public EventReference star { get; private set; }
 
     [field: Header("Music")]
     [field: SerializeField] public EventReference mainMenuMusic { get; private set; }
