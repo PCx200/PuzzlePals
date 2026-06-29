@@ -132,7 +132,8 @@ MonoBehaviour:
   CurrentStatePreset: " <sbspreset pkgurl=\"pkg://FoamCarpet\" label=\"\" >\n  <presetinput
     identifier=\"$outputsize\" uid=\"802327493\" type=\"8\" value=\"10,10\" />\n 
     <presetinput identifier=\"Riges_Foam\" uid=\"1222111371\" type=\"4\" value=\"30\"
-    />\n </sbspreset>\n"
+    />\n  <presetinput identifier=\"Color_Ridges\" uid=\"1222111429\" type=\"2\"
+    value=\"1,1,1\" />\n </sbspreset>\n"
   IsRuntimeOnly: 0
   GenerateAllOutputs: 0
   GenerateAllMipmaps: 1
@@ -141,7 +142,7 @@ MonoBehaviour:
     identifier=\"$outputsize\" uid=\"802327493\" type=\"8\" value=\"10,10\" />\n
     </sbspreset>\n"
   MaterialShader: Universal Render Pipeline/Lit
-  RenderTextures: 0
+  RenderTextures: 1
   OutputRemaped: 0
   Presets: []
   references:
@@ -221,7 +222,7 @@ MonoBehaviour:
           GuiDescription: 
           Type: 2
           WidgetType: 3
-        Data: {x: 0.525135, y: 0.369375, z: 0.7343}
+        Data: {x: 1, y: 1, z: 1}
         NumericalDescription:
           DefaultValue: {x: 0.525135, y: 0.369375, z: 0.7343}
           MinValue: {x: 0, y: 0, z: 0}

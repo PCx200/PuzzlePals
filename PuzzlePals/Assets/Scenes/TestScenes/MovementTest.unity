@@ -832,8 +832,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d1c383412c51ca42acb02c5674cd6ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EventBus.DreamState
-  invisibleObjs: []
   visible: 0
+  dreamParticles: {fileID: 0}
 --- !u!114 &333567040
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -847,6 +847,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
   monsterName: 2
+  footStepsPartEff: {fileID: 0}
   stats: {fileID: 11400000, guid: 78c666639d1fae04b82755f2cd453f0e, type: 2}
   superPowers:
   - {fileID: 0}
@@ -1239,6 +1240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EventBus.EndPoint
   area: {fileID: 578028867}
   level: {fileID: 2120576666}
+  nextScene: 0
 --- !u!1 &643846766
 GameObject:
   m_ObjectHideFlags: 0
@@ -1599,7 +1601,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
 --- !u!4 &665155498 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7257894971969011387, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5764189183531684824, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
   m_PrefabInstance: {fileID: 665155497}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &703516645
@@ -3819,13 +3821,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e153a7529e0f14ab6fbc5e5b8567c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  normalJumpHeight: 0
+  walkingParticles: {fileID: 0}
   currentMonster: {fileID: 333567040}
+  monsters: []
   legsTransform: {fileID: 1341797044}
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
   lookAtTransform: {fileID: 1263250170}
+  isSprinting: 0
+  isJumping: 0
   interactCooldown: 0.2
 --- !u!54 &1408116998
 Rigidbody:
@@ -5120,7 +5127,7 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
 --- !u!4 &1922576168 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 7257894971969011387, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
+  m_CorrespondingSourceObject: {fileID: 5764189183531684824, guid: 224829b4d65a4be4a8ece7f3cc7e3d6a, type: 3}
   m_PrefabInstance: {fileID: 1922576167}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1940292854
@@ -5510,7 +5517,7 @@ GameObject:
   - component: {fileID: 2120576667}
   - component: {fileID: 2120576666}
   m_Layer: 0
-  m_Name: Home Lv1
+  m_Name: Home
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5529,8 +5536,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Level
   levelData: {fileID: 11400000, guid: e607b696b63f9124695b20eb15a53103, type: 2}
-  timeElapsed: 0
+  completionTime: 0
   endPoint: {fileID: 578028870}
+  completed: 0
 --- !u!4 &2120576667
 Transform:
   m_ObjectHideFlags: 0
@@ -5613,7 +5621,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <bed>k__BackingField.Path
-      value: event:/HomeBed
+      value: event:/Monster SFX/Home/HomeBed
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <pipe>k__BackingField.Path

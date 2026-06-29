@@ -23,7 +23,7 @@ public class ReleaseHappiness : SuperPower
         particles.Play();
         var hitObj = Physics.SphereCastAll(transform.position, radius, transform.forward, 0, sadObj);
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.happiness, transform.position);
-        player.currentMonster.Animator.PlaySuperPower("ReleaseHappiness");
+        player.currentMonster.Animator.SetTrigger("Happiness");
 
 
         foreach (var obj in hitObj)

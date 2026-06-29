@@ -8337,7 +8337,7 @@ GameObject:
   - component: {fileID: 2120576667}
   - component: {fileID: 2120576666}
   m_Layer: 0
-  m_Name: Home Lv1
+  m_Name: Home
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8358,6 +8358,7 @@ MonoBehaviour:
   levelData: {fileID: 11400000, guid: e607b696b63f9124695b20eb15a53103, type: 2}
   completionTime: 0
   endPoint: {fileID: 0}
+  completed: 0
 --- !u!4 &2120576667
 Transform:
   m_ObjectHideFlags: 0
@@ -8573,7 +8574,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <bed>k__BackingField.Path
-      value: event:/HomeBed
+      value: event:/Monster SFX/Home/HomeBed
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <pipe>k__BackingField.Path

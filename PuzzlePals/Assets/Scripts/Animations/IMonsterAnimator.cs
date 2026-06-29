@@ -6,6 +6,10 @@ using UnityEngine;
 /// </summary>
 public interface IMonsterAnimator
 {
+    void SetBool(string name, bool state);
+
+    void SetTrigger(string name);
+
     void PlayIdle();
     void PlayWalk();
     void PlayRun();

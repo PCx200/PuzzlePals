@@ -1815,6 +1815,7 @@ MonoBehaviour:
   levelData: {fileID: 11400000, guid: b6203b2a19e71ae4d8105693dee9fd0b, type: 2}
   completionTime: 0
   endPoint: {fileID: 1962624153}
+  completed: 0
 --- !u!4 &760966037
 Transform:
   m_ObjectHideFlags: 0
@@ -3449,7 +3450,7 @@ MonoBehaviour:
       Data2: 1216422622
       Data3: 548061113
       Data4: -1062682253
-    Path: event:/DoorOpen
+    Path: event:/Obstacles/DoorOpen
 --- !u!95 &1730996660
 Animator:
   serializedVersion: 7
@@ -4855,7 +4856,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <bed>k__BackingField.Path
-      value: event:/HomeBed
+      value: event:/Monster SFX/Home/HomeBed
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <pipe>k__BackingField.Path
@@ -4867,7 +4868,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <doorOpen>k__BackingField.Path
-      value: event:/DoorOpen
+      value: event:/Obstacles/DoorOpen
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <bed>k__BackingField.Guid.Data1
@@ -4887,11 +4888,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <throwBall>k__BackingField.Path
-      value: event:/ThrowBall
+      value: event:/Monster SFX/Mida/ThrowBall
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <monsterEat>k__BackingField.Path
-      value: event:/MonsterEat
+      value: event:/Obstacles/MonsterEat
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <pipe>k__BackingField.Guid.Data1
@@ -4911,7 +4912,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <buttonClick>k__BackingField.Path
-      value: event:/ButtonClick
+      value: event:/Interactables/ButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <kaboom>k__BackingField.Guid.Data1
@@ -4947,7 +4948,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <transformation>k__BackingField.Path
-      value: event:/Transformation
+      value: event:/Interactables/Transformation
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <throwBall>k__BackingField.Guid.Data1

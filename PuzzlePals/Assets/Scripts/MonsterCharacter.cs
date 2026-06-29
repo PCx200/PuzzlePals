@@ -25,29 +25,29 @@ public class MonsterCharacter : MonoBehaviour
 
     public IMonsterAnimator Animator;
 
+    private void Awake()
+    {
+        SetAnimator();
+    }
 
- 
     private void Start()
     {
         player = GetComponentInParent<PlayerController>();
 
         SetFootSteps();
         inputManager = InputManager.Instance;
-
-        SetAnimator();
-
     }
 
 
     private void Update()
     {
-        UpdateSound();
+       UpdateSound();
     }
     private void SetAnimator()
     {
         Animator = GetComponent<IMonsterAnimator>();
         if (Animator == null)
-            Debug.LogError($"No IMonsterAnimator found on {name}");
+            Debug.LogError($"No Animator found on {name}");
     }
     private void SetFootSteps()
     {
@@ -82,7 +82,7 @@ public class MonsterCharacter : MonoBehaviour
             if (playbackState.Equals(PLAYBACK_STATE.STOPPED) || playbackState.Equals(PLAYBACK_STATE.STOPPING))
             {
                 footsteps.start();
-                if(footStepsPartEff !=null) footStepsPartEff.Play();
+                if (footStepsPartEff != null) footStepsPartEff.Play();
                 Debug.Log("Footsteps are being played");
             }
         }

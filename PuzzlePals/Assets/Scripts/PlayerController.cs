@@ -29,8 +29,10 @@ public class PlayerController : MonoBehaviour
     private Vector3 jumpForce;
     private bool jumpPressed;
 
-    [HideInInspector] public bool isSprinting;
+    [SerializeField] public bool isSprinting;
     [HideInInspector] private bool isGrounded;
+    private bool isWalking;
+    [SerializeField] private bool isJumping;
 
     public bool Grounded => isGrounded;
 
@@ -80,7 +82,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext ctx)
-    {     
+    {
+        isJumping = true;
         Jump();
         Debug.Log("Jump pressed");
     }
@@ -112,18 +115,16 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        Debug.Log("Jump() called");
-        
-        isGrounded = IsGrounded();
+        if (!isGrounded) return;
+
+        currentMonster.Animator.SetTrigger("Jump");
 
         jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * normalJumpHeight) * Vector3.up;
-        if (isGrounded)
-        {
-            //resets the velocity so if jumping on slopes it should be with the same force
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
-            rb.AddForce(jumpForce, ForceMode.Impulse);
-            currentMonster.Animator.PlayJump();
-        }  
+
+        //resets the velocity so if jumping on slopes it should be with the same force
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+        rb.AddForce(jumpForce, ForceMode.Impulse);
+ 
     }
 
     private void Move()
@@ -151,15 +152,19 @@ public class PlayerController : MonoBehaviour
         
         rb.AddForce(moveForce - frictionForce, ForceMode.Force);
 
-        if (moveForce.magnitude > 0)
+        if (movementDirection.magnitude > 0)
         {
             transform.rotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-            currentMonster.Animator.PlayWalk();
+            isWalking = true;
         }
         else
-        { 
-            currentMonster.Animator.PlayIdle();
+        {
+            isWalking = false;
         }
+
+        currentMonster.Animator.SetBool("isWalking", isWalking);
+        currentMonster.Animator.SetBool("isSprinting", isSprinting);
+
     }
 
     #endregion
@@ -177,6 +182,11 @@ public class PlayerController : MonoBehaviour
             {
                 walkingParticles.Play();
             }
+        }
+
+        if (isGrounded)
+        {
+            isJumping = false;
         }
         
         Move();

@@ -19,4 +19,8 @@ public class HomeAnimator : MonoBehaviour, IMonsterAnimator
     public void PlaySuperPower(string superPowerName) => animator.Play(superPowerName);
 
     public void PlayWalk() => animator.Play("Walk");
+
+    public void SetBool(string name, bool state) => animator.SetBool(name, state);
+
+    public void SetTrigger(string name) => animator.SetTrigger(name);
 }
