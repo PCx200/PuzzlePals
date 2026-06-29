@@ -12961,6 +12961,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -152.07124
       objectReference: {fileID: 0}
+    - target: {fileID: 7513801987268114533, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1016601471}
+    - target: {fileID: 7513801987268114533, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: PauseGameButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7513801987268114533, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PauseMenuManager, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 8052071435465743728, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -13001,6 +13013,11 @@ PrefabInstance:
 --- !u!224 &761263489 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3874375626991805153, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+  m_PrefabInstance: {fileID: 761263488}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &761263490 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 746486531014924125, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
   m_PrefabInstance: {fileID: 761263488}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &774587727
@@ -17286,7 +17303,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16c918b7f256bcc4181b3582d63a25ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PauseMenuManager
-  pausePanel: {fileID: 0}
+  pausePanel: {fileID: 761263490}
 --- !u!1001 &1028398503
 PrefabInstance:
   m_ObjectHideFlags: 0
