@@ -29,7 +29,7 @@ public class PlayerController : MonoBehaviour
     private Vector3 jumpForce;
     private bool jumpPressed;
 
-    [HideInInspector] public bool isSprinting;
+    [SerializeField] public bool isSprinting;
     [HideInInspector] private bool isGrounded;
     private bool isWalking;
     [SerializeField] private bool isJumping;
@@ -163,7 +163,8 @@ public class PlayerController : MonoBehaviour
         }
 
         currentMonster.Animator.SetBool("isWalking", isWalking);
-    
+        currentMonster.Animator.SetBool("isSprinting", isSprinting);
+
     }
 
     #endregion

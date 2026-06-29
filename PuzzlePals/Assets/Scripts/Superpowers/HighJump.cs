@@ -31,7 +31,7 @@ public class HighJump : SuperPower
             rb.AddForce(jumpForce, ForceMode.Impulse);
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.copkacJump, transform.position);
             highJump.Play();
-            player.currentMonster.Animator.PlaySuperPower("HighJump");
+            player.currentMonster.Animator.SetTrigger("HighJump");
         }
     }
 

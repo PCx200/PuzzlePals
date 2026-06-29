@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 //this class is the super power of MIDA
@@ -21,24 +22,27 @@ public class IceCreamBalls : SuperPower
 
     public override void SuperPowerPressed()
     {
-        ThrowIceCreamBalls();
+        StartCoroutine(ThrowIceCreamBalls());
     }
 
-    void ThrowIceCreamBalls()
+    IEnumerator ThrowIceCreamBalls()
     {        
         if (currentCooldown < 0)
         {
-            var ball = Instantiate(iceCreamBallPrefab, ballSpawnPoint.transform.position, Quaternion.identity);
+            currentCooldown = cooldown;
 
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.throwBall, transform.position);
-            player.currentMonster.Animator.PlaySuperPower("ThrowIceCream");
+            player.currentMonster.Animator.SetTrigger("Throw");
+
+            yield return new WaitForSeconds(0.1f);
+            var ball = Instantiate(iceCreamBallPrefab, ballSpawnPoint.transform.position, Quaternion.identity);
 
             Rigidbody rb = ball.GetComponent<Rigidbody>();
 
             rb.AddForce(Vector3.up * upwardForce, ForceMode.Impulse);
             rb.AddForce(transform.forward * throwForce, ForceMode.Impulse);
 
-            currentCooldown = cooldown;
+
 
             Destroy(ball, ballDespawnTime);
         }
