@@ -43,7 +43,7 @@ public class LevelCompletedView : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         panel.SetActive(true);
 
-        completionTimeText.text = $"Completion Time: {FormatTime(level.CompletionTime)}";
+        completionTimeText.text = $"{FormatTime(level.CompletionTime)}";
 
         var entry = LevelManager.Instance.SaveData.GetOrCreate(level.LevelData.sceneName);
 
@@ -52,7 +52,7 @@ public class LevelCompletedView : MonoBehaviour
         if (bestTime == 0 || level.CompletionTime < bestTime)
             bestTime = (ushort)level.CompletionTime;
 
-        bestTimeText.text = $"Best Time: {FormatTime(bestTime)}";
+        bestTimeText.text = $"{FormatTime(bestTime)}";
     }
 
     private void EnableStarsOnLevelCompletion()
@@ -69,9 +69,10 @@ public class LevelCompletedView : MonoBehaviour
 
         for (int i = 0; i < level.StarsEarnedThisRun; i++)
         {
-            stars[i].gameObject.SetActive(true);
             //using this because we stop the time when the level is completed
             yield return new WaitForSecondsRealtime(0.5f);
+            stars[i].gameObject.SetActive(true);
+
         }
     }
 

@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
     [HideInInspector] public bool isSprinting;
     [HideInInspector] private bool isGrounded;
+    private bool isWalking;
+    private bool isJumping;
 
     public bool Grounded => isGrounded;
 
@@ -80,7 +82,8 @@ public class PlayerController : MonoBehaviour
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext ctx)
-    {     
+    {
+        isJumping = true;
         Jump();
         Debug.Log("Jump pressed");
     }
@@ -112,18 +115,16 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-        Debug.Log("Jump() called");
-        
-        isGrounded = IsGrounded();
+        if (!isGrounded) return;
+
+        currentMonster.Animator.PlayJump();
 
         jumpForce = Mathf.Sqrt(2.0f * Mathf.Abs(Physics.gravity.y) * normalJumpHeight) * Vector3.up;
-        if (isGrounded)
-        {
-            //resets the velocity so if jumping on slopes it should be with the same force
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
-            rb.AddForce(jumpForce, ForceMode.Impulse);
-            currentMonster.Animator.PlayJump();
-        }  
+
+        //resets the velocity so if jumping on slopes it should be with the same force
+        rb.linearVelocity = new Vector3(rb.linearVelocity.x, 0, rb.linearVelocity.z);
+        rb.AddForce(jumpForce, ForceMode.Impulse);
+ 
     }
 
     private void Move()
@@ -154,11 +155,11 @@ public class PlayerController : MonoBehaviour
         if (moveForce.magnitude > 0)
         {
             transform.rotation = Quaternion.LookRotation(movementDirection, Vector3.up);
-            currentMonster.Animator.PlayWalk();
+            currentMonster.Animator.PlayWalk();            
         }
         else
-        { 
-            currentMonster.Animator.PlayIdle();
+        {
+                currentMonster.Animator.PlayIdle();
         }
     }
 
