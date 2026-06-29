@@ -9,8 +9,6 @@ using UnityEngine.SceneManagement;
 public class LevelManager : MonoBehaviour
 {
     public static LevelManager Instance;
-    [SerializeField] private float transitionTime = 1.5f;
-    [SerializeField] private Animator transition;
 
     [SerializeField] private List<LevelData> levels;
     public List<LevelData> AllLevels => levels;
@@ -37,33 +35,6 @@ public class LevelManager : MonoBehaviour
         saveData = SaveSystem.Load();
         ApplySaveToLevels();
         RecalculateStars();
-    }
-
-    public void LoadLevel(string sceneName)
-    {
-        StartCoroutine(LoadLevelTransition(sceneName));   
-    }
-    IEnumerator LoadLevelTransition(string sceneName)
-    {
-        transition.SetTrigger("Start");
-
-        yield return new WaitForSeconds(transitionTime);
-
-        SceneManager.LoadScene(sceneName);        
-    }
-    public void ReplayLevel()
-    {
-        string sceneName = SceneManager.GetActiveScene().ToString();
-
-        StartCoroutine(LoadLevelTransition(sceneName));
-
-    }
-
-    public void NextLevel()
-    {
-        string sceneName = SceneManager.GetActiveScene() + 1.ToString();
-
-        StartCoroutine(LoadLevelTransition(sceneName));
     }
 
     private void ApplySaveToLevels()
