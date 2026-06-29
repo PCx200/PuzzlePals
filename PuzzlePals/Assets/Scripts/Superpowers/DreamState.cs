@@ -41,6 +41,10 @@ namespace EventBus
         {
             foreach (var obj in invisibleObjs)
             {
+                if (obj == null)
+                {
+                    return;
+                }
                 obj.SetActive(false);
             }
             visible = false;
