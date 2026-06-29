@@ -7,6 +7,7 @@ public class MusicManager : MonoBehaviour
 {
     public bool menu;
     public bool puzzle;
+    public bool ambience;
     
     private EventInstance menuEventInstance;
     private EventInstance puzzleMusicEventInstance;
@@ -23,14 +24,11 @@ public class MusicManager : MonoBehaviour
         {
             puzzleMusicEventInstance = AudioManager.Instance.CreateInstance(FMODEvents.Instance.puzzleMusic);
             puzzleMusicEventInstance.start();
+        }
+        if (ambience)
+        {
             ambientMusicEventInstance = AudioManager.Instance.CreateInstance(FMODEvents.Instance.ambience);
             ambientMusicEventInstance.start();
         }
     }
-
-    /*private void OnDisable()
-    {
-        ambientEventInstance.stop(STOP_MODE.ALLOWFADEOUT);
-        puzzleMusicEventInstance.stop(STOP_MODE.ALLOWFADEOUT);
-    }*/
 }
