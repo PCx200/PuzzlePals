@@ -4553,6 +4553,7 @@ MonoBehaviour:
   levelData: {fileID: 11400000, guid: 0b65bbe9d283ab14c889c2714c5a8de5, type: 2}
   completionTime: 0
   endPoint: {fileID: 708430497}
+  completed: 0
 --- !u!4 &1590568975
 Transform:
   m_ObjectHideFlags: 0
@@ -4725,7 +4726,7 @@ MonoBehaviour:
       Data2: 1216422622
       Data3: 548061113
       Data4: -1062682253
-    Path: event:/DoorOpen
+    Path: event:/Obstacles/DoorOpen
 --- !u!1001 &1658382711
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6328,7 +6329,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <bed>k__BackingField.Path
-      value: event:/HomeBed
+      value: event:/Monster SFX/Home/HomeBed
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <pipe>k__BackingField.Path
@@ -6340,7 +6341,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <sprint>k__BackingField.Path
-      value: event:/Sprint
+      value: event:/Monster SFX/Jullia/Sprint
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <bed>k__BackingField.Guid.Data1
@@ -6360,7 +6361,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <happiness>k__BackingField.Path
-      value: event:/Happiness
+      value: event:/Monster SFX/Jullia/Happiness
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <pipe>k__BackingField.Guid.Data1

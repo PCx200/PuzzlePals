@@ -7875,7 +7875,7 @@ GameObject:
   - component: {fileID: 1690630648}
   - component: {fileID: 1690630647}
   m_Layer: 0
-  m_Name: Copkac Lv1
+  m_Name: Copkac
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7896,6 +7896,7 @@ MonoBehaviour:
   levelData: {fileID: 11400000, guid: 735c3bc57306a0e489ff8e6d2c79c646, type: 2}
   completionTime: 0
   endPoint: {fileID: 445262497}
+  completed: 0
 --- !u!4 &1690630648
 Transform:
   m_ObjectHideFlags: 0
@@ -9949,7 +9950,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <bed>k__BackingField.Path
-      value: event:/HomeBed
+      value: event:/Monster SFX/Home/HomeBed
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <pipe>k__BackingField.Path
@@ -9961,11 +9962,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <sprint>k__BackingField.Path
-      value: event:/Sprint
+      value: event:/Monster SFX/Jullia/Sprint
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <doorOpen>k__BackingField.Path
-      value: event:/DoorOpen
+      value: event:/Obstacles/DoorOpen
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <bed>k__BackingField.Guid.Data1
@@ -9985,19 +9986,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <happiness>k__BackingField.Path
-      value: event:/Happiness
+      value: event:/Monster SFX/Jullia/Happiness
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <throwBall>k__BackingField.Path
-      value: event:/ThrowBall
+      value: event:/Monster SFX/Mida/ThrowBall
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <dreamState>k__BackingField.Path
-      value: event:/DreamState
+      value: event:/Monster SFX/Home/DreamState
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <monsterEat>k__BackingField.Path
-      value: event:/MonsterEat
+      value: event:/Obstacles/MonsterEat
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <pipe>k__BackingField.Guid.Data1
@@ -10017,7 +10018,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <buttonClick>k__BackingField.Path
-      value: event:/ButtonClick
+      value: event:/Interactables/ButtonClick
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <kaboom>k__BackingField.Guid.Data1
@@ -10069,7 +10070,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <transformation>k__BackingField.Path
-      value: event:/Transformation
+      value: event:/Interactables/Transformation
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <happiness>k__BackingField.Guid.Data1

@@ -4886,7 +4886,7 @@ GameObject:
   - component: {fileID: 1590568975}
   - component: {fileID: 1590568974}
   m_Layer: 0
-  m_Name: Jullia Lv1
+  m_Name: Jullia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4907,6 +4907,7 @@ MonoBehaviour:
   levelData: {fileID: 11400000, guid: 0b65bbe9d283ab14c889c2714c5a8de5, type: 2}
   completionTime: 0
   endPoint: {fileID: 708430497}
+  completed: 0
 --- !u!4 &1590568975
 Transform:
   m_ObjectHideFlags: 0
@@ -5079,7 +5080,7 @@ MonoBehaviour:
       Data2: 1216422622
       Data3: 548061113
       Data4: -1062682253
-    Path: event:/DoorOpen
+    Path: event:/Obstacles/DoorOpen
 --- !u!4 &1661703638 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8206610956478135232, guid: 7051684cedba40c47ab24c50c10e865b, type: 3}
@@ -6403,7 +6404,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <bed>k__BackingField.Path
-      value: event:/HomeBed
+      value: event:/Monster SFX/Home/HomeBed
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <pipe>k__BackingField.Path
@@ -6415,7 +6416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <sprint>k__BackingField.Path
-      value: event:/Sprint
+      value: event:/Monster SFX/Jullia/Sprint
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <bed>k__BackingField.Guid.Data1
@@ -6435,7 +6436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <happiness>k__BackingField.Path
-      value: event:/Happiness
+      value: event:/Monster SFX/Jullia/Happiness
       objectReference: {fileID: 0}
     - target: {fileID: 1765234377916268968, guid: e25e524ffaf8f954ea8b81475c4cc34f, type: 3}
       propertyPath: <pipe>k__BackingField.Guid.Data1
