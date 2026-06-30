@@ -16,6 +16,11 @@ public class SetSelectedUIElement : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        eventSystem = FindFirstObjectByType<EventSystem>();
+    }
+
     private void Update()
     {
         if (eventSystem.currentSelectedGameObject == null)

@@ -42,6 +42,7 @@ public class LevelLoader : MonoBehaviour
     {
         StartCoroutine(LoadLevelTransition(sceneName));
     }
+    
     private IEnumerator LoadLevelTransition(string sceneName)
     {
         transitionAnimator.SetTrigger("Start");
@@ -50,14 +51,23 @@ public class LevelLoader : MonoBehaviour
 
         SceneManager.LoadScene(sceneName);
     }
+    private IEnumerator LoadLevelTransition(int buildIndex)
+    {
+        transitionAnimator.SetTrigger("Start");
+
+        yield return new WaitForSecondsRealtime(transitionAnimator.GetCurrentAnimatorClipInfo(0).Length);
+
+        SceneManager.LoadScene(buildIndex);
+    }
     public void ReplayLevel()
     {
         StartCoroutine(LoadLevelTransition(SceneManager.GetActiveScene().name));
     }
 
-    public void NextLevel(string sceneName)
+    public void NextLevel()
     {
-        StartCoroutine(LoadLevelTransition(sceneName));
+        var buildIndex = SceneManager.GetActiveScene().buildIndex + 1;
+        StartCoroutine(LoadLevelTransition(buildIndex));
     }
 
     public void GoBackOnMenu(InputAction.CallbackContext context)
