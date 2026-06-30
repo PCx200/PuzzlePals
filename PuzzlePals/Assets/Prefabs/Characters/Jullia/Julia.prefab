@@ -458,7 +458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Sprint
   sprintMultiplier: 2
   playerController: {fileID: 0}
-  particleEffects: {fileID: 824856306068715864}
+  particleEffects: {fileID: 5363651919933296486}
 --- !u!114 &2574928934309579728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,6 +566,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8637097002711665819}
     m_Modifications:
+    - target: {fileID: 3651276556821390952, guid: 9219db4b3ba99434ea86bdaca211492c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.56
+      objectReference: {fileID: 0}
+    - target: {fileID: 3694494265108760102, guid: 9219db4b3ba99434ea86bdaca211492c, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6071823516797239455, guid: 9219db4b3ba99434ea86bdaca211492c, type: 3}
       propertyPath: m_Name
       value: Happiness VFX
@@ -576,7 +584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6600951081031494297, guid: 9219db4b3ba99434ea86bdaca211492c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -0.349
       objectReference: {fileID: 0}
     - target: {fileID: 6600951081031494297, guid: 9219db4b3ba99434ea86bdaca211492c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -905,9 +913,9 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1fe35b020c5524241b5f6d7f416dd13b, type: 3}
---- !u!1 &824856306068715864 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9054957572139378586, guid: 1fe35b020c5524241b5f6d7f416dd13b, type: 3}
+--- !u!198 &5363651919933296486 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 4374214182981718436, guid: 1fe35b020c5524241b5f6d7f416dd13b, type: 3}
   m_PrefabInstance: {fileID: 8564669599057878722}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &6313993264858726127 stripped
