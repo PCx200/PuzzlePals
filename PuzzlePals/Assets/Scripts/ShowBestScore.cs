@@ -18,10 +18,17 @@ public class ShowBestScore : MonoBehaviour
 
         ushort bestTime = entry.bestTime;
 
-        bestTimeText.text = bestTime.ToString();
+        bestTimeText.text = "Best Time " + $"{FormatTime(bestTime)}";
+
         for (int i = 0; i < entry.stars; i++)
         {
             stars[i].gameObject.SetActive(true);
         }
+    }
+    private string FormatTime(float time)
+    {
+        int minutes = (int)(time / 60f);
+        int seconds = (int)(time % 60f);
+        return $"{minutes:00}:{seconds:00}";
     }
 }
