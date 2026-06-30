@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4794309938177452914}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,7 +46,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7560228999898872401}
   - component: {fileID: 357361297160658304}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -99,7 +99,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4745873711319993721}
   - component: {fileID: 3032825749194503601}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Front
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,7 +152,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7496467257762782713}
   - component: {fileID: 2146515561586309242}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -204,7 +204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6003067770691192366}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pillars
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4156177697974230618}
   - component: {fileID: 7985378990952843626}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -294,7 +294,7 @@ GameObject:
   m_Component:
   - component: {fileID: 397218480151426592}
   - component: {fileID: 1487212635245465062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5756731222198904757}
   - component: {fileID: 875465791509049474}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -400,7 +400,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3526527693104285719}
   - component: {fileID: 7700328203316015539}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CloseLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -453,7 +453,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3020540626811077433}
   - component: {fileID: 1462184697051687754}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: GameObject (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -506,7 +506,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8464426386161207830}
   - component: {fileID: 5548993734371781527}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -559,7 +559,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4575466568804224496}
   - component: {fileID: 4322544238070840798}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -612,7 +612,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3718058443241518996}
   - component: {fileID: 1419852136505731181}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FarRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4054489071305811331}
   - component: {fileID: 9137130908374190012}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FarLeft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -717,7 +717,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7076780720311484307}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -753,7 +753,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3886153002885617819}
   - component: {fileID: 5375314742509705689}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Middle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -806,7 +806,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1779511498260332242}
   - component: {fileID: 8998877703820096044}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CloseRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -858,7 +858,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6160967984537596936}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Colliders
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -946,10 +946,14 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: 77cc07af38a48084fb217312d7b69df5, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 4cb26f2ee14252443935581559f7674c, type: 2}
+      objectReference: {fileID: 2100000, guid: 3683cc0049e5bfa45940a37123a77bb1, type: 2}
     - target: {fileID: 919132149155446097, guid: 77cc07af38a48084fb217312d7b69df5, type: 3}
       propertyPath: m_Name
       value: normalConstruction
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 77cc07af38a48084fb217312d7b69df5, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
