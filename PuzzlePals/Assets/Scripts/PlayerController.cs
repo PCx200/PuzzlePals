@@ -165,7 +165,7 @@ public class PlayerController : MonoBehaviour
         }
 
         currentMonster.Animator.SetBool("isWalking", isWalking);
-        currentMonster.Animator.SetBool("isSprinting", isSprinting);
+        //currentMonster.Animator.SetBool("isSprinting", isSprinting);
 
     }
 
