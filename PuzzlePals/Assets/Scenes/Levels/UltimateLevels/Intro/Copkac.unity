@@ -11022,6 +11022,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PauseMenuPanel
       objectReference: {fileID: 0}
+    - target: {fileID: 746486531014924125, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 804186105049211357, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11106,6 +11110,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4061335001960543578, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061335001960543578, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061335001960543578, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 345.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 4061335001960543578, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -147.11539
+      objectReference: {fileID: 0}
     - target: {fileID: 4219272801468697430, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -11114,6 +11134,38 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 2104473893}
+    - target: {fileID: 8052071435465743728, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052071435465743728, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052071435465743728, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 345.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8052071435465743728, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -390.07697
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810492452994714092, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810492452994714092, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810492452994714092, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 345.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 8810492452994714092, guid: 5a200c6663eda53458598be46cb9aedf, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -244.84619
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -17483,7 +17535,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5396633077090048142, guid: 3055b1cc53856db48a344d0c12841f38, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.786818
+      value: -30.97
       objectReference: {fileID: 0}
     - target: {fileID: 5396633077090048142, guid: 3055b1cc53856db48a344d0c12841f38, type: 3}
       propertyPath: m_LocalPosition.y
@@ -17491,7 +17543,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5396633077090048142, guid: 3055b1cc53856db48a344d0c12841f38, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.244644
+      value: -23.12
       objectReference: {fileID: 0}
     - target: {fileID: 5396633077090048142, guid: 3055b1cc53856db48a344d0c12841f38, type: 3}
       propertyPath: m_LocalRotation.w
@@ -17525,10 +17577,6 @@ PrefabInstance:
       propertyPath: level
       value: 
       objectReference: {fileID: 2047958929}
-    - target: {fileID: 8551516110548734552, guid: 3055b1cc53856db48a344d0c12841f38, type: 3}
-      propertyPath: nextScene
-      value: 3
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22221,6 +22269,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2104473897}
     m_Modifications:
+    - target: {fileID: 3836185558402862239, guid: e1260d927e1dae94d8e7da9af9e18d2e, type: 3}
+      propertyPath: m_text
+      value: Copkac introduction
+      objectReference: {fileID: 0}
     - target: {fileID: 4811503447740542148, guid: e1260d927e1dae94d8e7da9af9e18d2e, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -22313,6 +22365,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 947971515}
+    - target: {fileID: 5813965754055435323, guid: e1260d927e1dae94d8e7da9af9e18d2e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7697165876437917230, guid: e1260d927e1dae94d8e7da9af9e18d2e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
