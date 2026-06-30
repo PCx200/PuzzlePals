@@ -492,7 +492,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 98144e144c5de1c479cb36aef2ca2a49, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: b3bdafac687f8f74296f9f771dceff6c, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 98144e144c5de1c479cb36aef2ca2a49, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -636,7 +636,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 83ef6a7980327394abe997907f589030, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: 83bf14dcd048030419762c52094a1268, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 83ef6a7980327394abe997907f589030, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_SpriteState:
     m_HighlightedSprite: {fileID: 21300000, guid: 24342ce189e992547ab8ec7a5f4f1f96, type: 3}
     m_PressedSprite: {fileID: 21300000, guid: ed3aab0bb2381de48a9a6915bbc13669, type: 3}
-    m_SelectedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 21300000, guid: 24342ce189e992547ab8ec7a5f4f1f96, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -1146,13 +1146,14 @@ GameObject:
   - component: {fileID: 8027077731774732492}
   - component: {fileID: 6358179596834725607}
   - component: {fileID: 4546622530626064845}
+  - component: {fileID: 3089578445041018760}
   m_Layer: 5
   m_Name: Completed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8027077731774732492
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1211,6 +1212,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &3089578445041018760
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5813965754055435323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae4b8bb7252499942b8651038d586fc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SetSelectedUIElement
+  eventSystem: {fileID: 0}
+  toBeSelected: {fileID: 3738843701519820988}
 --- !u!1 &6869172424300524981
 GameObject:
   m_ObjectHideFlags: 0
@@ -1639,7 +1654,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Name of the level completed
+  m_text: Copkac introduction
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ee2c8bea4596f174a99d1c608ed6bc9a, type: 2}
   m_sharedMaterial: {fileID: -5096257206584490055, guid: ee2c8bea4596f174a99d1c608ed6bc9a, type: 2}
