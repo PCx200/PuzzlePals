@@ -101,6 +101,9 @@
 		<property name="playlistMode">
 			<value>1</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{8da2bb36-ac67-466d-bc23-0bcf8ca5773d}</destination>
+		</relationship>
 		<relationship name="sounds">
 			<destination>{4a0ffaa6-5121-4e63-a0ee-2341b60ed51d}</destination>
 			<destination>{d4f13473-3f04-4d3d-bb04-9cddf78c4cc6}</destination>
@@ -131,6 +134,14 @@
 	</object>
 	<object class="MixerBusPanner" id="{a4f4d0c1-5f9f-496a-940d-12231cf6b5e3}" />
 	<object class="MixerBusFader" id="{4716a092-7743-434a-9566-5e8efc182f5e}" />
+	<object class="RandomizerModulator" id="{8da2bb36-ac67-466d-bc23-0bcf8ca5773d}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>pitch</value>
+		</property>
+		<property name="amount">
+			<value>9</value>
+		</property>
+	</object>
 	<object class="SingleSound" id="{4a0ffaa6-5121-4e63-a0ee-2341b60ed51d}">
 		<property name="startOffset">
 			<value>5.5</value>
