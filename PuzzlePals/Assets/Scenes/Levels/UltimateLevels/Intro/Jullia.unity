@@ -10987,6 +10987,14 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7649116883341070858, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7649116883341070858, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8526339626939817904, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11002,6 +11010,26 @@ PrefabInstance:
     - target: {fileID: 8904131897699649861, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127712740964498441, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127712740964498441, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
+      propertyPath: lengthInSec
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127712740964498441, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
+      propertyPath: moveWithTransform
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127712740964498441, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9127712740964498441, guid: c70e3d7c70873cc4dbe9b29d4399690f, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
