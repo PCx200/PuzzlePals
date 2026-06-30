@@ -16,6 +16,14 @@ public class SetSelectedUIElement : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+        if (eventSystem.currentSelectedGameObject == null)
+        {
+            SelectElement();
+        }
+    }
+
     public void SelectElement()
     {
         if (eventSystem != null)

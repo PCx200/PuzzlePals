@@ -7,6 +7,7 @@ public class PauseMenuManager : MonoBehaviour
 {
     bool isPaused;
     [SerializeField] GameObject pausePanel;
+    [SerializeField] GameObject completedPanel;
 
     private InputManager inputManager;
     public Action PauseEvent; // pause audio
@@ -31,7 +32,7 @@ public class PauseMenuManager : MonoBehaviour
 
     public void PauseGame(InputAction.CallbackContext ctx)
     {
-        if (pausePanel != null)
+        if (pausePanel != null && !completedPanel.activeSelf)
         {
             if (!isPaused)
             {
