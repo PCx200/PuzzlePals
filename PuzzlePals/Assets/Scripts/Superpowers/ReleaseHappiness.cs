@@ -5,7 +5,6 @@ public class ReleaseHappiness : SuperPower
 {
     private PlayerController player;
     [SerializeField] private float radius;
-    [SerializeField] private Material happyMaterial;
     [SerializeField] private LayerMask sadObj;
     [Header ("ParticleSystem Effects")] 
     [SerializeField] private ParticleSystem circle;
@@ -25,15 +24,25 @@ public class ReleaseHappiness : SuperPower
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.happiness, transform.position);
         player.currentMonster.Animator.SetTrigger("Happiness");
 
+        foreach (var hit in hitObj)
+        {
+            var sadMonster = hit.collider.transform.Find("SadMonster");
+            if (sadMonster == null) continue;
 
-        foreach (var obj in hitObj)
-        { 
-            obj.collider.gameObject.GetComponent<MeshRenderer>().material = happyMaterial;
-            HappinessDetector.Instance.happyObjCount++;            
-            Debug.Log($"{obj.collider.gameObject.name} turned happy");
+            var animator = sadMonster.GetComponent<Animator>();
+            if (animator == null) continue;
+
+            if (HappinessDetector.Instance != null &&
+                !HappinessDetector.Instance.RegisterHappy(hit.collider.gameObject))
+                continue;
+
+            animator.SetTrigger("Happy");
+            Debug.Log($"{hit.collider.gameObject.name} turned happy");
         }
+
         if (HappinessDetector.Instance != null) HappinessDetector.Instance.CheckHappiness();
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.pink;
