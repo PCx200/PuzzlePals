@@ -534,78 +534,6 @@ ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 427827641056230882, guid: fe0453b2bc0aac2448768dc43a96ca4e, type: 3}
   m_PrefabInstance: {fileID: 1190889622}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &76970888
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2419178702932806752, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 960
-      objectReference: {fileID: 0}
-    - target: {fileID: 2419178702932806752, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 540
-      objectReference: {fileID: 0}
-    - target: {fileID: 2419178702932806752, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2419178702932806752, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2419178702932806752, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2419178702932806752, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2419178702932806752, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2419178702932806752, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2419178702932806752, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2419178702932806752, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5561538618046179009, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-      propertyPath: transitionAnimator
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 5571101099403228778, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-      propertyPath: m_Name
-      value: LevelLoader
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
---- !u!114 &76970889 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5561538618046179009, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
-  m_PrefabInstance: {fileID: 76970888}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a8840295bdf1cec4e98234e0e6f1e087, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LevelLoader
 --- !u!1001 &78359681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6077,18 +6005,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3943011657451191868, guid: 3581874a5f3e4fe4186ad5be31a25d19, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
-      value: 
-      objectReference: {fileID: 76970889}
-    - target: {fileID: 3943011657451191868, guid: 3581874a5f3e4fe4186ad5be31a25d19, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: NextLevel
-      objectReference: {fileID: 0}
-    - target: {fileID: 3943011657451191868, guid: 3581874a5f3e4fe4186ad5be31a25d19, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
-      value: Mida
-      objectReference: {fileID: 0}
     - target: {fileID: 6719822827137897926, guid: 3581874a5f3e4fe4186ad5be31a25d19, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -17707,5 +17623,4 @@ SceneRoots:
   - {fileID: 952151387}
   - {fileID: 179610289}
   - {fileID: 1523991136}
-  - {fileID: 76970888}
   - {fileID: 27234562}

@@ -42,17 +42,20 @@ public class LevelLoader : MonoBehaviour
     
     private IEnumerator LoadLevelTransition(string sceneName)
     {
-        transitionAnimator.SetTrigger("Start");
+        Time.timeScale = 1;
+        transitionAnimator.SetTrigger("Start"); 
+        //transitionAnimator.Play("End_Transition");
 
-        yield return new WaitForSecondsRealtime(transitionAnimator.GetCurrentAnimatorClipInfo(0).Length);
+        yield return new WaitForSecondsRealtime(1.5f);
 
         SceneManager.LoadScene(sceneName);
     }
     private IEnumerator LoadLevelTransition(int buildIndex)
     {
+        Time.timeScale = 1;
         transitionAnimator.SetTrigger("Start");
 
-        yield return new WaitForSecondsRealtime(transitionAnimator.GetCurrentAnimatorClipInfo(0).Length);
+        yield return new WaitForSecondsRealtime(1.5f);
 
         SceneManager.LoadScene(buildIndex);
     }
@@ -71,7 +74,7 @@ public class LevelLoader : MonoBehaviour
     {
         if (isOnLevelSelectionScene)
         {
-            SceneManager.LoadScene("MainMenu");
+            StartCoroutine(LoadLevelTransition("MainMenu"));
         }
     }
 
