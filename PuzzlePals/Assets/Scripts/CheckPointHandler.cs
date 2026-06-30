@@ -16,7 +16,7 @@ public class CheckPointHandler : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (transform.position.y < -10f)
+        if (transform.position.y < -15f)
         {
             TeleportToCheckpoint();
         }
