@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] public bool isSprinting;
     [HideInInspector] private bool isGrounded;
+    private bool lastGroundedState;
+
     private bool isWalking;
     [SerializeField] private bool isJumping;
 
@@ -188,7 +190,13 @@ public class PlayerController : MonoBehaviour
         {
             isJumping = false;
         }
-        
+
+        if (isGrounded != lastGroundedState)
+        {
+            currentMonster.Animator.SetBool("isGrounded", isGrounded);
+            lastGroundedState = isGrounded;
+        }
+
         Move();
     }
     private void FindCurrentMonster()
