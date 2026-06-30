@@ -54,6 +54,69 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!1 &5476671242320719663
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3174486618326007049}
+  - component: {fileID: 132567747524127097}
+  m_Layer: 0
+  m_Name: FMODEmitter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3174486618326007049
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5476671242320719663}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8303959616735039870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &132567747524127097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5476671242320719663}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: FMODUnity::FMODUnity.StudioEventEmitter
+  CollisionTag: Player
+  EventReference:
+    Guid:
+      Data1: 977409154
+      Data2: 1188580072
+      Data3: 712098184
+      Data4: -2037430810
+    Path: event:/Interactables/SadMonster
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 1
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 4
 --- !u!1001 &2806979635044615770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -190,6 +253,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 451216599662334089, guid: ce23651e31069894092459ccde4052c7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 6125352032874904310}
+    - targetCorrespondingSourceObject: {fileID: 451216599662334089, guid: ce23651e31069894092459ccde4052c7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3174486618326007049}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 939242104705665587, guid: ce23651e31069894092459ccde4052c7, type: 3}
       insertIndex: -1

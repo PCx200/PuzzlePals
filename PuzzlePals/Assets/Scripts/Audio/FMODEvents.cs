@@ -14,6 +14,7 @@ public class FMODEvents : MonoBehaviour
     [field: SerializeField] public EventReference doorOpen { get; private set; }
     [field: SerializeField] public EventReference returnSpawnpoint { get; private set; }
     [field: SerializeField] public EventReference monsterEat { get; private set; }
+    [field: SerializeField] public EventReference happyMonster { get; private set; }
 
     [field: SerializeField] public EventReference homeFootsteps { get; private set; }
     [field: SerializeField] public EventReference bed { get; private set; }
