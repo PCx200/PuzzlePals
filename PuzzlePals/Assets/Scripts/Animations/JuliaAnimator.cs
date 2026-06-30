@@ -21,4 +21,6 @@ public class JuliaAnimator : MonoBehaviour, IMonsterAnimator
     public void SetBool(string name, bool state) => animator.SetBool(name, state);
 
     public void SetTrigger(string name) => animator.SetTrigger(name);
+
+    public Animator GetAnimator() => animator;
 }

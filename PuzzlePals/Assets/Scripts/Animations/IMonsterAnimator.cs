@@ -16,4 +16,6 @@ public interface IMonsterAnimator
     void PlayJump();
 
     void PlaySuperPower(string superPowerName);
+
+    Animator GetAnimator();
 }

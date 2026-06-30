@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Cupcake : SuperPower
 {
@@ -16,14 +17,22 @@ public class Cupcake : SuperPower
     {
         if (spawnedCupcake == null)
         {
-            spawnedCupcake = Instantiate(cupcake, spawnPoint.transform.position, Quaternion.identity, spawnPoint);
-            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.createCupcake, transform.position);
-            player.currentMonster.Animator.PlaySuperPower("CreateCupcake");
+            StartCoroutine(SpawnCupcakeAfterAnimation());
         }
         else
         {
             Destroy(spawnedCupcake);
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.createCupcake, transform.position);
         }
+    }
+
+    private IEnumerator SpawnCupcakeAfterAnimation()
+    {       
+        player.currentMonster.Animator.SetTrigger("CreateCupcake");
+
+        yield return new WaitForSeconds(player.currentMonster.Animator.GetAnimator().GetCurrentAnimatorClipInfo(0).Length);
+
+        AudioManager.Instance.PlayOneShot(FMODEvents.Instance.createCupcake, transform.position);
+        spawnedCupcake = Instantiate(cupcake, spawnPoint.transform.position, Quaternion.identity, spawnPoint);
     }
 }

@@ -33062,6 +33062,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 9100000, guid: 77723288c4f26a248890fae4550c50e7, type: 2}
     - target: {fileID: 5866666021909216657, guid: e813979b847b0204eafc27729676b880, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: e813979b847b0204eafc27729676b880, type: 3}
       propertyPath: m_ApplyRootMotion
       value: 1
       objectReference: {fileID: 0}
@@ -33245,6 +33249,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: f6093bf469d9e824da71d8fe069b9149, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 90e8c5f0c7e3cfa4da261f4f2be5ec0f, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -33525,7 +33533,7 @@ Animator:
   m_Avatar: {fileID: 9000000, guid: 824bbe94bba581448ad0f63c376f1762, type: 3}
   m_Controller: {fileID: 9100000, guid: 73036dacd8778f54ebe71cfec0010f73, type: 2}
   m_CullingMode: 1
-  m_UpdateMode: 0
+  m_UpdateMode: 1
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
@@ -33667,6 +33675,10 @@ PrefabInstance:
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 6be383219cd78814faef1fefccdb8445, type: 2}
+    - target: {fileID: 5866666021909216657, guid: 753af92bf3810a944a9351a99a9a1ce4, type: 3}
+      propertyPath: m_UpdateMode
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
