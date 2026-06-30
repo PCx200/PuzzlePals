@@ -1,7 +1,4 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
-using UnityEditor;
-using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
