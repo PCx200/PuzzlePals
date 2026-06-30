@@ -607,6 +607,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 608cf725adb82d64a98c76f7cbb49516, type: 3}
+--- !u!114 &559899062 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3294647441301020667, guid: fe0453b2bc0aac2448768dc43a96ca4e, type: 3}
+  m_PrefabInstance: {fileID: 3279237465954699978}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cff98ad2f3ca9314380315cda3a2d4de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MonsterCharacter
 --- !u!1 &657753330
 GameObject:
   m_ObjectHideFlags: 0
@@ -778,7 +789,7 @@ PrefabInstance:
     - target: {fileID: 3651842988542232994, guid: eccf0be4457e72f4a948aa93368ee221, type: 3}
       propertyPath: characterToTransformInto
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 559899062}
     - target: {fileID: 6150196380880504746, guid: eccf0be4457e72f4a948aa93368ee221, type: 3}
       propertyPath: m_Name
       value: TransformationPoint
