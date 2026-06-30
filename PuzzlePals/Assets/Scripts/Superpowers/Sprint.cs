@@ -17,12 +17,14 @@ public class Sprint : SuperPower
     {
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.sprint, transform.position);
         playerController.isSprinting = true;
+        playerController.currentMonster.Animator.SetBool("isSprinting", true);
         particleEffects.Play();
     }
 
     public override void SuperPowerReleased()
     {
         playerController.isSprinting = false;
+        playerController.currentMonster.Animator.SetBool("isSprinting", false);
         particleEffects.Stop();
     }
 }
