@@ -8,6 +8,7 @@ public class Cupcake : SuperPower
     [SerializeField] private Transform spawnPoint;
     [SerializeField] private GameObject cupcake;
     private GameObject spawnedCupcake = null;
+    private bool spawning = false;
     
     private void Start()
     {
@@ -15,9 +16,10 @@ public class Cupcake : SuperPower
     }
     public override void SuperPowerPressed()
     {
-        if (spawnedCupcake == null)
+        if (spawnedCupcake == null && !spawning)
         {
             StartCoroutine(SpawnCupcakeAfterAnimation());
+            spawning = true;
         }
         else
         {
@@ -34,5 +36,6 @@ public class Cupcake : SuperPower
 
         AudioManager.Instance.PlayOneShot(FMODEvents.Instance.createCupcake, transform.position);
         spawnedCupcake = Instantiate(cupcake, spawnPoint.transform.position, Quaternion.identity, spawnPoint);
+        spawning = false;
     }
 }
