@@ -9,7 +9,7 @@ public class GoThroughWall : SuperPower
     private void Awake()
     {
         player = GetComponentInParent<PlayerController>();
-        gameObject.GetComponentInChildren<MeshRenderer>().material = opaqueMaterial;
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = opaqueMaterial;
     }
     public override void SuperPowerPressed()
     {
@@ -18,14 +18,14 @@ public class GoThroughWall : SuperPower
         {
             player.gameObject.layer = LayerMask.NameToLayer("MIDA");
             active = true;
-            gameObject.GetComponentInChildren<MeshRenderer>().material = transparentMaterial;
+            gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = transparentMaterial;
             IceWalls.instance.TurnTransparent();
             Debug.Log("Set the layer of the player to MIDA");
         }else
         {
             player.gameObject.layer = LayerMask.NameToLayer("Player");
             active= false;
-            gameObject.GetComponentInChildren<MeshRenderer>().material = opaqueMaterial;
+            gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material = opaqueMaterial;
             IceWalls.instance.TurnOpaque();
             Debug.Log("Set the layer of the player to Player");
         }
