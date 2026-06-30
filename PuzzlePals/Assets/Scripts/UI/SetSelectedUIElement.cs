@@ -25,15 +25,21 @@ public class SetSelectedUIElement : MonoBehaviour
     {
         if (eventSystem.currentSelectedGameObject == null)
         {
-            SelectElement();
+            SelectElement(toBeSelected);
         }
+        
     }
 
-    public void SelectElement()
+    public void SetToBeSelected(GameObject go)
+    {
+        toBeSelected = go;
+    }
+
+    public void SelectElement(GameObject element)
     {
         if (eventSystem != null)
         {
-            eventSystem.SetSelectedGameObject(toBeSelected);
+            eventSystem.SetSelectedGameObject(element);
         }
     }
 }
