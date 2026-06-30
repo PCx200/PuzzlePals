@@ -46,7 +46,7 @@ public class LevelLoader : MonoBehaviour
         transitionAnimator.SetTrigger("Start"); 
         //transitionAnimator.Play("End_Transition");
 
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSecondsRealtime(transitionAnimator.GetCurrentAnimatorClipInfo(0).Length + 0.25f);
 
         SceneManager.LoadScene(sceneName);
     }
@@ -55,7 +55,7 @@ public class LevelLoader : MonoBehaviour
         Time.timeScale = 1;
         transitionAnimator.SetTrigger("Start");
 
-        yield return new WaitForSecondsRealtime(1.5f);
+        yield return new WaitForSecondsRealtime(transitionAnimator.GetCurrentAnimatorClipInfo(0).Length + 0.25f);
 
         SceneManager.LoadScene(buildIndex);
     }
