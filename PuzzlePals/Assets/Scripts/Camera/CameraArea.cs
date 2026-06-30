@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class CameraArea : MonoBehaviour
 {
-    private CinemachineFollow follow;
+    private static bool transitioning = false;
+    private static CinemachineFollow follow;
     [SerializeField] private Vector3 offset;
     [SerializeField] private float blendTime;
 
@@ -29,6 +30,11 @@ public class CameraArea : MonoBehaviour
 
     private IEnumerator LerpCamera()
     {
+        while (transitioning)
+        {
+            yield return null;
+        }
+        transitioning = true;
         Vector3 startOffset = new Vector3(follow.FollowOffset.x, follow.FollowOffset.y, follow.FollowOffset.z);
         float timer = 0f;
         while (timer <= blendTime)
@@ -39,5 +45,6 @@ public class CameraArea : MonoBehaviour
             follow.FollowOffset.z = Mathf.Lerp(startOffset.z, offset.z, timer / blendTime);
             yield return null;
         }
+        transitioning = false;
     }
 }
