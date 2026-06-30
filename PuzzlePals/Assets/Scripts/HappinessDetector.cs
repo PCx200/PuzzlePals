@@ -1,30 +1,38 @@
-using NUnit.Framework;
 using UnityEngine;
 using UnityEngine.Events;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 
 public class HappinessDetector : MonoBehaviour
 {
-    [SerializeField] private LayerMask sadObjectLayer;
-    [SerializeField] private Material happyMaterial;
     [SerializeField] private UnityEvent onAllHappy;
     [SerializeField] private List<GameObject> sadObjects;
-    public int happyObjCount;
 
     public static HappinessDetector Instance;
+
+    private readonly HashSet<GameObject> happyObjects = new();
+
     private void Awake()
     {
         Instance = this;
     }
 
+    public bool RegisterHappy(GameObject sadObject)
+    {
+        if (!sadObjects.Contains(sadObject) || happyObjects.Contains(sadObject))
+            return false;
+
+        happyObjects.Add(sadObject);
+        return true;
+    }
+
     public void CheckHappiness()
     {
-        if(happyObjCount == sadObjects.Count)
+        if (sadObjects.Count == 0) return;
+
+        if (happyObjects.Count == sadObjects.Count)
         {
             onAllHappy.Invoke();
             Debug.Log("All objects are happy");
         }
     }
-
 }
