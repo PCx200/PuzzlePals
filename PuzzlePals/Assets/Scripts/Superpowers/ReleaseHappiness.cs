@@ -37,6 +37,7 @@ public class ReleaseHappiness : SuperPower
                 continue;
 
             animator.SetTrigger("Happy");
+            AudioManager.Instance.PlayOneShot(FMODEvents.Instance.happyMonster, transform.position);
             Debug.Log($"{hit.collider.gameObject.name} turned happy");
         }
 
