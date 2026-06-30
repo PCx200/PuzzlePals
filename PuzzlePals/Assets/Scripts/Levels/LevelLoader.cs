@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelLoader : MonoBehaviour
 {
-    [SerializeField] private float transitionTime = 1.5f;
+    //[SerializeField] private float transitionTime = 1.5f;
     [SerializeField] private Animator transitionAnimator;
 
     public void ExitGame()
@@ -22,22 +22,17 @@ public class LevelLoader : MonoBehaviour
     {
         transitionAnimator.SetTrigger("Start");
 
-        yield return new WaitForSecondsRealtime(transitionTime);
+        yield return new WaitForSecondsRealtime(transitionAnimator.GetCurrentAnimatorClipInfo(0).Length);
 
         SceneManager.LoadScene(sceneName);
     }
     public void ReplayLevel()
     {
-        string sceneName = SceneManager.GetActiveScene().ToString();
-
-        StartCoroutine(LoadLevelTransition(sceneName));
-
+        StartCoroutine(LoadLevelTransition(SceneManager.GetActiveScene().name));
     }
 
-    public void NextLevel()
+    public void NextLevel(string sceneName)
     {
-        string sceneName = SceneManager.GetActiveScene() + 1.ToString();
-
         StartCoroutine(LoadLevelTransition(sceneName));
     }
 }
