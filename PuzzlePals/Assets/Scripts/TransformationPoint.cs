@@ -1,5 +1,3 @@
-using System.Collections.Generic;
-using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
 
 [RequireComponent(typeof(BoxCollider))]
@@ -13,7 +11,24 @@ public class TransformationPoint : MonoBehaviour
     //private MonsterCharacter previousMonster;
 
     [SerializeField] BoxCollider area;
-    
+
+    [SerializeField] private Transform tentLight;
+
+    [SerializeField] private Color[] tentLightColors;
+
+    private void Awake()
+    {
+        if (tentLight != null)
+        {
+            var renderer = tentLight.GetComponent<Renderer>();
+
+            // Force a unique material instance for THIS tent
+            renderer.material = new Material(renderer.sharedMaterial);
+
+            ChangeLightMaterialColor();
+        }
+    }
+
 
     private void Transform(PlayerController player, MonsterCharacter transformInto)
     {
@@ -58,7 +73,31 @@ public class TransformationPoint : MonoBehaviour
             default:
                 break;
         }
-    }    
+    }
+
+    private void ChangeLightMaterialColor()
+    {
+        var material = tentLight.GetComponent<Renderer>().material;
+        material.EnableKeyword("_EMISSION");
+
+        switch (characterToTransformInto.Name)
+        {
+            case MonsterCharacter.MonsterName.Mida:
+                material.SetColor("_EmissionColor", tentLightColors[0]);
+                break;
+            case MonsterCharacter.MonsterName.Copkac:
+                material.SetColor("_EmissionColor", tentLightColors[1]);
+                break;
+            case MonsterCharacter.MonsterName.Home:
+                material.SetColor("_EmissionColor", tentLightColors[2]);
+                break;
+            case MonsterCharacter.MonsterName.Jullia:
+                material.SetColor("_EmissionColor", tentLightColors[3]);
+                break;
+            default:
+                break;
+        }
+    }
 
     private void OnTriggerEnter(Collider other)
     {
@@ -68,5 +107,6 @@ public class TransformationPoint : MonoBehaviour
             return;
         
         Transform(player, characterToTransformInto);
+        ChangeLightMaterialColor();
     }
 }

@@ -21,12 +21,18 @@ public class ElapsedTimeView : MonoBehaviour
 
     private void OnEnable()
     {
-        endPoint.OnLevelCompleted += DisableView ;
+        if (endPoint != null)
+        {
+            endPoint.OnLevelCompleted += DisableView ;
+        }
     }
 
     private void OnDisable()
     {
-        endPoint.OnLevelCompleted -= DisableView;
+        if (endPoint != null)
+        {
+            endPoint.OnLevelCompleted -= DisableView;
+        }
     }
 
     void Update()
