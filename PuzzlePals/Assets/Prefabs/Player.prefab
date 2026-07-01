@@ -7161,7 +7161,7 @@ ParticleSystem:
   emitterVelocityMode: 1
   looping: 0
   prewarm: 0
-  playOnAwake: 1
+  playOnAwake: 0
   useUnscaledTime: 0
   autoRandomSeed: 1
   startDelay:
@@ -23208,6 +23208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EventBus.DreamState
   visible: 0
   dreamParticles: {fileID: 5049866559017461407}
+  volume: {fileID: 2369601487017567074}
+  vignetteIntensity: 0.3
+  vignetteDuration: 0.25
 --- !u!114 &4880267051032278221
 MonoBehaviour:
   m_ObjectHideFlags: 0
