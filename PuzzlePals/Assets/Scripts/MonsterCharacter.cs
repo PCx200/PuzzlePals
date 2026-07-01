@@ -75,7 +75,7 @@ public class MonsterCharacter : MonoBehaviour
     }
     private void UpdateSound()
     {
-        if (inputManager.MoveAction.IsPressed() && player.Grounded)
+        if (inputManager.MoveAction.IsPressed() && player.Grounded && Time.timeScale > 0)
         {
             PLAYBACK_STATE playbackState;
             footsteps.getPlaybackState(out playbackState);
