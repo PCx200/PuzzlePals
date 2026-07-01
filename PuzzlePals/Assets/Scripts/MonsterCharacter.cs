@@ -103,4 +103,10 @@ public class MonsterCharacter : MonoBehaviour
         if (superPowers == null || superPowers[superPowerNumber] == null) return;
         superPowers[superPowerNumber].SuperPowerReleased();
     }
+
+    private void OnDisable()
+    {
+        footsteps.stop(STOP_MODE.ALLOWFADEOUT);
+        if (footStepsPartEff != null) footStepsPartEff.Stop();
+    }
 }
