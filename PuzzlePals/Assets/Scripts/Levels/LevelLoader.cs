@@ -39,6 +39,10 @@ public class LevelLoader : MonoBehaviour
     {
         StartCoroutine(LoadLevelTransition(sceneName));
     }
+    public void LoadLevel(int buildIndex)
+    {
+        StartCoroutine(LoadLevelTransition(buildIndex));
+    }
     
     private IEnumerator LoadLevelTransition(string sceneName)
     {

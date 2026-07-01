@@ -41,11 +41,6 @@ public class PlayerController : MonoBehaviour
     // Player Inputs
     private InputManager inputManager;
 
-    // should probably not be in player controller
-    public IInteractable currentInteractable;
-    [SerializeField] private float interactCooldown = 0.2f;
-    private float lastInteractTime = -999f;
-
     // Audio
     private EventInstance homeFootsteps;
     private EventInstance midaFootsteps;
@@ -71,7 +66,6 @@ public class PlayerController : MonoBehaviour
         inputManager.SuperPower2Action.canceled += OnSuperPower2Released;
 
         FindCurrentMonster();
-        Debug.Log(inputManager.SuperPower2Action.enabled);
     }
 
     private void OnDisable()
@@ -214,27 +208,7 @@ public class PlayerController : MonoBehaviour
     {
         return Physics.CheckSphere(legsTransform.position, groundCheckRadius, groundLayer);
     }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.TryGetComponent(out IInteractable interactable))
-        { 
-        
-            currentInteractable = interactable;
-            Debug.Log("Trigger with: " + other.name);
-        }
-    }
-
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.TryGetComponent(out IInteractable interactable) &&
-            currentInteractable == interactable)
-        {
-            Debug.Log("Exited: " + other.name);
-            currentInteractable = null;
-        }
-    }
-
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.green;

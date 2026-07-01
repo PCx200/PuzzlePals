@@ -7,7 +7,7 @@ public class InputManager : MonoBehaviour
 {
     public static InputManager Instance { get; private set; }
 
-    [SerializeField] private InputActionAsset inputActionAsset;
+    [SerializeField] public InputActionAsset inputActionAsset;
 
     #region Input Actions
     private InputAction moveAction;

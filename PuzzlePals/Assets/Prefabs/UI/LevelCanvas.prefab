@@ -287,7 +287,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5571101099403228778, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2327321745504177749}
   m_SourcePrefab: {fileID: 100100000, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
 --- !u!4 &3641099962738363982 stripped
 Transform:
@@ -299,12 +302,32 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5561538618046179009, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
   m_PrefabInstance: {fileID: 1375127484897772078}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6793092657079055428}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8840295bdf1cec4e98234e0e6f1e087, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LevelLoader
+--- !u!1 &6793092657079055428 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5571101099403228778, guid: 3a2bfeb5b9605db4aad88ce61ad39b5b, type: 3}
+  m_PrefabInstance: {fileID: 1375127484897772078}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2327321745504177749
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6793092657079055428}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a05d281be2848a4c89de87ebd2ba0bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AFKtimer
+  afkTime: 0
+  maxAfkTime: 300
+  levelLoader: {fileID: 6790270183080928495}
 --- !u!1001 &1854331763949601149
 PrefabInstance:
   m_ObjectHideFlags: 0
