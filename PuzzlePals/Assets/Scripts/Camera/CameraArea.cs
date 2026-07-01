@@ -11,10 +11,9 @@ public class CameraArea : MonoBehaviour
 
     private void Start()
     {
-        follow = FindFirstObjectByType<CinemachineFollow>();
         if (follow == null)
         {
-            Debug.LogWarning($"Cinemachine follow not found in: {gameObject.name}");
+            follow = FindFirstObjectByType<CinemachineFollow>();
         }
     }
     private void OnTriggerEnter(Collider other)

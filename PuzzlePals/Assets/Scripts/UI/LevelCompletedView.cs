@@ -12,7 +12,7 @@ public class LevelCompletedView : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI completionTimeText;
     [SerializeField] private TextMeshProUGUI bestTimeText;
-
+    [SerializeField] private TextMeshProUGUI levelNameText;
     [SerializeField] private List<Image> stars;
 
     private void Awake()
@@ -53,6 +53,7 @@ public class LevelCompletedView : MonoBehaviour
             bestTime = (ushort)level.CompletionTime;
 
         bestTimeText.text = $"{FormatTime(bestTime)}";
+        levelNameText.text = level.LevelData.levelName;
     }
 
     private void EnableStarsOnLevelCompletion()

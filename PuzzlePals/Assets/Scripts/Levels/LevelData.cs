@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelData : ScriptableObject
 {
     public string sceneName;
+    public string levelName;
     [HideInInspector]
     public ushort bestCompletionTime;
     [HideInInspector]
