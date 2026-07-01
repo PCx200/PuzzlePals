@@ -5,6 +5,7 @@ public class Befriendable : MonoBehaviour
     Animator animator;
     [SerializeField] private string animationName;
     [SerializeField] private GameObject soundEmitter;
+    [SerializeField] private GameObject icon;
 
     private void Awake()
     {
@@ -20,6 +21,7 @@ public class Befriendable : MonoBehaviour
             Debug.Log("Cupcake eaten");
             AudioManager.Instance.PlayOneShot(FMODEvents.Instance.monsterEat, transform.position);
             soundEmitter.SetActive(false);
+            icon.SetActive(false);
         }
     }
 }
