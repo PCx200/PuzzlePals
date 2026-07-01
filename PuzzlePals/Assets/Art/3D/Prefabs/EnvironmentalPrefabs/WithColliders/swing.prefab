@@ -60,6 +60,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -8391409883662074821, guid: 1b39d182f24db9940aeebe2ae485cb95, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9864048
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391409883662074821, guid: 1b39d182f24db9940aeebe2ae485cb95, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.1643343
+      objectReference: {fileID: 0}
+    - target: {fileID: -8391409883662074821, guid: 1b39d182f24db9940aeebe2ae485cb95, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 18.917
+      objectReference: {fileID: 0}
     - target: {fileID: -2682167134973850427, guid: 1b39d182f24db9940aeebe2ae485cb95, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -99,6 +111,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -2567555823779535870, guid: 1b39d182f24db9940aeebe2ae485cb95, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1400139655546670960}
+    - targetCorrespondingSourceObject: {fileID: -2567555823779535870, guid: 1b39d182f24db9940aeebe2ae485cb95, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2156454713347086152}
   m_SourcePrefab: {fileID: 100100000, guid: 1b39d182f24db9940aeebe2ae485cb95, type: 3}
 --- !u!1 &1123414359242350595 stripped
 GameObject:
@@ -181,6 +196,28 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 5942086413982268935, guid: 1b39d182f24db9940aeebe2ae485cb95, type: 3}
+--- !u!95 &2156454713347086152
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5348329016487199779}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b80416344890a224dbe90c91cb148446, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &5718883951546776361 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -2793727289926329592, guid: 1b39d182f24db9940aeebe2ae485cb95, type: 3}
