@@ -46,7 +46,8 @@ public class LevelLoader : MonoBehaviour
     
     private IEnumerator LoadLevelTransition(string sceneName)
     {
-        Time.timeScale = 1;
+        //apparently you can set the animator to use unscaled time and then you dont need to do this
+        //Time.timeScale = 1;
         transitionAnimator.SetTrigger("Start"); 
         //transitionAnimator.Play("End_Transition");
 
