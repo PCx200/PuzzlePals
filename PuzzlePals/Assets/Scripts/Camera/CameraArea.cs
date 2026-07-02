@@ -16,6 +16,10 @@ public class CameraArea : MonoBehaviour
             follow = FindFirstObjectByType<CinemachineFollow>();
         }
     }
+    private void OnDisable()
+    {
+        transitioning = false;
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
